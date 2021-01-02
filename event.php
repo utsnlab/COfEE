@@ -16,7 +16,7 @@ if($ug_id > 2){
                 <td>' . $row['title'] . '</td>
                 <td>' . $row['des'] . '</td>
                 <td>
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#eventChildren" data-parent="' . $row['id'] . '">Arguments</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#eventChildren" data-parent="' . $row['id'] . '">Children</button>
                     <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $row['id'] . '">Delete</button>
                 </td>
             </tr>';

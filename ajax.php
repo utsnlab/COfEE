@@ -201,7 +201,7 @@ switch ($action) {
             }
         }
         break;
-    case 'add_event_argument':
+    case 'add_event_child':
         if($ug_id > 2){
             $res = [
                 'status'=>false,
@@ -235,11 +235,73 @@ switch ($action) {
             }
         }
         break;
-    case 'get_event_argument':
+    case 'add_event_argument':
+        if($ug_id > 2){
+            $res = [
+                'status'=>false,
+                'message'=>'<div class="alert alert-danger" role="alert">Permission Require</div>'
+            ];
+        }else {
+            $title = test_input($_REQUEST['title']);
+            $des = test_input($_REQUEST['des']);
+            $event_id = test_input($_REQUEST['event_id']);
+            if (!empty($title) and is_numeric($event_id) and !empty($event_id)) {
+                $d->iquery("arguments", ['title' => $title, 'u_id' => $u_id, 'des' => $des,'event_id'=>$event_id]);
+                $value = $d->insert_id();
+                $res = [
+                    'html' => '
+                    <tr>
+                        <td>' . $value . '</td>
+                        <td>' . $title . '</td>
+                        <td>' . $des . '</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $value . '">Delete</button>
+                        </td>
+                    </tr>
+                  ',
+                    'status' => true
+                ];
+            } else {
+                $res = [
+                    'status'=>false,
+                    'message'=>'<div class="alert alert-danger" role="alert">Title is required.</div>'
+                ];
+            }
+        }
+        break;
+    case 'get_event_child':
         $parent = test_input($_REQUEST['parent']);
         if(!empty($parent) and is_numeric($parent)){
             $table = '';
             $q = $d->query("select * from events where parent={$parent}");
+            while($row = $d->fetch($q)){
+                $table .= '
+                    <tr>
+                        <td>' . $row['id'] . '</td>
+                        <td>' . $row['title'] . '</td>
+                        <td>' . $row['des'] . '</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
+                        </td>
+                    </tr>
+                ';
+            }
+            $res = [
+                'status'=>true,
+                'html'=>$table
+            ];
+        }else{
+            $res = [
+                'status'=>false,
+                'message'=>'<div class="alert alert-danger" role="alert">Incorrect Event.</div>'
+            ];
+        }
+        break;
+    case 'get_event_argument':
+        $parent = test_input($_REQUEST['parent']);
+        if(!empty($parent) and is_numeric($parent)){
+            $table = '';
+            $q = $d->query("select * from arguments where event_id={$parent}");
             while($row = $d->fetch($q)){
                 $table .= '
                     <tr>

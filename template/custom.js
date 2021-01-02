@@ -49,6 +49,20 @@ $(document.body).on('click',".add-event",function (e) {
         }
     }, "json");
 });
+$(document.body).on('click',".add-event-event",function (e) {
+    var data = $("#addEventArgument").serialize();
+    $.post( "ajax.php", "action=add_event_child&"+data, function( data ) {
+        if(data.status) {
+            $(".childTable").append(data.html).fadeIn('slow');
+            var event = $("#event").val();
+            $("#addEventChild")[0].reset();
+            $('#event').val(event);
+        }else{
+            $(".error-box-modal").empty() ;
+            $(".error-box-modal").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
+        }
+    }, "json");
+});
 $(document.body).on('click',".add-event-argument",function (e) {
     var data = $("#addEventArgument").serialize();
     $.post( "ajax.php", "action=add_event_argument&"+data, function( data ) {
@@ -214,7 +228,21 @@ $('#eventChildren').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var event_id = button.data('parent');
     var modal = $(this);
-    $.post( "ajax.php", "action=get_event_argument&parent="+event_id, function( data ) {
+    $.post( "ajax.php", "action=get_event_child&parent="+event_id, function( data ) {
+        if(data.status) {
+            modal.find('.modal-body #event').val(event_id);
+            modal.find('#childTable').html(data.html);
+        }else{
+
+        }
+    }, "json");
+});
+$('#eventArguments').on('show.bs.modal', function (argument) {
+    var button = $(argument.relatedTarget);
+    var event_id = button.data('parent');
+    alert(event_id);
+    var modal = $(this);
+    $.post( "ajax.php", "action=get_event_argument&event_id="+event_id, function( data ) {
         if(data.status) {
             modal.find('.modal-body #event').val(event_id);
             modal.find('#childTable').html(data.html);
