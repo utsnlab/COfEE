@@ -65,6 +65,7 @@ $(document.body).on('click',".add-event-child",function (e) {
 });
 $(document.body).on('click',".add-event-argument",function (e) {
     var data = $("#addEventArgument").serialize();
+    alert(data);
     $.post( "ajax.php", "action=add_event_argument&"+data, function( data ) {
         if(data.status) {
             $(".childTable").append(data.html).fadeIn('slow');
@@ -239,7 +240,7 @@ $('#eventChildren').on('show.bs.modal', function (event) {
 });
 $('#eventArguments').on('show.bs.modal', function (argument) {
     var button = $(argument.relatedTarget);
-    var event_id = button.data('parent');
+    var event_id = button.data('event');
     var modal = $(this);
     $.post( "ajax.php", "action=get_event_argument&event_id="+event_id, function( data ) {
         if(data.status) {
