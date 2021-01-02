@@ -51,7 +51,6 @@ $(document.body).on('click',".add-event",function (e) {
 });
 $(document.body).on('click',".add-event-child",function (e) {
     var data = $("#addEventChild").serialize();
-    alert(data);
     $.post( "ajax.php", "action=add_event_child&"+data, function( data ) {
         if(data.status) {
             $(".childTable").append(data.html).fadeIn('slow');
