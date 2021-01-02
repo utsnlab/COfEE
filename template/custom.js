@@ -50,7 +50,7 @@ $(document.body).on('click',".add-event",function (e) {
     }, "json");
 });
 $(document.body).on('click',".add-event-child",function (e) {
-    var data = $("#addEventArgument").serialize();
+    var data = $("#addEventChild").serialize();
     $.post( "ajax.php", "action=add_event_child&"+data, function( data ) {
         if(data.status) {
             $(".childTable").append(data.html).fadeIn('slow');
