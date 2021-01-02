@@ -282,7 +282,7 @@ switch ($action) {
                         <td>' . $row['title'] . '</td>
                         <td>' . $row['des'] . '</td>
                         <td>
-                            <button class="btn btn-sm btn-info" data-toggle="modal" data-parent="'.$value.'" data-target="#eventArguments">Arguments</button>
+                            <button class="btn btn-sm btn-info" data-toggle="modal" data-event="' . $row['id'] . '" data-target="#eventArguments">Arguments</button>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
                         </td>
                     </tr>
