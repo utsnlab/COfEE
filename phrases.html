@@ -1,0 +1,52 @@
+[-add_phrases_section-]
+<section>
+    <div class="text-center">
+    [-start_annotation-]
+    </div>
+    <table class="table table-striped table-hover result-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        [-phrases-]
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            [-paginate-]
+        </ul>
+    </nav>
+</section>
+<div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabe2">Import Projects From Excel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <a href="/sampleExcel.xlsx" target="_blank">Download Sample File</a>
+                <hr>
+                <div class="error-box-modal"></div>
+                <form id="importProjects" enctype="multipart/form-data">
+                    <input type="text" name="project" id="project" hidden value="[-project_id-]">
+                    <div class="form-group">
+                        <label for="file">Select A File</label>
+                        <input type="file" class="form-control-file" id="file" name="file">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary importExcel">Upload and Import</button>
+            </div>
+        </div>
+    </div>
+</div>
