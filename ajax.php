@@ -186,7 +186,7 @@ switch ($action) {
                         <td>' . $title . '</td>
                         <td>' . $des . '</td>
                         <td>
-                            <button class="btn btn-sm btn-info" data-toggle="modal" data-parent="'.$value.'" data-target="#eventChildren">Children</button>
+                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-parent="'.$value.'" data-target="#eventChildren">Children</button>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $value . '">Delete</button>
                         </td>
                     </tr>
