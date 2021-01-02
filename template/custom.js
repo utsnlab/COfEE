@@ -49,7 +49,7 @@ $(document.body).on('click',".add-event",function (e) {
         }
     }, "json");
 });
-$(document.body).on('click',".add-event-event",function (e) {
+$(document.body).on('click',".add-event-child",function (e) {
     var data = $("#addEventArgument").serialize();
     $.post( "ajax.php", "action=add_event_child&"+data, function( data ) {
         if(data.status) {
@@ -227,7 +227,6 @@ $('#userStatistics').on('show.bs.modal', function (event) {
 $('#eventChildren').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var event_id = button.data('parent');
-    alert(event_id);
     var modal = $(this);
     $.post( "ajax.php", "action=get_event_child&parent="+event_id, function( data ) {
         if(data.status) {
