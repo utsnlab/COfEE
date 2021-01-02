@@ -282,6 +282,7 @@ switch ($action) {
                         <td>' . $row['title'] . '</td>
                         <td>' . $row['des'] . '</td>
                         <td>
+                            <button class="btn btn-sm btn-info" data-toggle="modal" data-parent="'.$value.'" data-target="#eventArguments">Arguments</button>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
                         </td>
                     </tr>
@@ -299,10 +300,10 @@ switch ($action) {
         }
         break;
     case 'get_event_argument':
-        $parent = test_input($_REQUEST['parent']);
-        if(!empty($parent) and is_numeric($parent)){
+        $event_id = test_input($_REQUEST['event_id']);
+        if(!empty($event_id) and is_numeric($event_id)){
             $table = '';
-            $q = $d->query("select * from arguments where event_id={$parent}");
+            $q = $d->query("select * from arguments where event_id={$event_id}");
             while($row = $d->fetch($q)){
                 $table .= '
                     <tr>
