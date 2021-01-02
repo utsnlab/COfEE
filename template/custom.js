@@ -241,6 +241,7 @@ $('#eventChildren').on('show.bs.modal', function (event) {
 $('#eventArguments').on('show.bs.modal', function (argument) {
     var button = $(argument.relatedTarget);
     var event_id = button.data('event');
+    alert(event_id);
     var modal = $(this);
     $.post( "ajax.php", "action=get_event_argument&event_id="+event_id, function( data ) {
         if(data.status) {
