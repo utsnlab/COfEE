@@ -65,13 +65,12 @@ $(document.body).on('click',".add-event-child",function (e) {
 });
 $(document.body).on('click',".add-event-argument",function (e) {
     var data = $("#addEventArgument").serialize();
-    alert(data);
     $.post( "ajax.php", "action=add_event_argument&"+data, function( data ) {
         if(data.status) {
             $(".childTable").append(data.html).fadeIn('slow');
-            var event = $("#event").val();
+            var event = $("#argument").val();
             $("#addEventArgument")[0].reset();
-            $('#event').val(event);
+            $('#argument').val(event);
         }else{
             $(".error-box-modal").empty() ;
             $(".error-box-modal").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
@@ -241,12 +240,11 @@ $('#eventChildren').on('show.bs.modal', function (event) {
 $('#eventArguments').on('show.bs.modal', function (argument) {
     var button = $(argument.relatedTarget);
     var event_id = button.data('event');
-    alert(event_id);
     var modal = $(this);
     $.post( "ajax.php", "action=get_event_argument&event_id="+event_id, function( data ) {
         if(data.status) {
-            modal.find('.modal-body #event').val(event_id);
-            modal.find('#childTable').html(data.html);
+            modal.find('.modal-body #argument').val(event_id);
+            modal.find('#argumentTable').html(data.html);
         }else{
 
         }

@@ -283,7 +283,7 @@ switch ($action) {
                         <td>' . $row['des'] . '</td>
                         <td>
                             <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#eventArguments" data-event="' . $row['id'] . '">Arguments</button>
-                            <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
+                            <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $row['id'] . '">Delete</button>
                         </td>
                     </tr>
                 ';
@@ -311,7 +311,7 @@ switch ($action) {
                         <td>' . $row['title'] . '</td>
                         <td>' . $row['des'] . '</td>
                         <td>
-                            <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
+                            <button class="btn btn-sm btn-danger delete-rows" data-type="arguments" data-id="' . $row['id'] . '">Delete</button>
                         </td>
                     </tr>
                 ';
@@ -630,11 +630,11 @@ switch ($action) {
                                 project_users.u_id=".$u_id." 
                               order by project_phrases_words.id asc");
         while($row = $d->fetch($q)){
-            $hasEvent = $d->getrowvalue("type","select `type` from project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.events = events.id and events.parent is null and word=".$row['id'],true);
+            $hasEvent = $d->getrowvalue("type","select `type` from project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.events = events.id and word=".$row['id'],true);
             if($hasEvent == "B_"){
                 $word_id = $d->getrowvalue("id","select `id` from project_phrases_words_events where u_id={$u_id} and word=".$row['id'],true);
-                $inline_text = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and events.parent is null and (project_phrases_words_events.word=".$row['id']." or project_phrases_words_events.parent=".$word_id.")",true);
-                $inline_id = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and events.parent is null and (project_phrases_words_events.word=".$row['id']." or project_phrases_words_events.parent=".$word_id.")",true);
+                $inline_text = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=".$row['id']." or project_phrases_words_events.parent=".$word_id.")",true);
+                $inline_id = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=".$row['id']." or project_phrases_words_events.parent=".$word_id.")",true);
                 $word_event_id = $d->getrowvalue("events","select events from project_phrases_words_events where u_id={$u_id} and word=".$row['id'],true);
                 $this_event_id = $d->getrowvalue("id","select id from project_phrases_words_events where u_id={$u_id} and word=".$row['id'],true);
                 $entities .= '
@@ -643,7 +643,7 @@ switch ($action) {
                             <td>
                                 <select class="form-control set_argument" data-event="'.$this_event_id.'" data-words="'.$_REQUEST['words'].'">
                                     <option value="0"></option>';
-                $qq = $d->query("select id,title,des from events where parent=".$word_event_id);
+                $qq = $d->query("select id,title,des from arguments where event_id=".$word_event_id);
                 while($res = $d->fetch($qq)){
                     $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$res['id']} and event={$this_event_id} and word in (".$_REQUEST['words'].")",true);
                     if(!empty($res['des'])) $res['des'] = ' ( '.$res['des'].' ) ';
@@ -683,7 +683,7 @@ switch ($action) {
         $q = $d->query("select * from project_phrases_words_events where u_id={$u_id} and word=".$word);
         $event_info = $d->fetch($q);
         $argument_option = [];
-        $q = $d->query("select * from events where parent = ".$event);
+        $q = $d->query("select * from arguments where event_id = ".$event);
         while($row = $d->fetch($q)){
             $argument_option[$row['id']]['title'] = $row['title'];
             $argument_option[$row['id']]['des'] = $row['des'];
@@ -823,7 +823,7 @@ switch ($action) {
     case 'delete_rows':
         $id = test_input($_REQUEST['id']);
         $table = test_input($_REQUEST['type']);
-        if($table == "projects" or $table == "entities" or $table == "events" or $table == 'project_phrases' or $table == "project_phrases_words_entities" or $table == "project_phrases_words_events" or $table == "user") {
+        if($table == "projects" or $table == "entities" or $table == "events" or $table == "arguments" or $table == 'project_phrases' or $table == "project_phrases_words_entities" or $table == "project_phrases_words_events" or $table == "user") {
             if (!empty($id)) {
                 $d->query("delete from ".$table." where id = '" . $id."'");
                 $res['status'] = true;
