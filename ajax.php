@@ -554,14 +554,15 @@ switch ($action) {
             $words = explode(",",$words);
             $i = 0;
             foreach($words as $word){
-                $q = $d->query("delete from project_phrases_words_events where u_id={$u_id} and word={$word}");
+                $old_event = $d->getrowvalue("id", "select id from project_phrases_words_events where evect={$event} and u_id={$u_id} and word={$word}", true);
+//                $q = $d->query("delete from project_phrases_words_events where u_id={$u_id} and word={$word}");
                 if ($i == 0) $type = "B_";
                 else $type = "I_";
-                if($i == 0) {
+                if($i == 0 && empty($old_event)) {
                     $d->iquery('project_phrases_words_events', ['u_id'=>$u_id, 'word' => $word, 'events' => $event, 'type' => $type]);
                     $id = $d->insert_id();
                 }
-                else
+                elseif($i > 0 && empty($old_event))
                     $d->iquery('project_phrases_words_events', ['u_id'=>$u_id,'word' => $word, 'events' => $event, 'type' => $type,'parent'=>$id]);
                 $i++;
             }
@@ -588,14 +589,14 @@ switch ($action) {
             $words = explode(",",$words);
             $i = 0;
             foreach($words as $word){
-                $q = $d->query("delete from project_phrases_words_entities where u_id={$u_id} and word={$word}");
+                $old_entity = $d->getrowvalue("id", "select id from project_phrases_words_entities where entity={$entity} and u_id={$u_id} and word={$word}", true);
                 if ($i == 0) $type = "B_";
                 else $type = "I_";
-                if($i == 0) {
+                if($i == 0 && empty($old_entity)) {
                     $d->iquery('project_phrases_words_entities', ['u_id'=>$u_id,'word' => $word, 'entity' => $entity, 'type' => $type]);
                     $id = $d->insert_id();
                 }
-                else
+                elseif($i > 0 && empty($old_entity))
                     $d->iquery('project_phrases_words_entities', ['u_id'=>$u_id,'word' => $word, 'entity' => $entity, 'type' => $type,'parent'=>$id]);
                 $i++;
             }
@@ -700,30 +701,46 @@ switch ($action) {
                                 project_phrases.id = {$phrases} and 
                                 project_users.u_id=".$u_id." 
                               order by project_phrases_words.id asc");
+        $start_id_str = "";
         while($row = $d->fetch($q)){
-            $hasEntity = $d->getrowvalue("type","select `type` from project_phrases_words_entities where u_id={$u_id} and word=".$row['id'],true);
-            if($hasEntity == "B_"){
-                $word_id = $d->getrowvalue("id","select `id` from project_phrases_words_entities where u_id={$u_id} and word=".$row['id'],true);
-                $inline_text = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=".$row['id']." or project_phrases_words_entities.parent=".$word_id.")",true);
-                $inline_id = $d->getrowvalue("text","select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=".$row['id']." or project_phrases_words_entities.parent=".$word_id.")",true);
-                $entities .= '
-                        <tr>
-                            <td>'.$inline_text.'</td>
-                            <td>
-                                <select class="form-control set_argument" data-event="'.$word_event_id.'" data-words="'.$inline_id.'">
-                                    <option value="0"></option>';
-                foreach($argument_option as $arg_id=>$arg_value){
-                    $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$arg_id} and event={$word_event_id} and word in (".$inline_id.")",true);
-                    if(!empty($arg_value['des'])) $arg_value['des'] = ' ( '.$arg_value['des'].' ) ';
-                    if(empty($hasArgument)){
-                        $entities .= '<option value="'.$arg_id.'">'.$arg_value['title'].$arg_value['des'].'</option>';
-                    }else{
-                        $entities .= '<option value="'.$arg_id.'" selected>'.$arg_value['title'].$arg_value['des'].'</option>';
-                    }
+            $start_id = 0;
+
+            while($start_id >= 0) {
+                if ($start_id >= 0) {
+                    $start_id_str = $start_id_str . "_" . $start_id;
                 }
-                $entities .= '</select>
-                            </td>
-                        </tr>';
+                $hasEntity = $d->getrowvalue("type","select `type` from project_phrases_words_entities where id>{$start_id} and u_id={$u_id} and word=".$row['id'],true);
+                if ($hasEntity == "B_") {
+                    $word_id = $d->getrowvalue("id", "select `id` from project_phrases_words_entities where id>{$start_id} and u_id={$u_id} and word=" . $row['id'], true);
+                    $start_id = $word_id;
+                    $inline_text = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ")", true);
+                    $inline_id = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ")", true);
+                    $entities .= '
+                            <tr>
+                                <td>' . $inline_text . '</td>
+                                <td>
+                                    <select class="form-control set_argument" data-event="' . $word_event_id . '" data-words="' . $inline_id . '">
+                                        <option value="0"></option>';
+                    foreach ($argument_option as $arg_id => $arg_value) {
+                        $hasArgument = $d->getrowvalue("id", "select id from project_phrases_words_arguments where u_id={$u_id} and argument={$arg_id} and event={$word_event_id} and word in (" . $inline_id . ")", true);
+                        if (!empty($arg_value['des'])) $arg_value['des'] = ' ( ' . $arg_value['des'] . ' ) ';
+                        if (empty($hasArgument)) {
+                            $entities .= '<option value="' . $arg_id . '">' . $arg_value['title'] . $arg_value['des'] . '</option>';
+                        } else {
+                            $entities .= '<option value="' . $arg_id . '" selected>' . $arg_value['title'] . $arg_value['des'] . '</option>';
+                        }
+                    }
+                    $entities .= '</select>
+                                </td>
+                            </tr>';
+                }
+                elseif ($hasEntity == "I_") {
+                    $word_id = $d->getrowvalue("id", "select `id` from project_phrases_words_entities where id>{$start_id} and u_id={$u_id} and word=" . $row['id'], true);
+                    $start_id = $word_id;
+                }
+                else {
+                    $start_id = -1;
+                }
             }
         }
         $entities .= '</table>';
@@ -743,23 +760,24 @@ switch ($action) {
         }else{
             $asserted_option = '<option value="0" selected></option><option value="Definitive">Definitive</option><option value="Uncertain">Uncertain</option>';
         }
-        $html = '
-        <div class="row">
-            <div class="col-md-12">
-                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_events" data-id="'.$word_event_id.'">Delete This Event</button>
-            </div>
-        </div>
-        <hr>
-        <h3>'.$event_word_title.' : '.$event_title.'</h3>
-        <table class="table">
-            <tr><td>Tens</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
-            <td>Asserted</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
-        </table>
-        <hr>
-        '.$entities;
+//        $html = '
+//        <div class="row">
+//            <div class="col-md-12">
+//                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_events" data-id="'.$word_event_id.'">Delete This Event</button>
+//            </div>
+//        </div>
+//        <hr>
+//        <h3>'.$event_word_title.' : '.$event_title.'</h3>
+//        <table class="table">
+//            <tr><td>Tens</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
+//            <td>Asserted</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
+//        </table>
+//        <hr>
+//        '.$entities;
         $res = [
+            'start_id' => $start_id_str,
             'status'=>true,
-            'html'=>$html
+            'html'=>''
         ];
         break;
     case 'set_tens':
@@ -780,9 +798,9 @@ switch ($action) {
         $argument = test_input($_REQUEST['argument']);
         $event = test_input($_REQUEST['event']);
         if($ug_id >2){
-            $event_name = $d->getrowvalue("title", "select title from events where id='" . $argument . "' and u_id=" . $parent_id, true);
+            $event_name = $d->getrowvalue("title", "select title from events where id='" . $event . "' and u_id=" . $parent_id, true);
         }else {
-            $event_name = $d->getrowvalue("title", "select title from events where id='" . $argument . "' and u_id=" . $u_id, true);
+            $event_name = $d->getrowvalue("title", "select title from events where id='" . $event . "' and u_id=" . $u_id, true);
         }
         if(!empty($event_name)) {
             $words = test_input($_REQUEST['words']);

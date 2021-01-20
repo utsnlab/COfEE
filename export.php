@@ -29,9 +29,10 @@ while($row = $d->fetch($q)){
     $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
     $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
     $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
-    $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
-    $objPHPExcel->getActiveSheet()->setCellValue('F1', 'ID_Event');
-    $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Argument');
+    $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Assertation');
+    $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
+    $objPHPExcel->getActiveSheet()->setCellValue('G1', 'ID_Event');
+    $objPHPExcel->getActiveSheet()->setCellValue('H1', 'Argument');
     $cellNum++;
     $qq = $d->query("select * from project_phrases,project_phrases_status where project_phrases.id = project_phrases_status.phrases and project_phrases_status.u_id=".$row['u_id']." and project_phrases_status.status=1 and project={$project_id} order by project_phrases.id asc");
     while($phrases = $d->fetch($qq)){
@@ -44,9 +45,10 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
             $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
             $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
-            $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
-            $objPHPExcel->getActiveSheet()->setCellValue('F1', 'ID_Event');
-            $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Argument');
+            $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Assertation');
+            $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
+            $objPHPExcel->getActiveSheet()->setCellValue('G1', 'ID_Event');
+            $objPHPExcel->getActiveSheet()->setCellValue('H1', 'Argument');
             $cellNum = 2;
         }
         $i = 0;
@@ -56,6 +58,7 @@ while($row = $d->fetch($q)){
             $args = $d->getrowvalue("title", "select  GROUP_CONCAT(CONCAT(project_phrases_words_entities.type, entities.title) ORDER BY title ASC SEPARATOR ', ') as title from entities,project_phrases_words_entities where entities.id = project_phrases_words_entities.entity and project_phrases_words_entities.u_id = ".$row['u_id']." and project_phrases_words_entities.word=" . $words['id'], true);
             $event = $d->getrowvalue("title", "select GROUP_CONCAT(CONCAT(project_phrases_words_events.type, events.title) ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
             $asserted = $d->getrowvalue("title", "select GROUP_CONCAT(project_phrases_words_events.asserted ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
+            $tens = $d->getrowvalue("title", "select GROUP_CONCAT(project_phrases_words_events.tens ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
             $event_id = $d->getrowvalue("title", "select GROUP_CONCAT(events.id ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
             $role = $d->getrowvalue("title", "select GROUP_CONCAT(CONCAT(project_phrases_words_arguments.type, arguments.title) ORDER BY title ASC SEPARATOR ', ') as title from arguments,project_phrases_words_arguments where arguments.id = project_phrases_words_arguments.argument and project_phrases_words_arguments.u_id = ".$row['u_id']." and project_phrases_words_arguments.word=" . $words['id'], true);
             $data[$i]['word'] = $words['word'];
@@ -84,6 +87,11 @@ while($row = $d->fetch($q)){
             }else{
                 $data[$i]['asserted'] = $asserted;
             }
+            if($tens == ""){
+                $data[$i]['tens'] = "O";
+            }else{
+                $data[$i]['tens'] = $tens;
+            }
             $i++;
         }
         $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<doc>');
@@ -93,6 +101,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('E' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, '');
+        $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, '');
         $cellNum++;
         $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<s>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, 'begin');
@@ -101,6 +110,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('E' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, 'O');
+        $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, 'O');
         $cellNum++;
         foreach ($data as $dataa) {
             $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, $dataa['word']);
@@ -108,8 +118,9 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, $dataa['arg']);
             $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, $dataa['event']);
             $objPHPExcel->getActiveSheet()->setCellValue('E' . $cellNum, $dataa['asserted']);
-            $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, $dataa['event_id']);
-            $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, $dataa['role']);
+            $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, $dataa['tens']);
+            $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, $dataa['event_id']);
+            $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, $dataa['role']);
             $cellNum++;
         }
         $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</s>');
@@ -119,6 +130,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('E' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, 'O');
+        $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, 'O');
         $cellNum++;
         $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</doc>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, '');
@@ -127,6 +139,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('E' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, '');
+        $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, '');
     }
 
 }
