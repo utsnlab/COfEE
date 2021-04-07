@@ -60,22 +60,33 @@ while($row = $d->fetch($q)){
             $asserted = $d->getrowvalue("title", "select GROUP_CONCAT(project_phrases_words_events.asserted ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
             $tens = $d->getrowvalue("title", "select GROUP_CONCAT(project_phrases_words_events.tens ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
             $event_id = $d->getrowvalue("title", "select GROUP_CONCAT(events.id ORDER BY title ASC SEPARATOR ', ') as title from events,project_phrases_words_events where events.id = project_phrases_words_events.events and project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
-            $role = $d->getrowvalue("title", "select GROUP_CONCAT(CONCAT(project_phrases_words_arguments.type, arguments.title) ORDER BY title ASC SEPARATOR ', ') as title from arguments,project_phrases_words_arguments where arguments.id = project_phrases_words_arguments.argument and project_phrases_words_arguments.u_id = ".$row['u_id']." and project_phrases_words_arguments.word=" . $words['id'], true);
             $data[$i]['word'] = $words['word'];
             if ($args == "") {
                 $data[$i]['arg'] = "O";
             } else {
-                $data[$i]['arg'] = $args;
+                $args_id = $d->getrowvalue("entity", "select  entity from project_phrases_words_entities where project_phrases_words_entities.u_id = ".$row['u_id']." and project_phrases_words_entities.word=" . $words['id'], true);
+                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $words['id'] . '_' . $args_id . ')';
             }
             if ($event == "") {
                 $data[$i]['event'] = "O";
             } else {
-                $data[$i]['event'] = $event;
+                $events_id = $d->getrowvalue("events", "select  events from project_phrases_words_events where project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
+                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
             }
-            if ($role == "") {
-                $data[$i]['role'] = "O";
-            } else {
-                $data[$i]['role'] = $role;
+
+            $data[$i]['role'] = "";
+            $aq = $d->query("select * from project_phrases_words_arguments where u_id = ".$row['u_id']." and word=" . $words['id'] . " order by id asc");
+            while ($argument = $d->fetch($aq)) {
+                $role = $d->getrowvalue("title", "select GROUP_CONCAT(CONCAT(project_phrases_words_arguments.type, arguments.title) ORDER BY title ASC SEPARATOR ', ') as title from arguments,project_phrases_words_arguments where arguments.id = project_phrases_words_arguments.argument and project_phrases_words_arguments.id = " . $argument['id'], true);
+
+                if ($role == "") {
+                    $data[$i]['role'] .= "O";
+                } else {
+                    $ev_id = $d->getrowvalue("events", "select  events from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
+                    $ev_word = $d->getrowvalue("word", "select  word from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
+                    $data[$i]['role'] .= '(' . $role . ',' . 'EV_' . $row['u_id'] . '_' .
+                        $ev_word . '_' . $ev_id . ',' . 'EN_' . $row['u_id'] . '_' . $words['id'] . '_' . $args_id . ')';
+                }
             }
             if ($event_id == "") {
                 $data[$i]['event_id'] = "O";
@@ -85,16 +96,16 @@ while($row = $d->fetch($q)){
             if($asserted == ""){
                 $data[$i]['asserted'] = "O";
             }else{
-                $data[$i]['asserted'] = $asserted;
+                $data[$i]['asserted'] = '(' . $asserted . ',' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
             }
             if($tens == ""){
                 $data[$i]['tens'] = "O";
             }else{
-                $data[$i]['tens'] = $tens;
+                $data[$i]['tens'] = '(' . $tens . ',' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
             }
             $i++;
         }
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<doc>');
+        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<project id="' . $project_id . '>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, $phrases['link']);
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, $phrases['time']);
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, '');
@@ -103,7 +114,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, '');
         $cellNum++;
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<s>');
+        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<s id="'. $phrases['id'] . '">');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, 'begin');
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, 'O');
@@ -132,7 +143,7 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, 'O');
         $cellNum++;
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</doc>');
+        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</project>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, '');

@@ -24,9 +24,10 @@ $(document.body).on('click',".add-user",function (e) {
     }, "json");
 });
 $(document.body).on('click',".set-project-user",function (e) {
-    var data = $("#setProjectUser").serialize();
-    var id = $("#project").val();
-    $.post( "ajax.php", "action=set_project_user&"+data, function( data ) {
+    let reqData = $("#setProjectUser").serialize();
+    let id = $("#project").val();
+    $.get( "ajax.php?action=set_project_user&"+reqData, function( data, status) {
+        data = JSON.parse(data);
         if(data.status) {
             $("#project"+id).html(data.html);
             $("#setProjectUser")[0].reset();
@@ -35,7 +36,7 @@ $(document.body).on('click',".set-project-user",function (e) {
             $(".error-box-modal").empty() ;
             $(".error-box-modal").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
         }
-    }, "json");
+    });
 });
 $(document.body).on('click',".add-event",function (e) {
     var data = $("#addEvent").serialize();
@@ -180,6 +181,20 @@ $(document.body).on('change',".set_asserted",function (e) {
         }
     }, "json");
 });
+$(document.body).on('change',".set_polarity",function (e) {
+    var polarity_value = $(this).val();
+    var event_id = $(this).data('event');
+    var $this = $(this);
+    $.post( "ajax.php", "action=set_polarity&polarity="+polarity_value+'&event='+event_id, function( data ) {
+        if(data.status) {
+            $this.addClass('is-valid');
+        }else{
+            $(".error-box").empty() ;
+            $(".error-box").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
+        }
+    }, "json");
+});
+
 $(document.body).on('change',".set_argument",function (e) {
     var argument = $(this).val();
     var words = $(this).data('words');

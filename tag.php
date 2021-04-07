@@ -21,8 +21,9 @@ if (isset($_GET['cancel'])) {
 if ($status) {
     $id = test_input($_GET['id']);
     if (!empty($id)) {
-        $_SESSION['user']['rtl'] = $d->getrowvalue("rtl", "select rtl from project_phrases,projects where project_phrases.project = projects.id and project_phrases.id={$id}", true);
-        $next = $d->getrowvalue("id", "select id from project_phrases where id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 1 , 1", true);
+        $_SESSION['user']['rtl'] = $d->getrowvalue("rtl", "select rtl, projects.id from project_phrases,projects where project_phrases.project = projects.id and project_phrases.id={$id}", true);
+        $project = $d->getrowvalue("p_id", "select rtl, projects.id as p_id from project_phrases,projects where project_phrases.project = projects.id and project_phrases.id={$id}", true);
+        $next = $d->getrowvalue("id", "select id from project_phrases where project = {$project} and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 1 , 1", true);
         if (empty($next)) {
             $button = '
         <div class="float-left"><a href="index.php?action=tag&cancel=' . $id . '" class="btn btn-danger">Cancel</a></div>
@@ -49,12 +50,36 @@ if ($status) {
             $hasEntity = $d->getrowvalue("type", "select `type` from project_phrases_words_entities where u_id={$u_id} and word=" . $row['id'], true);
             if ($hasEvent == "B_") {
                 $word_id = $d->getrowvalue("id", "select `id` from project_phrases_words_events where u_id={$u_id} and word=" . $row['id'], true);
-                $inline_text = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ")", true);
+                $inline_text = "";
+                if ($_SESSION['user']['rtl']){
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ") order by project_phrases_words.id asc", true);
+                    while ($wr = $d->fetch($wd))
+                        $inline_text .= $wr["word"] . " ";
+                }
+                else{
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ") order by project_phrases_words.id desc", true);
+                    while ($wr = $d->fetch($wd))
+                        $inline_text .= $wr["word"] . " ";
+                }
+                $inline_text = rtrim($inline_text, " ");
+//                $inline_text = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ")", true);
                 $inline_id =   $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ")", true);
                 $text .= '<span class="word-button-blue word-button" data-type="event" data-value="' . $inline_id . '">' . $inline_text . '</span> ';
             } elseif ($hasEntity == "B_") {
                 $word_id = $d->getrowvalue("id", "select `id` from project_phrases_words_entities where u_id={$u_id} and word=" . $row['id'], true);
-                $inline_text = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ")", true);
+                $inline_text = "";
+                if ($_SESSION['user']['rtl']){
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ") order by project_phrases_words.id asc", true);
+                    while ($wr = $d->fetch($wd))
+                        $inline_text .= $wr["word"] . " ";
+                }
+                else{
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ") order by project_phrases_words.id desc", true);
+                    while ($wr = $d->fetch($wd))
+                        $inline_text .= $wr["word"] . " ";
+                }
+                $inline_text = rtrim($inline_text, " ");
+//                $inline_text = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.word SEPARATOR ' ') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ")", true);
                 $inline_id = $d->getrowvalue("text", "select GROUP_CONCAT(project_phrases_words.id SEPARATOR ',') as text from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ")", true);
                 $text .= '<span class="word-button-green word-button" data-type="entity" data-value="' . $inline_id . '">' . $inline_text . '</span> ';
             } elseif (empty($hasEvent) and empty($hasEntity)) {
@@ -71,17 +96,17 @@ if ($status) {
         }
         while ($row = $d->fetch($q)) {
             $cnt = $d->getrowvalue("cnt", "select count(*) as cnt from entities where parent=" . $row['id'], true);
-            if (!empty($row['des'])) $row['des'] = ' - ' . $row['des'];
+            if (!empty($row['des'])) $row['des'] = $row['des'];
             if ($cnt > 0) {
-                $entities_option .= '<menu label="' . $row['title'] . '">';
+                $entities_option .= '<menu label="' . $row['des'] . '">';
                 $qq = $d->query("select * from entities where parent=" . $row['id']);
                 while ($res = $d->fetch($qq)) {
-                    if (!empty($res['des'])) $res['des'] = ' - ' . $res['des'];
-                    $entities_option .= '<command label="' . $res['title'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'entity\')"></command>';
+                    if (!empty($res['des'])) $res['des'] = $res['des'];
+                    $entities_option .= '<command label="' . $res['des'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'entity\')"></command>';
                 }
                 $entities_option .= '</menu>';
             } else {
-                $entities_option .= '<command label="' . $row['title'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'entity\')"></command>';
+                $entities_option .= '<command label="' . $row['des'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'entity\')"></command>';
             }
         }
         $entities_option = '<menu label="Entity">' . $entities_option . '</menu>';
@@ -95,17 +120,17 @@ if ($status) {
         }
         while ($row = $d->fetch($q)) {
             $cnt = $d->getrowvalue("cnt", "select count(*) as cnt from events where parent=" . $row['id'], true);
-            if (!empty($row['des'])) $row['des'] = ' - ' . $row['des'];
+            if (!empty($row['des'])) $row['des'] = $row['des'];
             if ($cnt > 0) {
-                $events_option .= '<menu label="' . $row['title'] . '">';
+                $events_option .= '<menu label="' . $row['des'] . '">';
                 $qq = $d->query("select * from events where parent=" . $row['id']);
                 while ($res = $d->fetch($qq)) {
-                    if (!empty($res['des'])) $res['des'] = ' - ' . $res['des'];
-                    $events_option .= '<command label="' . $res['title'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
+                    if (!empty($res['des'])) $res['des'] = $res['des'];
+                    $events_option .= '<command label="' . $res['des'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
                 }
                 $events_option .= '</menu>';
             } else {
-                $events_option .= '<command label="' . $row['title'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'event\')"></command>';
+                $events_option .= '<command label="' . $row['des'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'event\')"></command>';
             }
         }
         $events_option = '<menu label="Events">' . $events_option . '</menu>';

@@ -19,6 +19,7 @@ while($row = $d->fetch($q)){
                 <td>'.$row['id'].'</td>
                 <td><a href="index.php?action=tag&id='.$next.'">'.$row['title'].'</a></td>
                 <td>'.$row['user_num'].'</td>
+                <td>'.$row['annotation_num'].'</td>
                 <td id="project'.$row['id'].'">'.$users.'</td>
                 <td>
                     '.$add_user_button.'
@@ -42,8 +43,12 @@ if($ug_id < 3){
             <textarea class="form-control" id="des" name="des" rows="3"></textarea>
         </div>
         <div class="form-group">
-            <label for="user_num">Number of annotation per record</label>
+            <label for="user_num">Number of add user for projects</label>
             <input class="form-control" type="number" id="user_num" name="user_num" value="1">
+        </div>
+        <div class="form-group">
+            <label for="annotation_num">Number of annotation per record</label>
+            <input class="form-control" type="number" id="annotation_num" name="annotation_num" value="1">
         </div>
         <div class="custom-control custom-checkbox">
             <input type="checkbox" name="rtl" class="custom-control-input" id="customCheck1" value="1">
