@@ -2,21 +2,21 @@
 $project = $_GET['id'];
 if(is_numeric($project)) {
     $phrases_table = "";
-    $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
+    $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
     if(!empty($next)){
         $start_annotation = '<a href="index.php?action=tag&id='.$next.'" class="btn btn-success btn-delete center-block">Start Annotation</a>';
     }
-    echo $ug_id."\n";
+    //echo $ug_id."\n";
     if($ug_id <3) {
         $cnt = $d->getrowvalue('cnt',"select count(*) as cnt from project_phrases,project_users where project_users.project = project_phrases.project and project_users.u_id={$u_id} and project_phrases.project = {$project}",true);
         if($start >= $cnt) {
             $start = 0;
             $current_page = 1;
         }
-        echo "start-"."\n";
-        echo $start."\n";
-        echo $cnt."\n";
-        echo $limit_per_page."\n";
+        //echo "start-"."\n";
+        //echo $start."\n";
+        //echo $cnt."\n";
+        //echo $limit_per_page."\n";
         $q = $d->query("select * from project_phrases,project_users where project_users.project = project_phrases.project and project_users.u_id={$u_id} and project_phrases.project = {$project} limit {$start},{$limit_per_page}");
         while ($row = $d->fetch($q)) {
             $status = "";
@@ -69,23 +69,23 @@ if(is_numeric($project)) {
     }
     else{
         $cnt = $d->getrowvalue('cnt',"select count(*) as cnt from project_phrases,project_phrases_status where project_phrases.id = project_phrases_status.phrases and project_phrases_status.u_id={$u_id}",true);
-        echo "start-"."\n";
-        echo $start."\n";
-        echo $cnt."\n";
-        echo $limit_per_page."\n";
+        //echo "start-"."\n";
+        //echo $start."\n";
+        //echo $cnt."\n";
+        //echo $limit_per_page."\n";
         if($start >= $cnt) {
             $start = 0;
             $current_page = 1;
         }
 //        $q = $d->query("select * from project_phrases,project_phrases_status where project_phrases.id = project_phrases_status.phrases and project_phrases_status.u_id={$u_id} limit {$start},{$limit_per_page}");
         $q = $d->query("select * from project_phrases,project_users where project_users.project = project_phrases.project and project_users.u_id={$u_id} and project_phrases.project = {$project} limit {$start},{$limit_per_page}");
-        echo $project."\n";
+        //echo $project."\n";
         $annotation_num = $d->getrowvalue('annotation_num',"select annotation_num from projects where id={$project}",true);
         while($row = $d->fetch($q)){
             $an_num = $d->getrowvalue('cnt',"select count(*) as cnt from project_phrases_status where u_id!={$u_id} and status=1 and phrases={$row['id']}",true);
-            echo $row['id']."-".$an_num."\n";
+            //echo $row['id']."-".$an_num."\n";
             if($annotation_num > $an_num) {
-                echo $an_num."\n";
+                //echo $an_num."\n";
                 if(empty($row['status'])){
                     $status = '<span class="btn btn-info btn-sm btn-show-status">-</span><br>';
                 }elseif($row['status'] == 1){
