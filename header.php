@@ -14,5 +14,7 @@
 	include('include/pdate.php');
 	include('include/jdf.php');
 	include('include/functions.php');
-    include('include/simple_html_dom.php');
-?>
+	include('include/simple_html_dom.php');
+	include('include/labels.php');
+	if(empty($_SESSION['using_lang']))
+		$_SESSION['using_lang'] = 'en';

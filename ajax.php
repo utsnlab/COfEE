@@ -1,5 +1,6 @@
 <?php session_start();
 include 'header.php';
+$using_lang = $_SESSION['using_lang'];
 if(!isset($_SESSION['user'])){
     $res = ['status'=>false];
     echo json_encode($res);
@@ -818,32 +819,30 @@ switch ($action) {
             }
         }
         $entities .= '</table>';
-        if($event_info['tens'] == "Past"){
-            $tens_option = '<option value="0"></option><option value="Past" selected>Past</option><option value="Now">Now</option><option value="Future">Future</option>';
-        }elseif($event_info['tens'] == "Now"){
-            $tens_option = '<option value="0"></option><option value="Past">Past</option><option value="Now" selected>Now</option><option value="Future">Future</option>';
-        }elseif($event_info['tens'] == "Future"){
-            $tens_option = '<option value="0"></option><option value="Past">Past</option><option value="Now">Now</option><option value="Future" selected>Future</option>';
-        }else{
-            $tens_option = '<option value="0" selected></option><option value="Past">Past</option><option value="Now">Now</option><option value="Future">Future</option>';
-        }
         
-        if($event_info['asserted'] == 'Definitive'){
-            $asserted_option = '<option value="0"></option><option value="Definitive" selected>Definitive</option><option value="Uncertain">Uncertain</option>';
-        }elseif($event_info['asserted'] == 'Uncertain') {
-            $asserted_option = '<option value="0"></option><option value="Definitive">Definitive</option><option value="Uncertain" selected>Uncertain</option>';
-        }else{
-            $asserted_option = '<option value="0" selected></option><option value="Definitive">Definitive</option><option value="Uncertain">Uncertain</option>';
-        }
-
-        if($event_info['polarity'] == 'Positive'){
-            $polarity_option = '<option value="0"></option><option value="Positive" selected>Positive</option><option value="Negative">Negative</option>';
-        }elseif($event_info['polarity'] == 'Negative') {
-            $polarity_option = '<option value="0"></option><option value="Positive">Positive</option><option value="Negative" selected>Negative</option>';
-        }else{
-            $polarity_option = '<option value="0" selected></option><option value="Positive">Positive</option><option value="Negative">Negative</option>';
-        }
-
+        $selected_tens = array('Past' => '', 'Now'=>'', 'Future'=>'', '0'=>'');
+        $selected_tens[$event_info['tens']] = 'selected';
+        $tens_option = 
+            "<option value='0' {$selected_tens['0']}></option>
+            <option value='Past' {$selected_tens['Past']}>$PAST[$using_lang]</option>
+            <option value='Now' {$selected_tens['Now']}>$NOW[$using_lang]</option>
+            <option value='Future' {$selected_tens['Future']}>$FUTURE[$using_lang]</option>";
+        
+        $selected_asserted = array('Definitive' => '', 'Uncertain'=>'', '0'=>'');
+        $selected_asserted[$event_info['asserted']] = 'selected';
+        $asserted_option = 
+            "<option value='0' {$selected_asserted['Default']}></option>
+            <option value='Definitive' {$selected_asserted['Definitive']}>{$DEFINITIVE[$using_lang]}</option>
+            <option value='Uncertain' {$selected_asserted['Uncertain']}>{$UNCERTAIN[$using_lang]}</option>";
+        
+        $selected_polarity = array('Positive' => '', 'Negative'=>'', '0'=>'');
+        $selected_polarity[$event_info['polarity']] = 'selected';
+        $polarity_option = 
+            "<option value='0' {$selected_polarity['0']}></option>
+            <option value='Positive' {$selected_polarity['Positive']}>{$POSITIVE[$using_lang]}</option>
+            <option value='Negative' {$selected_polarity['Negative']}>{$NEGATIVE[$using_lang]}</option>";
+        
+        
         $html = '
         <div class="row">
             <div class="col-md-12">
@@ -853,9 +852,9 @@ switch ($action) {
         <hr>
         <h3>'.$event_word_title.' : '.$event_title.'</h3>
         <table class="table">
-            <tr><td>Tens</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
-            <td>Asserted</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
-            <td>Polarity</td><td><select class="form-control set_polarity" data-event="'.$word_event_id.'">'.$polarity_option.'</select></td></tr>
+            <tr><td>'.$TENS[$using_lang].'</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
+            <td>'.$ASSERTED[$using_lang].'</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
+            <td>'.$POLARITY[$using_lang].'</td><td><select class="form-control set_polarity" data-event="'.$word_event_id.'">'.$polarity_option.'</select></td></tr>
         </table>
         <hr>
         '.$entities;
@@ -948,6 +947,11 @@ switch ($action) {
         }else{
             $res['status'] = false;
         }
+        break;
+    case 'change_lang':
+        $lang = test_input($_REQUEST['lang']);
+        $_SESSION['using_lang'] = $lang;
+        $res=array('lang'=>$lang, 'status' => true);
         break;
     default:
         $res = ['status'=>false];

@@ -2,8 +2,11 @@
 $project = $_GET['id'];
 if(is_numeric($project)) {
     $phrases_table = "";
-    $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
-    if(!empty($next)){
+    $next = $d->getrowvalue("phrases","select phrases from project_phrases_status where status=3 and u_id={$u_id}",true);
+    if(empty($next)) {
+        $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
+    }
+    if(!empty($next)) {
         $start_annotation = '<a href="index.php?action=tag&id='.$next.'" class="btn btn-success btn-delete center-block">Start Annotation</a>';
     }
     //echo $ug_id."\n";
@@ -27,8 +30,11 @@ if(is_numeric($project)) {
                     $status .= '<span class="btn btn-info btn-sm btn-show-status">'.$res['username'].' : -</span><br>';
                 }elseif($statusCheck == 1){
                     $status .= '<span class="btn btn-success btn-sm btn-show-status">'.$res['username'].' : Confirmed</span><br>';
-                }else{
+                }elseif($statusCheck == 2){
                     $status .= '<span class="btn btn-danger btn-sm btn-show-status">'.$res['username'].' : Canceled</span><br>';
+                }
+                elseif($statusCheck == 3){
+                    $status .= '<span class="btn btn-secondary btn-sm btn-show-status">'.$res['username'].' : In process</span><br>';
                 }
             }
             $status = rtrim($status,"<br>");

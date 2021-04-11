@@ -352,3 +352,15 @@ function rightClickCallback(key,phrase,type){
         alert("Please select a word.")
     }
 }
+$(document.body).on('change',".lang_selector",function (e) {
+    var lang = $(this).val();
+    $.post( "ajax.php", "action=change_lang&lang="+lang, function( data ) {
+        console.log(data)
+        if(data.status) {
+            location.reload();
+        }else{
+            $(".error-box").empty() ;
+            $(".error-box").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
+        }
+    }, "json");
+});

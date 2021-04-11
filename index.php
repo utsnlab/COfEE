@@ -1,6 +1,7 @@
 <?php session_start();
 include 'header.php';
 $error_message = "";
+
 if(isset($_GET['action']) and $_GET['action'] == "logout"){
     unset($_SESSION['user']);
 }
@@ -138,6 +139,17 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
         </li>
     ';
     }
+
+    $select_lang = array('en'=>'', 'fa'=>'');
+    $using_lang = $_SESSION['using_lang'];
+    $select_lang[$using_lang]='selected';
+    
+    $navigation .= 
+        "<select class='form-control lang_selector'>
+            <option data-content='en' {$select_lang['en']}>en</option>
+            <option  data-content='fa' {$select_lang['fa']}>fa</option>
+        </select>
+        ";
     $full_status = true;
     $limit_per_page = $user_info['limit_per_page'];
     $current_page = test_input($_GET['page']);
@@ -214,6 +226,6 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
     <?php else: ?>
         <script src="template/bootstrap/ltr/js/bootstrap.min.js"></script>
     <?php endif; ?>
-    <script src="template/custom.js?8"></script>
+    <script src="template/custom.js?9"></script>
 </body>
 </html>
