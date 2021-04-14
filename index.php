@@ -1,6 +1,7 @@
 <?php session_start();
 include 'header.php';
 $error_message = "";
+$using_lang = $_SESSION['using_lang'];
 
 if(isset($_GET['action']) and $_GET['action'] == "logout"){
     unset($_SESSION['user']);
@@ -78,70 +79,69 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
     if($ug_id == 1){
         $navigation = '
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=project">Projects</a>
+            <a class="nav-link" href="index.php?action=project">'.$PROJECTS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=users">Users</a>
+            <a class="nav-link" href="index.php?action=users">'.$USERS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=entity">Entity</a>
+            <a class="nav-link" href="index.php?action=entity">'.$ENTITIES[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=event">Events</a>
+            <a class="nav-link" href="index.php?action=event">'.$EVENETS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=statistics">Statistics</a>
+            <a class="nav-link" href="index.php?action=statistics">'.$STATISTICS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=settings">Settings</a>
+            <a class="nav-link" href="index.php?action=settings">'.$SETTINGS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=logout">Logout</a>
+            <a class="nav-link" href="index.php?action=logout">'.$LOGOUT[$using_lang].'</a>
         </li>
     ';
     }elseif($ug_id == 2){
         $navigation = '
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=project">Projects</a>
+            <a class="nav-link" href="index.php?action=project">'.$PROJECTS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=users">Users</a>
+            <a class="nav-link" href="index.php?action=users">'.$USERS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=entity">Entity</a>
+            <a class="nav-link" href="index.php?action=entity">'.$ENTITIES[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=event">Events</a>
+            <a class="nav-link" href="index.php?action=event">'.$EVENETS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=statistics">Statistics</a>
+            <a class="nav-link" href="index.php?action=statistics">'.$STATISTICS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=settings">Settings</a>
+            <a class="nav-link" href="index.php?action=settings">'.$SETTINGS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=logout">Logout</a>
+            <a class="nav-link" href="index.php?action=logout">'.$LOGOUT[$using_lang].'</a>
         </li>
     ';
     }else{
         $navigation = '
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=project">Projects</a>
+            <a class="nav-link" href="index.php?action=project">'.$PROJECTS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=statistics">Statistics</a>
+            <a class="nav-link" href="index.php?action=statistics">'.$STATISTICS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=settings">Settings</a>
+            <a class="nav-link" href="index.php?action=settings">'.$SETTINGS[$using_lang].'</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?action=logout">Logout</a>
+            <a class="nav-link" href="index.php?action=logout">'.$LOGOUT[$using_lang].'</a>
         </li>
     ';
     }
 
     $select_lang = array('en'=>'', 'fa'=>'');
-    $using_lang = $_SESSION['using_lang'];
     $select_lang[$using_lang]='selected';
     
     $navigation .= 

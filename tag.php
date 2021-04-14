@@ -1,4 +1,6 @@
 <?php
+
+$using_lang = $_SESSION['using_lang'];
 $status = true;
 if (isset($_GET['confirmed'])) {
     if (is_numeric($_GET['confirmed'])) {
@@ -33,13 +35,13 @@ if ($status) {
         
         if (empty($next)) {
             $button = '
-        <div class="float-left"><a href="index.php?action=tag&cancel=' . $id . '" class="btn btn-danger">Cancel</a></div>
-        <div class="float-right"><a href="index.php?action=tag&confirmed=' . $id . '" class="btn btn-success">Confirmed</a></div>
+        <div class="float-left"><a href="index.php?action=tag&cancel=' . $id . '" class="btn btn-danger">'.$CANCEL[$using_lang].'</a></div>
+        <div class="float-right"><a href="index.php?action=tag&confirmed=' . $id . '" class="btn btn-success">'.$CONFIRM[$using_lang].'</a></div>
         ';
         } else {
             $button = '
-        <div class="float-left"><a href="index.php?action=tag&id=' . $next . '&cancel=' . $id . '" class="btn btn-danger">Cancel</a></div>
-        <div class="float-right"><a href="index.php?action=tag&id=' . $next . '&confirmed=' . $id . '" class="btn btn-success">Confirmed</a></div>
+        <div class="float-left"><a href="index.php?action=tag&id=' . $next . '&cancel=' . $id . '" class="btn btn-danger">'.$CANCEL[$using_lang].'</a></div>
+        <div class="float-right"><a href="index.php?action=tag&id=' . $next . '&confirmed=' . $id . '" class="btn btn-success">'.$CONFIRM[$using_lang].'</a></div>
         ';
         }
         $q = $d->query("select project_phrases_words.id,project_phrases_words.word from 

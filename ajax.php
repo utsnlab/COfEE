@@ -832,8 +832,8 @@ switch ($action) {
         $selected_asserted[$event_info['asserted']] = 'selected';
         $asserted_option = 
             "<option value='0' {$selected_asserted['Default']}></option>
-            <option value='Definitive' {$selected_asserted['Definitive']}>{$DEFINITIVE[$using_lang]}</option>
-            <option value='Uncertain' {$selected_asserted['Uncertain']}>{$UNCERTAIN[$using_lang]}</option>";
+            <option value='Definitive' {$selected_asserted['Definitive']}>{$ASSERTED[$using_lang]}</option>
+            <option title={$LIST_OF_UNCERTIANS[$using_lang]} value='Uncertain' {$selected_asserted['Uncertain']}>{$OTHER[$using_lang]}</option>";
         
         $selected_polarity = array('Positive' => '', 'Negative'=>'', '0'=>'');
         $selected_polarity[$event_info['polarity']] = 'selected';
@@ -846,14 +846,14 @@ switch ($action) {
         $html = '
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_events" data-id="'.$word_event_id.'">Delete This Event</button>
+                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_events" data-id="'.$word_event_id.'">'.$DELETE_THIS_EVENT[$using_lang].'</button>
             </div>
         </div>
         <hr>
         <h3>'.$event_word_title.' : '.$event_title.'</h3>
         <table class="table">
             <tr><td>'.$TENS[$using_lang].'</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
-            <td>'.$ASSERTED[$using_lang].'</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
+            <td>'.$MODALITY[$using_lang].'</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
             <td>'.$POLARITY[$using_lang].'</td><td><select class="form-control set_polarity" data-event="'.$word_event_id.'">'.$polarity_option.'</select></td></tr>
         </table>
         <hr>
