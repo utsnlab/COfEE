@@ -2,7 +2,7 @@
 $project = $_GET['id'];
 if(is_numeric($project)) {
     $phrases_table = "";
-    $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and id in(select phrases from project_phrases_status where status=3 and u_id={$u_id}) order by id asc limit 0 , 1",true);
+    $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and id in(select phrases from project_phrases_status where status=3 and u_id={$u_id}) and num_of_visit > 0 order by id asc limit 0 , 1",true);
     
     if(empty($next)) {
         $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
