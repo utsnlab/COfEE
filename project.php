@@ -1,5 +1,6 @@
 <?php
 $project_table = "";
+$using_lang = $_SESSION['using_lang'];
 $cnt = $d->getrowvalue("cnt","select count(*) as cnt from projects,project_users where project_users.project = projects.id and project_users.u_id={$u_id}",true);
 if($start >= $cnt) {
     $start = 0;
@@ -8,9 +9,9 @@ if($start >= $cnt) {
 $q = $d->query("select * from projects,project_users where project_users.project = projects.id and project_users.u_id={$u_id} limit {$start},{$limit_per_page}");
 while($row = $d->fetch($q)){
     if($ug_id < 3){
-        $add_user_button = '<button class="btn btn-sm btn-info" data-toggle="modal" data-project="'.$row['id'].'" data-target="#setUser">Add User</button>';
-        $delete_button = '<button class="btn btn-sm btn-danger delete-rows" data-type="projects" data-id="'.$row['id'].'">Delete</button>';
-        $export_button = '<a target="_blank" href="export.php?id='.$row['id'].'" class="btn btn-sm btn-primary">Export</a>';
+        $add_user_button = '<button class="btn btn-sm btn-info" data-toggle="modal" data-project="'.$row['id'].'" data-target="#setUser">'.$ADD_USER[$using_lang].'</button>';
+        $delete_button = '<button class="btn btn-sm btn-danger delete-rows" data-type="projects" data-id="'.$row['id'].'">'.$DELETE[$using_lang].'</button>';
+        $export_button = '<a target="_blank" href="export.php?id='.$row['id'].'" class="btn btn-sm btn-primary">'.$EXPORT[$using_lang].'</a>';
     }
     $next = $d->getrowvalue("id","select id from project_phrases where id not in (select phrases from project_phrases_status where u_id = {$u_id}) and project_phrases.project=".$row['id']." order by id asc limit 0 , 1",true);
     $users = $d->getrowvalue("users","select GROUP_CONCAT(user.username) as users from user,project_users where user.id = project_users.u_id and project = ".$row['id'],true);
@@ -23,7 +24,7 @@ while($row = $d->fetch($q)){
                 <td id="project'.$row['id'].'">'.$users.'</td>
                 <td>
                     '.$add_user_button.'
-                    <a href="index.php?action=phrases&id='.$row['id'].'" class="btn btn-sm btn-success">Annotate</a>
+                    <a href="index.php?action=phrases&id='.$row['id'].'" class="btn btn-sm btn-success">'.$ANNOTATE[$using_lang].'</a>
                     '.$export_button.'
                     '.$delete_button.'
                 </td>

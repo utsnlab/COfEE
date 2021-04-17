@@ -747,7 +747,7 @@ switch ($action) {
         $html = '
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_entities" data-id="'.$word_entity_id.'">Delete This Entity</button>
+                <button class="btn btn-danger btn-sm btn-delete delete-box" data-type="project_phrases_words_entities" data-id="'.$word_entity_id.'">'.$DELETE_THIS_ENTITY[$using_lang].'</button>
             </div>
         </div>
         <hr>
@@ -840,7 +840,7 @@ switch ($action) {
         $polarity_option = 
             "<option value='0' {$selected_polarity['0']}></option>
             <option value='Positive' {$selected_polarity['Positive']}>{$POSITIVE[$using_lang]}</option>
-            <option value='Negative' {$selected_polarity['Negative']}>{$NEGATIVE[$using_lang]}</option>";
+            <option title={$LIST_OF_NEGATIVES[$using_lang]} value='Negative' {$selected_polarity['Negative']}>{$NEGATIVE[$using_lang]}</option>";
         
         
         $html = '
