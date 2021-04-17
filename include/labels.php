@@ -28,6 +28,5 @@
     $ANNOTATE = array('fa' => 'تگ گذاری', 'en' => 'Annotate');
     $EXPORT = array('fa' => 'اکسل', 'en' => 'Export');
     $DELETE = array('fa' => 'حذف', 'en' => 'Delete');
-    
-    
+    $START_ANNOTATION = array('fa' => 'شروع تگ گذاری', 'en' => 'Start Annotation');
     

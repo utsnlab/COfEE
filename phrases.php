@@ -8,7 +8,7 @@ if(is_numeric($project)) {
         $next = $d->getrowvalue("id","select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where u_id = {$u_id}) order by id asc limit 0 , 1",true);
     }
     if(!empty($next)) {
-        $start_annotation = '<a href="index.php?action=tag&id='.$next.'" class="btn btn-success btn-delete center-block">Start Annotation</a>';
+        $start_annotation = '<a href="index.php?action=tag&id='.$next.'" class="btn btn-success btn-delete center-block">'.$START_ANNOTATION[$using_lang].'</a>';
     }
     
     if($ug_id <3) {

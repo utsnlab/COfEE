@@ -41,7 +41,7 @@ switch ($action) {
                     <td>' . $project_id . '</td>
                     <td>' . $title . '</td>
                     <td>' . $user_num . '</td>
-                    <td>' . $user_name . '</td>
+                    <td id="project'.$project_id.'" >' . $user_name . '</td>
                     <td>
                         ' . $add_user_button . '
                         <a href="index.php?action=phrases&id=' .$project_id . '" class="btn btn-sm btn-success">Annotate</a>
