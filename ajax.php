@@ -41,6 +41,7 @@ switch ($action) {
                     <td>' . $project_id . '</td>
                     <td>' . $title . '</td>
                     <td>' . $user_num . '</td>
+                    <td>' . $annotation_num . '</td>
                     <td id="project'.$project_id.'" >' . $user_name . '</td>
                     <td>
                         ' . $add_user_button . '
