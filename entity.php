@@ -23,7 +23,7 @@ if($ug_id > 2){
                 <td>' . $row['title'] . '</td>
                 <td>' . $desc_row . '</td>
                 <td>
-                    <button class="btn btn-sm btn-info" data-toggle="modal" data-entity="'.$row['id'].'" data-target="#addEntityChildModal">Childes</button>
+                    <button class="btn btn-sm btn-info" data-toggle="modal" data-entity="'.$row['id'].'" data-target="#addEntityChildModal">Children</button>
                     <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
                 </td>
             </tr>';

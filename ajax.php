@@ -352,7 +352,7 @@ switch ($action) {
                         <td>' . $title . '</td>
                         <td>' . $des . '</td>
                         <td>
-                            <button class="btn btn-sm btn-info" data-toggle="modal" data-entity="'.$value.'" data-target="#addEntityChildModal">Childes</button>
+                            <button class="btn btn-sm btn-info" data-toggle="modal" data-entity="'.$value.'" data-target="#addEntityChildModal">Children</button>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $value . '">Delete</button>
                         </td>
                     </tr>
