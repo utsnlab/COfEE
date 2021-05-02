@@ -104,22 +104,26 @@ if ($status) {
         } else {
             $q = $d->query("select * from entities where u_id={$parent_id} and parent is null");
         }
+        $row_key = 'title';
+        if($using_lang == 'fa'){
+            $row_key = 'des';
+        }
         while ($row = $d->fetch($q)) {
             $cnt = $d->getrowvalue("cnt", "select count(*) as cnt from entities where parent=" . $row['id'], true);
-            if (!empty($row['des'])) $row['des'] = $row['des'];
+            if (!empty($row[$row_key])) $row[$row_key] = $row[$row_key];
             if ($cnt > 0) {
-                $entities_option .= '<menu label="' . $row['des'] . '">';
+                $entities_option .= '<menu label="' . $row[$row_key] . '">';
                 $qq = $d->query("select * from entities where parent=" . $row['id']);
                 while ($res = $d->fetch($qq)) {
-                    if (!empty($res['des'])) $res['des'] = $res['des'];
-                    $entities_option .= '<command label="' . $res['des'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'entity\')"></command>';
+                    if (!empty($res[$row_key])) $res[$row_key] = $res[$row_key];
+                    $entities_option .= '<command label="' . $res[$row_key] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'entity\')"></command>';
                 }
                 $entities_option .= '</menu>';
             } else {
-                $entities_option .= '<command label="' . $row['des'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'entity\')"></command>';
+                $entities_option .= '<command label="' . $row[$row_key] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'entity\')"></command>';
             }
         }
-        $entities_option = '<menu label="Entity">' . $entities_option . '</menu>';
+        $entities_option = '<menu label='.$ENTITY[$using_lang].'>' . $entities_option . '</menu>';
 
 //Events Menu
         $events_option = '';
@@ -130,20 +134,20 @@ if ($status) {
         }
         while ($row = $d->fetch($q)) {
             $cnt = $d->getrowvalue("cnt", "select count(*) as cnt from events where parent=" . $row['id'], true);
-            if (!empty($row['des'])) $row['des'] = $row['des'];
+            if (!empty($row[$row_key])) $row[$row_key] = $row[$row_key];
             if ($cnt > 0) {
-                $events_option .= '<menu label="' . $row['des'] . '">';
+                $events_option .= '<menu label="' . $row[$row_key] . '">';
                 $qq = $d->query("select * from events where parent=" . $row['id']);
                 while ($res = $d->fetch($qq)) {
-                    if (!empty($res['des'])) $res['des'] = $res['des'];
-                    $events_option .= '<command label="' . $res['des'] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
+                    //if (!empty($res[$row_key])) $res[$row_key] = $res[$row_key];
+                    $events_option .= '<command label="' . $res[$row_key] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
                 }
                 $events_option .= '</menu>';
             } else {
-                $events_option .= '<command label="' . $row['des'] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'event\')"></command>';
+                $events_option .= '<command label="' . $row[$row_key] . '" onclick="rightClickCallback(' . $row['id'] . ',' . $id . ',\'event\')"></command>';
             }
         }
-        $events_option = '<menu label="Events">' . $events_option . '</menu>';
+        $events_option = '<menu label='.$EVENT[$using_lang].'>' . $events_option . '</menu>';
 
 // All Menu
         $menu = $entities_option . $events_option;

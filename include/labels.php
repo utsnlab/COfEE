@@ -29,4 +29,5 @@
     $EXPORT = array('fa' => 'اکسل', 'en' => 'Export');
     $DELETE = array('fa' => 'حذف', 'en' => 'Delete');
     $START_ANNOTATION = array('fa' => 'شروع تگ گذاری', 'en' => 'Start Annotation');
-    
+    $ENTITY = array('fa' => 'موجودیت', 'en' => 'Entity');    
+    $EVENT = array('fa' => 'رویداد', 'en' => 'Event');
