@@ -140,7 +140,7 @@ if ($status) {
                 $qq = $d->query("select * from events where parent=" . $row['id']);
                 while ($res = $d->fetch($qq)) {
                     //if (!empty($res[$row_key])) $res[$row_key] = $res[$row_key];
-                    $events_option .= '<command label="' . $res[$row_key] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
+                    $events_option .= '<command phrase_id="'.$id.'" event_id="'. $res['id'] .'" label="' . $res[$row_key] . '" onclick="rightClickCallback(' . $res['id'] . ',' . $id . ',\'event\')"></command>';
                 }
                 $events_option .= '</menu>';
             } else {

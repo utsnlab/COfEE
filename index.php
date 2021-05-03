@@ -205,6 +205,24 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
 </head>
 <body>
     <header>
+        <style>
+                .child > span > ul {
+                    margin: 0; 
+                    padding: 0;
+                    list-style: none;
+                    display: block;
+                    float: none;
+                }
+                .child > span > ul > li {
+                    display: inline-block;
+                    border: 1px solid #CCC;
+                    overflow: hidden;
+                    margin: 2px;
+                    padding: 1px;
+                    
+                }
+                .child > span > ul > li:hover { border: 1px solid #000; }
+        </style>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -289,9 +289,71 @@ $(document.body).on('click',".delete-box",function (e) {
 
 // Right Click Action
 $(function() {
+    let allItems = $.contextMenu.fromMenu($('#html5menu'));
+    const createRow = (elementStr) => {
+        return function(item, opt, root) {
+            $(elementStr)
+                .appendTo(this)
+                .on('click', 'li', function() {
+                    // do some funky stuff
+                    console.log('Clicked on ' + $(this).text());
+                    // hide the menu
+                    let phraseId = $(this).attr('phrase_id')
+                    let eventId = $(this).attr('event_id');
+                    rightClickCallback(eventId, phraseId, 'event')
+                    root.$menu.trigger('contextmenu:hide');
+                });
+    
+            this.addClass('child').on('contextmenu:focus', function(e) {
+                // setup some awesome stuff
+            }).on('contextmenu:blur', function(e) {
+                // tear down whatever you did
+            }).on('keydown', function(e) {
+                // some funky key handling, maybe?
+            });
+        };
+    }
+    const createChildrenMenu = (childrenItems, parentName) => {
+        let newChildrenItems = {};
+        let lenItems = Object.keys(childrenItems).length;
+        let maxRows = 12;
+        let numOfRowItems = parseInt((maxRows + lenItems)/maxRows);
+        let cnt = 0;
+        let tmpElementStr = '';
+        for(let keyItem in childrenItems){
+            let item = childrenItems[keyItem];
+            cnt+=1;
+            if(numOfRowItems==1 || cnt%numOfRowItems==1){
+                tmpElementStr = '<span><ul>';
+            }
+            
+            let eventId = $('[label="'+item.name+'"]').attr('event_id');
+            let phraseId = $('[label="'+item.name+'"]').attr('phrase_id');
+            tmpElementStr+='<li class="child" phrase_id="'+phraseId+'" event_id="'+eventId+'" >'+item.name+'</li>';
+            if(numOfRowItems==1 || cnt%numOfRowItems==0){
+                let groupNumber = parseInt(cnt/numOfRowItems).toString();
+                let groupName = (parentName+groupNumber).replace(" ","");
+                $.contextMenu.types[groupName] = createRow(tmpElementStr);
+                newChildrenItems[groupName] = {type: groupName, customName: ""}; 
+            }
+        }
+        return newChildrenItems;
+    }
+    for(key in allItems){
+        let eventInPersian = "رویداد";
+        if(allItems[key].name == 'Event' || allItems[key].name == eventInPersian){
+            for(event_key in allItems[key].items){
+                eventChildren = allItems[key].items[event_key].items;
+                let parentName = allItems[key].items[event_key].name;
+                let newChildren = createChildrenMenu(eventChildren, parentName);
+                allItems[key].items[event_key].items = newChildren;
+            }
+        }
+    }
+    
     $.contextMenu({
         selector: '.context-menu-one',
-        items: $.contextMenu.fromMenu($('#html5menu')),
+        items: allItems,//$.contextMenu.fromMenu($('#html5menu')),
         rtl:true
     });
 });
