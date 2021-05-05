@@ -289,11 +289,12 @@ switch ($action) {
                 $table .= '
                     <tr>
                         <td>' . $row['id'] . '</td>
-                        <td>' . $row['title'] . '</td>
-                        <td>' . $row['des'] . '</td>
+                        <td contenteditable="true">' . $row['title'] . '</td>
+                        <td contenteditable="true">' . $row['des'] . '</td>
                         <td>
                             <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#eventArguments" data-event="' . $row['id'] . '">Arguments</button>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $row['id'] . '">Delete</button>
+                            <button class="btn btn-sm btn-warning edit-rows" data-type="events" data-id="' . $row['id'] . '">Edit</button>
                         </td>
                     </tr>
                 ';
@@ -318,10 +319,11 @@ switch ($action) {
                 $table .= '
                     <tr>
                         <td>' . $row['id'] . '</td>
-                        <td>' . $row['title'] . '</td>
-                        <td>' . $row['des'] . '</td>
+                        <td contenteditable="true">' . $row['title'] . '</td>
+                        <td contenteditable="true">' . $row['des'] . '</td>
                         <td>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="arguments" data-id="' . $row['id'] . '">Delete</button>
+                            <button class="btn btn-sm btn-warning edit-rows" data-type="arguments" data-id="' . $row['id'] . '">Edit</button>
                         </td>
                     </tr>
                 ';
@@ -414,10 +416,11 @@ switch ($action) {
                 $table .= '
                     <tr>
                         <td>' . $row['id'] . '</td>
-                        <td>' . $row['title'] . '</td>
-                        <td>' . $row['des'] . '</td>
+                        <td contenteditable="true">' . $row['title'] . '</td>
+                        <td contenteditable="true">' . $row['des'] . '</td>
                         <td>
                             <button class="btn btn-sm btn-danger delete-rows" data-type="entities" data-id="' . $row['id'] . '">Delete</button>
+                            <button class="btn btn-sm btn-warning edit-rows" data-type="entities" data-id="' . $row['id'] . '">Edit</button>
                         </td>
                     </tr>
                 ';
