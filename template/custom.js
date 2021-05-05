@@ -281,9 +281,8 @@ $(document.body).on('click',".edit-rows",function (e) {
     let id = $(this).data("id");
     let type = $(this).data("type");
     let table_row = $(this).parent().parent();
-    
     let title = table_row.find('td').eq(1).text();
-    let alias = 'test';
+    let alias = table_row.find('td').eq(2).text();
     let action = 'edit_row';
     let reqData = {
         id,
