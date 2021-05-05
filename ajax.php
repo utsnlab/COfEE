@@ -1,6 +1,10 @@
 <?php session_start();
 include 'header.php';
 $using_lang = $_SESSION['using_lang'];
+$using_key_lang = 'des';
+if($using_lang == 'en'){
+    $using_key_lang = 'title';
+}
 if(!isset($_SESSION['user'])){
     $res = ['status'=>false];
     echo json_encode($res);
@@ -733,11 +737,11 @@ switch ($action) {
                 while($res = $d->fetch($qq)){
 //                    $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$res['id']} and event={$word_event_id} and word in (".$_REQUEST['words'].")",true);
                     $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$res['id']} and event={$this_event_id} and word in (".$_REQUEST['words'].")",true);
-                    if(!empty($res['des'])) $res['des'] = $res['des'];
+                    if(!empty($res[$using_key_lang])) $res[$using_key_lang] = $res[$using_key_lang];
                     if(empty($hasArgument)){
-                        $entities .= '<option value="'.$res['id'].'">'.$res['des'].'</option>';
+                        $entities .= '<option value="'.$res['id'].'">'.$res[$using_key_lang].'</option>';
                     }else{
-                        $entities .= '<option value="'.$res['id'].'" selected>'.$res['des'].'</option>';
+                        $entities .= '<option value="'.$res['id'].'" selected>'.$res[$using_key_lang].'</option>';
                     }
                 }
                 $entities .= '</select>
@@ -807,11 +811,11 @@ switch ($action) {
                 foreach($argument_option as $arg_id=>$arg_value){
 //                    $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$arg_id} and event={$event} and word in (".$inline_id.")",true);
                     $hasArgument = $d->getrowvalue("id","select id from project_phrases_words_arguments where u_id={$u_id} and argument={$arg_id} and event={$word_event_id} and word in (".$inline_id.")",true);
-                    if(!empty($arg_value['des'])) $arg_value['des'] = $arg_value['des'];
+                    if(!empty($arg_value[$using_key_lang])) $arg_value[$using_key_lang] = $arg_value[$using_key_lang];
                     if(empty($hasArgument)){
-                        $entities .= '<option value="'.$arg_id.'">'.$arg_value['des'].'</option>';
+                        $entities .= '<option value="'.$arg_id.'">'.$arg_value[$using_key_lang].'</option>';
                     }else{
-                        $entities .= '<option value="'.$arg_id.'" selected>'.$arg_value['des'].'</option>';
+                        $entities .= '<option value="'.$arg_id.'" selected>'.$arg_value[$using_key_lang].'</option>';
                     }
                 }
                 $entities .= '</select>

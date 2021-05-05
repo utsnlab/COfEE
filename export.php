@@ -67,14 +67,24 @@ while($row = $d->fetch($q)){
             if ($args == "") {
                 $data[$i]['arg'] = "O";
             } else {
-                $args_id = $d->getrowvalue("entity", "select  entity from project_phrases_words_entities where project_phrases_words_entities.u_id = ".$row['u_id']." and project_phrases_words_entities.word=" . $words['id'], true);
-                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $words['id'] . '_' . $args_id . ')';
+                $phrase_entity_word = $d->fetch($d->query("select  * from project_phrases_words_entities where project_phrases_words_entities.u_id = ".$row['u_id']." and project_phrases_words_entities.word=" . $words['id'], true));
+                $args_id = $phrase_entity_word['entity'];
+                $parent_id = $phrase_entity_word['parent'];
+                if(empty($parent_id)){
+                    $parent_id = $phrase_entity_word['id'];
+                }
+                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $parent_id . '_' . $args_id . ')';
             }
             if ($event == "") {
                 $data[$i]['event'] = "O";
             } else {
-                $events_id = $d->getrowvalue("events", "select  events from project_phrases_words_events where project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true);
-                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
+                $phrase_event_word = $d->fetch($d->query("select  * from project_phrases_words_events where project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true));
+                $args_id = $phrase_event_word['event'];
+                $parent_id = $phrase_event_word['parent'];
+                if(empty($parent_id)){
+                    $parent_id = $phrase_event_word['id'];
+                }
+                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $parent_id . '_' . $events_id . ')';
             }
 
             $data[$i]['role'] = "";
