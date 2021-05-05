@@ -276,6 +276,28 @@ $(document.body).on('click',".delete-rows",function (e) {
         }
     }, "json");
 });
+$(document.body).on('click',".edit-rows",function (e) {
+    let edit_btn = $(this);
+    let id = $(this).data("id");
+    let type = $(this).data("type");
+    let table_row = $(this).parent().parent();
+    
+    let title = table_row.find('td').eq(1).text();
+    let alias = 'test';
+    let action = 'edit_row';
+    let reqData = {
+        id,
+        type,
+        title,
+        alias,
+        action
+    }
+    $.post( "ajax.php", reqData, function( data ) {
+        if(data.status) {
+            console.log('ok');
+        }
+    }, "json");
+});
 $(document.body).on('click',".delete-box",function (e) {
     var id = $(this).data("id");
     var type = $(this).data("type");
@@ -426,3 +448,4 @@ $(document.body).on('change',".lang_selector",function (e) {
         }
     }, "json");
 });
+

@@ -20,11 +20,12 @@ if($ug_id > 2){
         $events_table .= '
             <tr>
                 <td>' . $row['id'] . '</td>
-                <td>' . $row['title'] . '</td>
-                <td>' . $desc_row . '</td>
+                <td contenteditable="true" >' . $row['title'] . '</td>
+                <td contenteditable="true" >' . $desc_row . '</td>
                 <td>
                     <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#eventChildren" data-parent="' . $row['id'] . '">Children</button>
                     <button class="btn btn-sm btn-danger delete-rows" data-type="events" data-id="' . $row['id'] . '">Delete</button>
+                    <button class="btn btn-sm btn-warning edit-rows" data-type="events" data-id="' . $row['id'] . '">Edit</button>
                 </td>
             </tr>';
     }

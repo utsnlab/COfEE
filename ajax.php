@@ -953,6 +953,22 @@ switch ($action) {
             $res['status'] = false;
         }
         break;
+    case 'edit_row':
+        $id = test_input($_REQUEST['id']);
+        $table = test_input($_REQUEST['type']);
+        $title = test_input($_REQUEST['title']);
+        $alias = test_input($_REQUEST['alias']);
+        if(!empty($table)) {
+            if (!empty($id)) {
+                $d->query("update ".$table." set title='". $title. "', des='".$alias. "' where id= '" . $id."'");
+                $res['status'] = true;
+            } else {
+                $res['status'] = false;
+            }
+        }else{
+            $res['status'] = false;
+        }
+        break;
     case 'change_lang':
         $lang = test_input($_REQUEST['lang']);
         $_SESSION['using_lang'] = $lang;
