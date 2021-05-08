@@ -29,13 +29,23 @@ if(isset($_POST['register'])){
             if (empty($u_id)) {
                 $d->iquery("user", ['username' => $username, 'password' => $password, 'user_group' => 2]);
                 $u_id = $d->insert_id();
-                $q = $d->query("select * from events where u_id=1 and parent is null");
+                $defualt_user = $d->fetch($d->query("select * from user where username='admin'"));
+                $defualt_user_id = 1;
+                if(!empty($defualt_user)){
+                    $defualt_user_id = $defualt_user['id'];
+                }
+                $q = $d->query("select * from events where u_id={$defualt_user_id} and parent is null");
                 while($row = $d->fetch($q)){
                     $d->iquery("events",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
                     $parent_event_id = $d->insert_id();
                     $qq = $d->query("select * from events where parent = ".$row['id']);
                     while($res = $d->fetch($qq)){
                         $d->iquery("events",["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,'parent'=>$parent_event_id]);
+                        $new_event_id = $d->insert_id();
+                        $qq_args = $d->query("select * from arguments where event_id = ".$res['id']);
+                        while($arg = $d->fetch($qq_args)){
+                            $d->iquery("arguments",["title"=>$arg['title'],'des'=>$arg['des'],'u_id'=>$u_id,'event_id'=>$new_event_id]);
+                        }
                     }
                 }
                 $q = $d->query("select * from entities where u_id=1 and parent is null");
