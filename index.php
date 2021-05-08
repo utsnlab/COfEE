@@ -48,7 +48,7 @@ if(isset($_POST['register'])){
                         }
                     }
                 }
-                $q = $d->query("select * from entities where u_id=1 and parent is null");
+                $q = $d->query("select * from entities where u_id={$defualt_user_id} and parent is null");
                 while($row = $d->fetch($q)){
                     $d->iquery("entities",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
                     $parent_entity_id = $d->insert_id();
