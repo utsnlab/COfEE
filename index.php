@@ -224,6 +224,8 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
                 .child > span > ul > li:hover { border: 1px solid #000; }
         </style>
         <div class="container">
+            <h2>COfEE Annotation Tool</h2>
+            <p>A annotation tool for manual event extraction from text</p>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

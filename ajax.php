@@ -828,10 +828,11 @@ switch ($action) {
         }
         $entities .= '</table>';
         
-        $selected_tens = array('Past' => '', 'Now'=>'', 'Future'=>'', '0'=>'');
+        $selected_tens = array('Unspecified' => '', 'Past' => '', 'Now'=>'', 'Future'=>'', '0'=>'');
         $selected_tens[$event_info['tens']] = 'selected';
         $tens_option = 
             "<option value='0' {$selected_tens['0']}></option>
+            <option value='Unspecified' {$selected_tens['Unspecified']}>$UNSPECIFIED[$using_lang]</option>
             <option value='Past' {$selected_tens['Past']}>$PAST[$using_lang]</option>
             <option value='Now' {$selected_tens['Now']}>$NOW[$using_lang]</option>
             <option value='Future' {$selected_tens['Future']}>$FUTURE[$using_lang]</option>";

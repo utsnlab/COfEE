@@ -43,9 +43,9 @@ if($ug_id < 3){
             <label for="des">Description</label>
             <textarea class="form-control" id="des" name="des" rows="3"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden>
             <label for="user_num">Number of add user for projects</label>
-            <input class="form-control" type="number" id="user_num" name="user_num" value="1">
+            <input class="form-control" type="number" id="user_num" name="user_num" value="1000">
         </div>
         <div class="form-group">
             <label for="annotation_num">Number of annotation per record</label>

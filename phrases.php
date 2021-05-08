@@ -54,11 +54,11 @@ if(is_numeric($project)) {
                 <div class="error-box"></div>
                 <form id="addPhrases">
                     <input type="text" name="project" hidden value="' . $project . '">
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label for="link">Link</label>
                         <input class="form-control" id="link" name="link">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label for="time">Time</label>
                         <input class="form-control" id="time" name="time">
                     </div>

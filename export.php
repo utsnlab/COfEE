@@ -29,7 +29,7 @@ while($row = $d->fetch($q)){
     $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
     $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
     $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
-    $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Assertation');
+    $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
     $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
     $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
     $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
@@ -46,7 +46,7 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
             $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
             $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
-            $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Assertation');
+            $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
             $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
             $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
             $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
@@ -69,11 +69,11 @@ while($row = $d->fetch($q)){
             } else {
                 $phrase_entity_word = $d->fetch($d->query("select  * from project_phrases_words_entities where project_phrases_words_entities.u_id = ".$row['u_id']." and project_phrases_words_entities.word=" . $words['id'], true));
                 $args_id = $phrase_entity_word['entity'];
-                $parent_id = $phrase_entity_word['parent'];
-                if(empty($parent_id)){
-                    $parent_id = $phrase_entity_word['id'];
+                $entity_parent_id = $phrase_entity_word['parent'];
+                if(empty($entity_parent_id)){
+                    $entity_parent_id = $phrase_entity_word['id'];
                 }
-                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $parent_id . '_' . $args_id . ')';
+                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $args_id . ')';
             }
             if ($event == "") {
                 $data[$i]['event'] = "O";
@@ -95,10 +95,16 @@ while($row = $d->fetch($q)){
                 if ($role == "") {
                     $data[$i]['role'] .= "O";
                 } else {
+                    $phrase_event_word = $d->fetch($d->query("select  * from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and project_phrases_words_events.id=" . $argument['event'], true));
+                    $args_id = $phrase_event_word['event'];
+                    $event_parent_id = $phrase_event_word['parent'];
+                    if(empty($event_parent_id)){
+                        $event_parent_id = $phrase_event_word['id'];
+                    }
                     $ev_id = $d->getrowvalue("events", "select  events from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
                     $ev_word = $d->getrowvalue("word", "select  word from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
                     $data[$i]['role'] .= '(' . $role . ',' . 'EV_' . $row['u_id'] . '_' .
-                        $ev_word . '_' . $ev_id . ',' . 'EN_' . $row['u_id'] . '_' . $words['id'] . '_' . $args_id . ')';
+                        $event_parent_id . '_' . $ev_id . ',' . 'EN_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $args_id . ')';
                 }
             }
             if ($event_id == "") {

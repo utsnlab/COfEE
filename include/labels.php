@@ -2,6 +2,7 @@
     $TENS = array('fa' => 'زمان', 'en' => 'Tens');
     $PAST = array('fa' => 'گذشته', 'en' => 'Past');
     $NOW = array('fa' => 'حال', 'en' => 'Now');
+    $UNSPECIFIED = array('fa' => 'نامعلوم', 'en' => 'Unspecified');
     $FUTURE = array('fa' => 'آینده', 'en' => 'Future');
     $ASSERTED = array('fa' => 'قطعی', 'en' => 'Asserted');
     $DEFINITIVE = array('fa' => 'قطعی', 'en' => 'Definitive');
