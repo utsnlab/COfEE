@@ -80,11 +80,11 @@ while($row = $d->fetch($q)){
             } else {
                 $phrase_event_word = $d->fetch($d->query("select  * from project_phrases_words_events where project_phrases_words_events.u_id = ".$row['u_id']." and project_phrases_words_events.word=" . $words['id'], true));
                 $args_id = $phrase_event_word['event'];
-                $parent_id = $phrase_event_word['parent'];
-                if(empty($parent_id)){
-                    $parent_id = $phrase_event_word['id'];
+                $parent_id_for_event = $phrase_event_word['parent'];
+                if(empty($parent_id_for_event)){
+                    $parent_id_for_event = $phrase_event_word['id'];
                 }
-                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $parent_id . '_' . $events_id . ')';
+                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'] . ')';
             }
 
             $data[$i]['role'] = "";
@@ -104,28 +104,28 @@ while($row = $d->fetch($q)){
                     $ev_id = $d->getrowvalue("events", "select  events from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
                     $ev_word = $d->getrowvalue("word", "select  word from project_phrases_words_events where project_phrases_words_events.u_id = ".$argument['u_id']." and id=" . $argument['event'], true);
                     $data[$i]['role'] .= '(' . $role . ',' . 'EV_' . $row['u_id'] . '_' .
-                        $event_parent_id . '_' . $ev_id . ',' . 'EN_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $args_id . ')';
+                        $event_parent_id . '_' . $ev_id . ',' . 'EN_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $phrase_entity_word['entity'] . ')';
                 }
             }
             if ($event_id == "") {
                 $data[$i]['event_id'] = "O";
             } else {
-                $data[$i]['event_id'] = $event_id;
+                $data[$i]['event_id'] = 'Ev_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'];
             }
             if($asserted == ""){
                 $data[$i]['asserted'] = "O";
             }else{
-                $data[$i]['asserted'] = '(' . $asserted . ',' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
+                $data[$i]['asserted'] = $asserted ;
             }
             if($tens == ""){
                 $data[$i]['tens'] = "O";
             }else{
-                $data[$i]['tens'] = '(' . $tens . ',' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
+                $data[$i]['tens'] = $tens;
             }
             if($polarity == ""){
                 $data[$i]['polarity'] = "O";
             }else{
-                $data[$i]['polarity'] = '(' . $polarity . ',' . $row['u_id'] . '_' . $words['id'] . '_' . $events_id . ')';
+                $data[$i]['polarity'] = $polarity;
             }
             $i++;
         }

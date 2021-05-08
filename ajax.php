@@ -837,12 +837,12 @@ switch ($action) {
             <option value='Now' {$selected_tens['Now']}>$NOW[$using_lang]</option>
             <option value='Future' {$selected_tens['Future']}>$FUTURE[$using_lang]</option>";
         
-        $selected_asserted = array('Definitive' => '', 'Uncertain'=>'', '0'=>'');
+        $selected_asserted = array('Asserted' => '', 'Other'=>'', '0'=>'');
         $selected_asserted[$event_info['asserted']] = 'selected';
         $asserted_option = 
             "<option value='0' {$selected_asserted['Default']}></option>
-            <option value='Definitive' {$selected_asserted['Definitive']}>{$ASSERTED[$using_lang]}</option>
-            <option title={$LIST_OF_UNCERTIANS[$using_lang]} value='Uncertain' {$selected_asserted['Uncertain']}>{$OTHER[$using_lang]}</option>";
+            <option value='Asserted' {$selected_asserted['Asserted']}>{$ASSERTED[$using_lang]}</option>
+            <option title={$LIST_OF_UNCERTIANS[$using_lang]} value='Other' {$selected_asserted['Other']}>{$OTHER[$using_lang]}</option>";
         
         $selected_polarity = array('Positive' => '', 'Negative'=>'', '0'=>'');
         $selected_polarity[$event_info['polarity']] = 'selected';
