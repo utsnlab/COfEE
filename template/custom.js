@@ -267,14 +267,17 @@ $('#eventArguments').on('show.bs.modal', function (argument) {
 });
 //Delete
 $(document.body).on('click',".delete-rows",function (e) {
-    var id = $(this).data("id");
-    var type = $(this).data("type");
-    var table_row = $(this).parent().parent();
-    $.post( "ajax.php", "action=delete_rows&type="+type+"&id="+id, function( data ) {
-        if(data.status) {
-            table_row.remove();
-        }
-    }, "json");
+    if (confirm('Are you sure you want to delete this?')) {
+        var id = $(this).data("id");
+        var type = $(this).data("type");
+        var table_row = $(this).parent().parent();
+        $.post( "ajax.php", "action=delete_rows&type="+type+"&id="+id, function( data ) {
+            if(data.status) {
+                table_row.remove();
+            }
+        }, "json");
+    }
+
 });
 $(document.body).on('click',".edit-rows",function (e) {
     let edit_btn = $(this);
