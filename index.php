@@ -21,9 +21,15 @@ if(isset($_POST['submit'])){
     }
 }
 if(isset($_POST['register'])){
+    
+    
+    if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
+        $error_message_register="<span style='color:red'>The Validation code does not match!</span>";		
+    }
+    
     $username = test_input($_POST['username']);
     $password = test_input($_POST['password']);
-    if (strpos($_POST['password'], '\\') === false) {
+    if (empty($error_message_register) && strpos($_POST['password'], '\\') === false) {
         if (strpos($_POST['username'], '\\') === false) {
             $u_id = $d->getrowvalue("id", "select id from user where username = '" . $username . "'", true);
             if (empty($u_id)) {
@@ -66,7 +72,7 @@ if(isset($_POST['register'])){
         }else{
             $error_message_register = '<div class="alert alert-danger" role="alert">Username can`t contain \.</div>';
         }
-    }else{
+    }elseif(empty($error_message_register)){
         $error_message_register = '<div class="alert alert-danger" role="alert">Password can`t contain \.</div>';
     }
 }
