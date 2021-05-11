@@ -7,23 +7,27 @@ if(isset($_GET['action']) and $_GET['action'] == "logout"){
     unset($_SESSION['user']);
 }
 if(isset($_POST['submit'])){
-    $username = test_input($_POST['username']);
-    $password = test_input($_POST['password']);
-    $u_id = $d->getrowvalue("id","select id from user where username = '".$username."' and password = '".$password."'",true);
-    $ug_id = $d->getrowvalue("user_group","select user_group from user where username = '".$username."' and password = '".$password."'",true);
-    $rtl = $d->getrowvalue("rtl","select rtl from user where username = '".$username."' and password = '".$password."'",true);
+    if(empty($_SESSION['captcha_code']) || empty($_SESSION['captcha_code']['login'] ) || strcasecmp($_SESSION['captcha_code']['login'], $_POST['captcha_code']) != 0){  
+        $error_message="<span style='color:red'>The Validation code does not match!</span>";		
+    }
+    else{
+        $username = test_input($_POST['username']);
+        $password = test_input($_POST['password']);
+        $u_id = $d->getrowvalue("id","select id from user where username = '".$username."' and password = '".$password."'",true);
+        $ug_id = $d->getrowvalue("user_group","select user_group from user where username = '".$username."' and password = '".$password."'",true);
+        $rtl = $d->getrowvalue("rtl","select rtl from user where username = '".$username."' and password = '".$password."'",true);
+    }
     if(!empty($u_id)){
         $_SESSION['user']['id'] = $u_id;
         $_SESSION['user']['ug'] = $ug_id;
         $_SESSION['user']['rtl'] = $rtl;
-    }else{
+    }elseif(empty($error_message)){
         $error_message = '<div class="alert alert-danger" role="alert">Incorrect Username or Password</div>';
     }
 }
 if(isset($_POST['register'])){
     
-    
-    if(empty($_SESSION['captcha_code'] ) || strcasecmp($_SESSION['captcha_code'], $_POST['captcha_code']) != 0){  
+    if(empty($_SESSION['captcha_code']) || empty($_SESSION['captcha_code']['register'] ) || strcasecmp($_SESSION['captcha_code']['register'], $_POST['captcha_code']) != 0){  
         $error_message_register="<span style='color:red'>The Validation code does not match!</span>";		
     }
     

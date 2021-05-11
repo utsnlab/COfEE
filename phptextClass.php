@@ -32,7 +32,7 @@ class phptextClass
 		}
 	}	
 	
-	public function phpcaptcha($textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#162453')
+	public function phpcaptcha($captchaName,$textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#162453')
 	{	
 		/* Settings */
 		$text=$this->random();
@@ -69,7 +69,10 @@ class phptextClass
 		header('Content-Type: image/jpeg');/* defining the image type to be shown in browser widow */
 		imagedestroy($im);/* Destroying image instance */
 		if(isset($_SESSION)){
-			$_SESSION['captcha_code'] = $text;/* set random text in session for captcha validation*/
+			if(empty($_SESSION['captcha_code']) || gettype($_SESSION['captcha_code'])!="array"){
+				$_SESSION['captcha_code'] = array();
+			}
+			$_SESSION['captcha_code'][$captchaName] = $text;/* set random text in session for captcha validation*/
 		}
 	}
 	
