@@ -344,6 +344,7 @@ $(function() {
         let numOfRowItems = parseInt((maxRows + lenItems)/maxRows);
         let cnt = 0;
         let tmpElementStr = '';
+        let groupNumber = 0;
         for(let keyItem in childrenItems){
             let item = childrenItems[keyItem];
             cnt+=1;
@@ -355,8 +356,8 @@ $(function() {
             let phraseId = $('[label="'+item.name+'"]').attr('phrase_id');
             tmpElementStr+='<li class="child" phrase_id="'+phraseId+'" event_id="'+eventId+'" >'+item.name+'</li>';
             if(numOfRowItems==1 || cnt%numOfRowItems==0 || Object.keys(childrenItems).length == cnt){
-                let groupNumber = parseInt(cnt/numOfRowItems).toString();
-                let groupName = (parentName+groupNumber).replace(" ","");
+                groupNumber += 1;
+                let groupName = (parentName+groupNumber.toString()).replace(" ","");
                 $.contextMenu.types[groupName] = createRow(tmpElementStr);
                 newChildrenItems[groupName] = {type: groupName, customName: ""}; 
             }
