@@ -1,5 +1,6 @@
 <?php session_start();
 include 'header.php';
+include './include/text_utils.php';
 $using_lang = $_SESSION['using_lang'];
 $using_key_lang = 'des';
 if($using_lang == 'en'){
@@ -442,12 +443,7 @@ switch ($action) {
             $res['message'] = '<div class="alert alert-danger" role="alert">Permission Require</div>';
         }else {
             $text = test_input($_REQUEST['text']);
-            $punctuations_arr = array(".", "!", "؟", "،", ":", "؛");
-            foreach ($punctuations_arr as $punctuation) {
-                $text = str_replace($punctuation, " ".$punctuation." ", $text);
-            }
-            $text = preg_replace('!\s+!', ' ', $text);
-
+            $text = text_normalizer($text);
             $time = test_input($_REQUEST['time']);
             $link = test_input($_REQUEST['link']);
             $project = test_input($_REQUEST['project']);
@@ -526,75 +522,7 @@ switch ($action) {
                                 TRUE,
                                 FALSE);
                             $text = test_input($rowData[0][0]);
-                            $text = preg_replace('/″|˝|”|“|"/', ' " ', $text);
-                            $text = preg_replace('/٬|ˈ|`|’|\'/', ' \' ', $text);
-                            $text = preg_replace('/­|−|–|—|‐|-/', ' - ', $text);
-                            $text = preg_replace('/❗|!/', ' ! ', $text);
-                            $text = preg_replace('/·|\./', ' . ', $text);
-                            $text = preg_replace('/˛|،/', ' ، ', $text);
-                            $text = preg_replace('/：|:/', ' : ', $text);
-                            $text = preg_replace('/》|﴿|»/', ' » ', $text);
-                            $text = preg_replace('/《|﴾|«/', ' « ', $text);
-                            $text = preg_replace('/›|>/', ' > ', $text);
-                            $text = preg_replace('/‹|</', ' < ', $text);
-                            $text = preg_replace('/）|\)/', ' ) ', $text);
-                            $text = preg_replace('/（|\(/', ' ( ', $text);
-                            $text = preg_replace('/\+/', ' + ', $text);
-                            $text = preg_replace('/-|-/', ' - ', $text);
-                            $text = preg_replace('/\*/', ' * ', $text);
-//                            $text = preg_replace('/[|.|]|{|3|,|}/', '…', $text);
-                            $text = preg_replace('/٪|%/', ' % ', $text);
-                            $text = preg_replace('/ﺍ|ﺎ|ٱ/', 'ا', $text);
-                            $text = preg_replace('/ٱ|ﺁ/', 'آ', $text);
-                            $text = preg_replace('/ﺏ|ﺐ|ﺒ|ﺑ/', 'ب', $text);
-                            $text = preg_replace('/ﭙ|ﭘ|ﭗ/', 'پ', $text);
-                            $text = preg_replace('/ﺕ|ﺗ|ﺖ|ﺘ/', 'ت', $text);
-                            $text = preg_replace('/ﺚ|ﺛ|ﺜ/', 'ث', $text);
-                            $text = preg_replace('/ﺞ|ﺠ|ﺟ|ﺝ/', 'ج', $text);
-                            $text = preg_replace('/ﭻ|ﭽ|ﭼ/', 'چ', $text);
-                            $text = preg_replace('/ﺤ|ﺣ|ﺢ/', 'ح', $text);
-                            $text = preg_replace('/ﺨ|ﺧ|ﺦ/', 'خ', $text);
-                            $text = preg_replace('/ﺩ|ﺪ/', 'د', $text);
-                            $text = preg_replace('/ﺬ|ﺫ/', 'ذ', $text);
-                            $text = preg_replace('/ﺭ|ﺮ/', 'ر', $text);
-                            $text = preg_replace('/ﺰ|ﺯ/', 'ز', $text);
-                            $text = preg_replace('/ﮊ/', 'ژ', $text);
-                            $text = preg_replace('/ﺲ|ﺱ|ﺴ|ﺳ/', 'س', $text);
-                            $text = preg_replace('/ﺵ|ﺶ|ﺸ|ﺷ/', 'ش', $text);
-                            $text = preg_replace('/ﺺ|ﺼ|ﺻ/', 'ص', $text);
-                            $text = preg_replace('/ﺿ|ﻀ|ﺽ/', 'ض', $text);
-                            $text = preg_replace('/ﻂ|ﻄ|ﻃ/', 'ط', $text);
-                            $text = preg_replace('/ﻈ|ﻇ/', 'ظ', $text);
-                            $text = preg_replace('/ﻊ|ﻌ|ﻋ|ﻉ/', 'ع', $text);
-                            $text = preg_replace('/ﻎ|ﻐ|ﻏ|ﻍ/', 'غ', $text);
-                            $text = preg_replace('/ﻑ|ﻒ|ﻔ|ﻓ/', 'ف', $text);
-                            $text = preg_replace('/ﻕ|ﻖ|ﻘ|ﻗ/', 'ق', $text);
-                            $text = preg_replace('/ﻜ|ﻛ|ﮎ|ﮏ|ﮑ|ﮐ|ك|ڪ|ﻚ|ګ/', 'ک', $text);
-                            $text = preg_replace('/ﮓ|ﮒ|ﮕ|ﮔ/', 'گ', $text);
-                            $text = preg_replace('/ﻝ|ﻞ|ﻠ|ﻟ/', 'ل', $text);
-                            $text = preg_replace('/ﻡ|ﻢ|ﻤ|ﻣ/', 'م', $text);
-                            $text = preg_replace('/ﻦ|ﻥ|ﻨ|ﻧ/', 'ن', $text);
-                            $text = preg_replace('/ۆ|ﻭ|ﻮ|ۊ/', 'و', $text);
-                            $text = preg_replace('/ە|ھ|ﻬ|ﻩ|ﻫ|ﻪ|ﮤ|ۀ|ة|ہ/', 'ه', $text);
-                            $text = preg_replace('/ﻱ|ﻲ|ﻯ|ﻴ|ﻰ|ﻳ|ﯼ|ﯽ|ﯾ|ﯿ|ي|ى|ے|ێ|ې/', 'ی', $text);
-                            $text = preg_replace('/ﻻ|ﻼ/', 'لا', $text);
-                            $text = preg_replace('/ﺌ|ﺋ/', 'ئ', $text);
-                            $text = preg_replace('/ء/', '', $text);
-                            $text = preg_replace('/إ|أ/', 'ا', $text);
-                            $text = preg_replace('/ؤ/', 'و', $text);
-                            $text = preg_replace('/۰|٠/', '.', $text);
-                            $text = preg_replace('/۱|١/', '۱', $text);
-                            $text = preg_replace('/۲|٢/', '۲', $text);
-                            $text = preg_replace('/۳|٣/', '۳', $text);
-                            $text = preg_replace('/۴|٤/', '۴', $text);
-                            $text = preg_replace('/۵|٥/', '۵', $text);
-                            $text = preg_replace('/۶|٦/', '۶', $text);
-                            $text = preg_replace('/۷|٧/', '۷', $text);
-                            $text = preg_replace('/۸|٨/', '۸', $text);
-                            $text = preg_replace('/۹|٩/', '۹', $text);
-
-
-                            $text = preg_replace('/\s+(?=\pP)|(?<=\pP\s)\s+/', '', $text);
+                            $text = text_normalizer($text);
                             $time = test_input($rowData[0][1]);
                             $link = test_input($rowData[0][2]);
 
