@@ -117,13 +117,13 @@ $(document.body).on('click',".add-phrases",function (e) {
     }, "json");
 });
 $(document.body).on('click',".importExcel",function (e) {
-    $('<div style="background-color:yellow; padding:2px;" class="adding-msg">please wait.</div>').insertBefore('.modal-footer');
     var project = $("#project").val();
     var file_data = $('#file').prop('files')[0];
     var form_data = new FormData();
     form_data.append('file', file_data);
     form_data.append('action','importExcel');
     form_data.append('project',project);
+    $('<div style="background-color:yellow; padding:2px;" class="adding-msg">please wait.</div>').insertBefore('.modal-footer');
     $.ajax({
         url: 'ajax.php',
         dataType: 'json',
@@ -137,8 +137,9 @@ $(document.body).on('click',".importExcel",function (e) {
                 $('.adding-msg').remove();
                 $('<div style="background-color:green; padding:2px;" class="adding-msg">added successfully.</div>').insertBefore('.modal-footer').delay(3000).fadeOut();
                 $(".result-table tbody").append(data.html);
-                $('#importExcel').modal('hide');
+                setTimeout(function() { $('#importExcel').modal('hide'); }, 2000);
             }else{
+                $('.adding-msg').remove();
                 $(".error-box-modal").empty() ;
                 $(".error-box-modal").append(data.message).fadeIn('slow').delay(2000).fadeOut(400);
             }

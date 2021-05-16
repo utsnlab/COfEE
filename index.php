@@ -269,6 +269,6 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
     <?php else: ?>
         <script src="template/bootstrap/ltr/js/bootstrap.min.js"></script>
     <?php endif; ?>
-    <script src="template/custom.js?14"></script>
+    <script src="template/custom.js?17"></script>
 </body>
 </html>
