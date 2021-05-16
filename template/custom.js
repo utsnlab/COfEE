@@ -117,6 +117,7 @@ $(document.body).on('click',".add-phrases",function (e) {
     }, "json");
 });
 $(document.body).on('click',".importExcel",function (e) {
+    $('<div style="background-color:yellow; padding:2px;" class="adding-msg">please wait.</div>').insertBefore('.modal-footer');
     var project = $("#project").val();
     var file_data = $('#file').prop('files')[0];
     var form_data = new FormData();
@@ -133,6 +134,8 @@ $(document.body).on('click',".importExcel",function (e) {
         type: 'post',
         success: function(data){
             if(data.status) {
+                $('.adding-msg').remove();
+                $('<div style="background-color:green; padding:2px;" class="adding-msg">added successfully.</div>').insertBefore('.modal-footer').delay(3000).fadeOut();
                 $(".result-table tbody").append(data.html);
                 $('#importExcel').modal('hide');
             }else{
