@@ -636,7 +636,8 @@ switch ($action) {
         $entity_word_title = $d->getrowvalue("title","select group_concat(word separator ' ') as title from project_phrases_words where id in (".$_REQUEST['words'].")",true);
         $entity = $d->getrowvalue("entity","select entity from project_phrases_words_entities where u_id={$u_id} and word=".$word,true);
         $word_entity_id = $d->getrowvalue("id","select id from project_phrases_words_entities where u_id={$u_id} and word=".$word,true);
-        $entity_title = $d->getrowvalue("title","select title from entities where id=".$entity,true);
+        $entity_ins = $d->fetch($d->query("select * from entities where id=".$entity));
+        $entity_title = $entity_ins['title'];
         $argument_option = [];
         $phrases = $d->getrowvalue("phrases","select phrases from project_phrases_words where id=".$word,true);
         $entities = '<table class="table table-striped">';
@@ -687,7 +688,7 @@ switch ($action) {
             </div>
         </div>
         <hr>
-        <h3>'.$entity_word_title.' : '.$entity_title.'</h3>
+        <h3>'.$entity_word_title.' : '.$entity_ins[$using_key_lang].'</h3>
         <hr>
         '.$entities;
         $res = [
@@ -706,7 +707,8 @@ switch ($action) {
 //        echo $newStr . "\n";
         $event = $d->getrowvalue("events","select events from project_phrases_words_events where u_id={$u_id} and word=".$word,true);
         $word_event_id = $d->getrowvalue("id","select id from project_phrases_words_events where u_id={$u_id} and word=".$word,true);
-        $event_title = $d->getrowvalue("title","select title from events where id=".$event,true);
+        $evetIns = $d->fetch($d->query("select * from events where id=".$event));
+        $event_title = $eventIns['title'];
         $q = $d->query("select * from project_phrases_words_events where u_id={$u_id} and word=".$word);
         $event_info = $d->fetch($q);
         $argument_option = [];
@@ -787,7 +789,7 @@ switch ($action) {
             </div>
         </div>
         <hr>
-        <h3>'.$event_word_title.' : '.$event_title.'</h3>
+        <h3>'.$event_word_title.' : '.$evetIns[$using_key_lang].'</h3>
         <table class="table">
             <tr><td>'.$TENS[$using_lang].'</td><td><select class="form-control set_tens" data-event="'.$word_event_id.'">'.$tens_option.'</select></td>
             <td>'.$MODALITY[$using_lang].'</td><td><select class="form-control set_asserted" data-event="'.$word_event_id.'">'.$asserted_option.'</select></td></tr>
