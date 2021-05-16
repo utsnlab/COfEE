@@ -32,7 +32,7 @@ class phptextClass
 		}
 	}	
 	
-	public function phpcaptcha($captchaName,$textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#162453')
+	public function phpcaptcha($captchaName,$textColor,$backgroundColor,$imgWidth,$imgHeight,$noiceLines=0,$noiceDots=0,$noiceColor='#fffff')
 	{	
 		/* Settings */
 		$text=$this->random();
@@ -53,6 +53,7 @@ class phptextClass
 		for( $i=0; $i<$noiceLines; $i++ ) {				
 			imageline($im, mt_rand(0,$imgWidth), mt_rand(0,$imgHeight),
 			mt_rand(0,$imgWidth), mt_rand(0,$imgHeight), $noiceColor);
+			
 		}}				
 				
 		if($noiceDots>0){/* generating the dots randomly in background */
