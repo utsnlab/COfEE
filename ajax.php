@@ -516,7 +516,14 @@ switch ($action) {
                         $sheet = $objPHPExcel->getSheet(0);
                         $highestRow = $sheet->getHighestRow();
                         $highestColumn = $sheet->getHighestColumn();
+                        $max_id = $d->fetch($d->query('select max(id) as m from project_phrases;'))['m'];
+                        $array_of_texts = [];
+                        $array_of_project_words = [];
+                        $max_id = (int)$max_id;
+                        $highestRow = (int) $highestRow; 
                         for ($row = 2; $row <= $highestRow; $row++) {
+                            
+                            $max_id+=1;
                             $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
                                 NULL,
                                 TRUE,
@@ -525,15 +532,12 @@ switch ($action) {
                             $text = text_normalizer($text);
                             $time = test_input($rowData[0][1]);
                             $link = test_input($rowData[0][2]);
-
                             $project = test_input($_REQUEST['project']);
-                            $d->iquery("project_phrases", ['text' => $text, 'time' => $time, 'link' => $link,'project'=>$project]);
-                            $id = $d->insert_id();
+                            array_push($array_of_texts, ['text' => $text, 'time' => $time, 'link' => $link,'project'=>$project, 'id'=>$max_id]);
                             $words = explode(" ", $text);
-//                            $words = preg_split('/ (@| |"|\'|}|&|،|) /', $text);
                             foreach ($words as $word) {
                                 if($word != "")
-                                    $d->iquery("project_phrases_words", ['phrases' => $id, 'word' => $word]);
+                                    array_push($array_of_project_words, ['phrases' => $max_id, 'word' => $word]);
                             }
                             $html_res .= '
                             <tr>
@@ -547,6 +551,23 @@ switch ($action) {
                             </tr>
                           ';
                         }
+                        $sql = array(); 
+                        foreach( $array_of_texts as $arr_data ) {
+                            $sql[] = '("'.$arr_data['text'].'", "'.$arr_data['time'].'", "'.$arr_data['link'].'", '.
+                            $arr_data['id'].', '. $arr_data['project'].')';
+                        }
+                        $values = implode(',', $sql);
+                        $query = 'insert into project_phrases (text, time, link, id, project) values '.$values;
+                        $d->query($query);
+                        
+                        $sql = array(); 
+                        foreach( $array_of_project_words as $arr_data ) {
+                            $sql[] = '('.$arr_data['phrases'].', "'.$arr_data['word'].'")';
+                        }
+                        $values = implode(',', $sql);
+                        $query = 'insert into project_phrases_words (phrases, word) values '.$values;
+                        $d->query($query);
+                        
                         unlink($inputFileName);
                         $res = [
                             'html' => $html_res,
