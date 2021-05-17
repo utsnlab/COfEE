@@ -539,6 +539,7 @@ switch ($action) {
                                 if($word != "")
                                     array_push($array_of_project_words, ['phrases' => $max_id, 'word' => $word]);
                             }
+                            $id = $max_id;
                             $html_res .= '
                             <tr>
                                 <td>' . $id . '</td>
