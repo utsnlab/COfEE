@@ -4,7 +4,7 @@
         $text = preg_replace('/٬|ˈ|`|’|\'/', ' \' ', $text);
         $text = preg_replace('/­|−|–|—|‐|-/', ' - ', $text);
         $text = preg_replace('/❗|!/', ' ! ', $text);
-        $text = preg_replace('/·|\./', ' . ', $text);
+        //$text = preg_replace('/·|\./', ' . ', $text);
         $text = preg_replace('/˛|،/', ' ، ', $text);
         $text = preg_replace('/：|:/', ' : ', $text);
         $text = preg_replace('/》|﴿|»/', ' » ', $text);
@@ -56,7 +56,7 @@
         $text = preg_replace('/ء/', '', $text);
         $text = preg_replace('/إ|أ/', 'ا', $text);
         $text = preg_replace('/ؤ/', 'و', $text);
-        $text = preg_replace('/۰|٠/', '.', $text);
+        //$text = preg_replace('/۰|٠/', '۰', $text);
         $text = preg_replace('/۱|١/', '۱', $text);
         $text = preg_replace('/۲|٢/', '۲', $text);
         $text = preg_replace('/۳|٣/', '۳', $text);
@@ -67,7 +67,7 @@
         $text = preg_replace('/۸|٨/', '۸', $text);
         $text = preg_replace('/۹|٩/', '۹', $text);
         $patterns_add_space = ['/([۱۲۳۴۵۶۷۸۹۰]+)/u', '/([123456789]+)/','/:/', '/;/', '/\?/', 
-        '/\!/',"/!/u", "/؟/u", "/،/u", "/:/u", "/؛/u", '/x{46}/', '/\./'];
+        '/\!/',"/!/u", "/؟/u", "/،/u", "/:/u", "/؛/u", '/\./'];
         $text = preg_replace($patterns_add_space, ' $0 ', $text);
         //$text = preg_replace('/\s+(?=\pP)|(?<=\pP\s)\s+/', '', $text);
         $text = preg_replace('!\s+!', ' ', $text);
