@@ -66,11 +66,10 @@
         $text = preg_replace('/۷|٧/', '۷', $text);
         $text = preg_replace('/۸|٨/', '۸', $text);
         $text = preg_replace('/۹|٩/', '۹', $text);
-        $patterns_add_space = ['/([۱۲۳۴۵۶۷۸۹۰]+)/u', '/([123456789]+)/','/:/', '/;/', '/\./', '/\?/', '/!/',
-            "/\./u", "/!/u", "/؟/u", "/،/u", "/:/u", "/؛/u"
-        ];
-        $text = preg_replace($patterns_add_space, ' $1 ', $text);
-        $text = preg_replace('/\s+(?=\pP)|(?<=\pP\s)\s+/', '', $text);
+        $patterns_add_space = ['/([۱۲۳۴۵۶۷۸۹۰]+)/u', '/([123456789]+)/','/:/', '/;/', '/\?/', 
+        '/\!/',"/!/u", "/؟/u", "/،/u", "/:/u", "/؛/u", '/x{46}/', '/\./'];
+        $text = preg_replace($patterns_add_space, ' $0 ', $text);
+        //$text = preg_replace('/\s+(?=\pP)|(?<=\pP\s)\s+/', '', $text);
         $text = preg_replace('!\s+!', ' ', $text);
         return $text;
     }
