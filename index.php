@@ -45,28 +45,55 @@ if(isset($_POST['register'])){
                     $defualt_user_id = $defualt_user['id'];
                 }
                 $q = $d->query("select * from events where u_id={$defualt_user_id} and parent is null");
+                $events_data_for_insert = [];
+                $events_columns = ['id', 'title', 'des', 'u_id', 'parent'];
+                $events_max_id = $d->fetch($d->query('select max(id) as m from events'))['m']; 
+                $arg_data_for_insert = [];
+                $args_columns = ["id", "title", 'des', 'u_id', 'event_id'];
+                $args_max_id = $d->fetch($d->query('select max(id) as m from arguments'))['m']; 
                 while($row = $d->fetch($q)){
-                    $d->iquery("events",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
-                    $parent_event_id = $d->insert_id();
+                    //$d->iquery("events",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
+                    $events_max_id+=1; 
+                    $events_data_for_insert[]=['id'=>$events_max_id, 'title'=>$row['title'],
+                    'des'=>$row['des'],'u_id'=>$u_id];
+                    $parent_event_id = $events_max_id;
                     $qq = $d->query("select * from events where parent = ".$row['id']);
                     while($res = $d->fetch($qq)){
-                        $d->iquery("events",["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,'parent'=>$parent_event_id]);
-                        $new_event_id = $d->insert_id();
+                        $events_max_id+=1;
+                        $events_data_for_insert[]=["id"=>$events_max_id, "title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,
+                        'parent'=>$parent_event_id];
+                        //$d->iquery("events",["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,'parent'=>$parent_event_id]);
+                        $new_event_id = $events_max_id;
                         $qq_args = $d->query("select * from arguments where event_id = ".$res['id']);
                         while($arg = $d->fetch($qq_args)){
-                            $d->iquery("arguments",["title"=>$arg['title'],'des'=>$arg['des'],'u_id'=>$u_id,'event_id'=>$new_event_id]);
+                            $args_max_id+=1;
+                            //$d->iquery("arguments",["title"=>$arg['title'],'des'=>$arg['des'],'u_id'=>$u_id,'event_id'=>$new_event_id]);
+                            $arg_data_for_insert[]=["id"=>$args_max_id, "title"=>$arg['title'],'des'=>$arg['des'],
+                            'u_id'=>$u_id,'event_id'=>$new_event_id];
                         }
                     }
                 }
+                $d->bulk_insert('events', $events_columns, $events_data_for_insert);
+                $d->bulk_insert('arguments', $args_columns, $arg_data_for_insert);
                 $q = $d->query("select * from entities where u_id={$defualt_user_id} and parent is null");
+                $entities_data_for_insert = [];
+                $entities_columns = ["id", "title", 'des', 'u_id', 'parent'];
+                $entities_max_id = $d->fetch($d->query('select max(id) as m from entities'))['m']; 
                 while($row = $d->fetch($q)){
-                    $d->iquery("entities",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
-                    $parent_entity_id = $d->insert_id();
+                    $entities_max_id+=1;
+                    $entities_data_for_insert[]=["id"=>$entities_max_id,"title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id];
+                    $parent_entity_id = $entities_max_id;
+                    //$d->iquery("entities",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
+                    //$parent_entity_id = $d->insert_id();
                     $qq = $d->query("select * from entities where parent = ".$row['id']);
                     while($res = $d->fetch($qq)){
-                        $d->iquery("entities",["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,'parent'=>$parent_entity_id]);
+                        $entities_max_id+=1;
+                        $entities_data_for_insert[]=["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,
+                        'parent'=>$parent_entity_id];
+                        //$d->iquery("entities",["title"=>$res['title'],'des'=>$res['des'],'u_id'=>$u_id,'parent'=>$parent_entity_id]);
                     }
                 }
+                $d->bulk_insert('entities', $entities_columns, $entities_data_for_insert);
                 $_SESSION['user']['id'] = $u_id;
                 $_SESSION['user']['ug'] = 2;
                 $_SESSION['user']['rtl'] = 0;

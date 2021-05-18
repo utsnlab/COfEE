@@ -88,4 +88,33 @@ class dbclass
         $r = mysqli_affected_rows($this->Connection);
         return $r;
     }
+    function bulk_insert($table, $columns, $values)
+    {
+        $sql = array(); 
+        $columns_num = count($columns);
+        foreach( $values as $row ) {
+            $value = "(";
+            $cnt = 0;
+            foreach( $columns as $column){
+                $cnt+=1;
+                if(empty($row[$column])){
+                    $value = $value . 'NULL';    
+                }
+                else{
+                    $value = $value .'"'. $row[$column].'"';
+                }
+                if($cnt != $columns_num){
+                    $value = $value.', ';
+                }
+                
+            }
+            $value = $value.')';
+            $sql[] = $value;
+        }
+        $columns_str = '('. implode(',', $columns).')';
+        $values_str = implode(',', $sql);
+        $query_str = 'insert into '.$table.' '. $columns_str. ' values '. $values_str;
+        $Q =  $this->Query($query_str);
+        return $Q;
+    }
 }
