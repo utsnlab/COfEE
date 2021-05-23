@@ -67,7 +67,7 @@ if ($status) {
                         $inline_text .= $wr["word"] . " ";
                 }
                 else{
-                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ") order by project_phrases_words.id desc", true);
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_events,events where project_phrases_words_events.u_id={$u_id} and project_phrases_words_events.word = project_phrases_words.id and project_phrases_words_events.events = events.id and (project_phrases_words_events.word=" . $row['id'] . " or project_phrases_words_events.parent=" . $word_id . ") order by project_phrases_words.id asc", true);
                     while ($wr = $d->fetch($wd))
                         $inline_text .= $wr["word"] . " ";
                 }
@@ -84,7 +84,7 @@ if ($status) {
                         $inline_text .= $wr["word"] . " ";
                 }
                 else{
-                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ") order by project_phrases_words.id desc", true);
+                    $wd = $d->query("select project_phrases_words.word from project_phrases_words,project_phrases_words_entities where project_phrases_words_entities.u_id={$u_id} and project_phrases_words_entities.word = project_phrases_words.id and (project_phrases_words_entities.word=" . $row['id'] . " or project_phrases_words_entities.parent=" . $word_id . ") order by project_phrases_words.id asc", true);
                     while ($wr = $d->fetch($wd))
                         $inline_text .= $wr["word"] . " ";
                 }
