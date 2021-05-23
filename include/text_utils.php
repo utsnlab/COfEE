@@ -5,8 +5,8 @@
         $text = preg_replace('/­|−|–|—|‐|-/', ' - ', $text);
         $text = preg_replace('/❗|!/', ' ! ', $text);
         //$text = preg_replace('/·|\./', ' . ', $text);
-        $text = preg_replace('/˛|،/', ' ، ', $text);
-        $text = preg_replace('/：|:/', ' : ', $text);
+        //$text = preg_replace('/˛|،/', ' ، ', $text);
+        //$text = preg_replace('/：|:/', ' : ', $text);
         $text = preg_replace('/》|﴿|»/', ' » ', $text);
         $text = preg_replace('/《|﴾|«/', ' « ', $text);
         $text = preg_replace('/›|>/', ' > ', $text);
@@ -66,8 +66,8 @@
         $text = preg_replace('/۷|٧/', '۷', $text);
         $text = preg_replace('/۸|٨/', '۸', $text);
         $text = preg_replace('/۹|٩/', '۹', $text);
-        $patterns_add_space = ['/([۱۲۳۴۵۶۷۸۹۰,]+)/u', '/([1234567890,]+)/','/:/', '/;/', '/\?/', 
-        '/\!/',"/!/u", "/؟/u", "/،/u", "/:/u", "/؛/u", '/\./'];
+        $patterns_add_space = ['/([۱۲۳۴۵۶۷۸۹۰1234567890,:\/]+)/u', '/[^1234567890۱۲۳۴۵۶۷۸۹۰]:/', '/;/', '/\?/', 
+        '/\!/',"/!/u", "/؟/u", "/[^1234567890۱۲۳۴۵۶۷۸۹۰]،/u", "/[^1234567890۱۲۳۴۵۶۷۸۹۰]:/u", "/؛/u", '/\./', '/[^1234567890۱۲۳۴۵۶۷۸۹۰],/'];
         $text = preg_replace($patterns_add_space, ' $0 ', $text);
         //$text = preg_replace('/\s+(?=\pP)|(?<=\pP\s)\s+/', '', $text);
         $text = preg_replace('!\s+!', ' ', $text);
