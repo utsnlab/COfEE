@@ -235,7 +235,10 @@ if(!(isset($_SESSION['user']['id']) and is_numeric($_SESSION['user']['id']))){
         <style>body{direction: rtl;}</style>
     <?php else: ?>
         <link href="template/bootstrap/ltr/css/bootstrap.min.css" rel="stylesheet">
-        <style>body{direction: ltr;}</style>
+        <style>
+            body{direction: ltr;} 
+            .modal { overflow: auto !important; }
+        </style>
     <?php endif; ?>
     <link href="template/custom.css" rel="stylesheet">
     <script src="template/jquery/jquery.min.js"></script>
