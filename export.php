@@ -30,7 +30,7 @@ while($row = $d->fetch($q)){
     $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
     $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
     $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
-    $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
+    $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tense');
     $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
     $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
     $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');
@@ -47,7 +47,7 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
             $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
             $objPHPExcel->getActiveSheet()->setCellValue('E1', 'Modality');
-            $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tens');
+            $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tense');
             $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
             $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
             $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');

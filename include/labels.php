@@ -1,5 +1,5 @@
 <?php
-    $TENS = array('fa' => 'زمان', 'en' => 'Tens');
+    $TENS = array('fa' => 'زمان', 'en' => 'Tense');
     $PAST = array('fa' => 'گذشته', 'en' => 'Past');
     $NOW = array('fa' => 'حال', 'en' => 'Now');
     $UNSPECIFIED = array('fa' => 'نامعلوم', 'en' => 'Unspecified');
