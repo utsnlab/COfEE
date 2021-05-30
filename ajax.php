@@ -135,6 +135,7 @@ switch ($action) {
                             $d->iquery("project_users", ['u_id' => $user, 'project' => $project]);
                         }
                         $users = $d->getrowvalue("users", "select GROUP_CONCAT(user.username) as users from user,project_users where user.id = project_users.u_id and project = " . $project, true);
+                        $users = str_replace(',', ', ', $users);
                         $res = [
                             'html' => $users,
                             'status' => true

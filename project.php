@@ -15,14 +15,18 @@ while($row = $d->fetch($q)){
     }
     $next = $d->getrowvalue("id","select id from project_phrases where id not in (select phrases from project_phrases_status where u_id = {$u_id}) and project_phrases.project=".$row['id']." order by id asc limit 0 , 1",true);
     $users = $d->getrowvalue("users","select GROUP_CONCAT(user.username) as users from user,project_users where user.id = project_users.u_id and project = ".$row['id'],true);
+    $users = str_replace(',', ', ', $users);
     $project_table .= '
             <tr>
                 <td>'.$row['id'].'</td>
-                <td><a href="index.php?action=tag&id='.$next.'">'.$row['title'].'</a></td>
-                <td>'.$row['user_num'].'</td>
-                <td>'.$row['annotation_num'].'</td>
-                <td id="project'.$row['id'].'">'.$users.'</td>
-                <td>
+                <td><a href="index.php?action=tag&id='.$next.'">'.$row['title'].'</a></td>';
+
+    if($ug_id < 3)
+        $project_table .='<td>'.$row['user_num'].'</td>
+            <td>'.$row['annotation_num'].'</td>
+            <td id="project'.$row['id'].'">'.$users.'</td>';
+    
+    $project_table .='<td>
                     '.$add_user_button.'
                     <a href="index.php?action=phrases&id='.$row['id'].'" class="btn btn-sm btn-success">'.$ANNOTATE[$using_lang].'</a>
                     '.$export_button.'
@@ -68,4 +72,9 @@ while($row = $d->fetch($q)){
     $user_option .= '<option value="'.$row['id'].'">'.$row['username'].'</option>';
 }
 $content = file_get_contents($action.".html");
+if($ug_id>2){
+    $content = str_replace('<th>Number of Annotates</th>', '', $content);
+    $content = str_replace('<th>Number of users</th>', '', $content);
+    $content = str_replace('<th>Users</th>', '', $content);
+}
 $content = str_replace(['[-projects-]','[-users-]','[-add_project_section-]','[-paginate-]'],[$project_table,$user_option,$add_project_section,$paginate],$content);
