@@ -9,6 +9,9 @@ if(is_numeric($project)) {
     }
     if(!empty($next)) {
         $start_annotation = '<a href="index.php?action=tag&id='.$next.'" class="btn btn-success btn-delete center-block">'.$START_ANNOTATION[$using_lang].'</a>';
+        $d->query("update project_phrases set num_of_visit = num_of_visit-1 where id = {$next}");
+        $d->query("delete from project_phrases_status where u_id={$u_id} and phrases={$next}");
+        $d->iquery("project_phrases_status", ['u_id' => $u_id, 'phrases' => $next, 'status' => 3]);
     }
     
     if($ug_id <3) {
