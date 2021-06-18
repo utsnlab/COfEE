@@ -26,14 +26,14 @@ if ($status) {
     if (!empty($id)) {
         $status = $d->getrowvalue("status","select status from project_phrases_status where phrases={$id} and u_id={$u_id}",true);
         if(empty($status)) {
-            $d->query("update project_phrases set num_of_visit = num_of_visit-1 where id = {$id}");
+            //$d->query("update project_phrases set num_of_visit = num_of_visit-1 where id = {$id}");
             $d->query("delete from project_phrases_status where u_id={$u_id} and phrases={$id}");
             $d->iquery("project_phrases_status", ['u_id' => $u_id, 'phrases' => $id, 'status' => 3]);
         }
         $_SESSION['user']['rtl'] = $d->getrowvalue("rtl", "select rtl, projects.id from project_phrases,projects where project_phrases.project = projects.id and project_phrases.id={$id}", true);
         $project = $d->getrowvalue("p_id", "select rtl, projects.id as p_id from project_phrases,projects where project_phrases.project = projects.id and project_phrases.id={$id}", true);
         $next = $d->getrowvalue("id", "select id from project_phrases where project = {$project} and num_of_visit > 0 and id not in (select phrases from project_phrases_status where status in (1, 2) and u_id={$u_id}) order by id asc limit 1 , 1", true);
-        
+        $d->query("update project_phrases set num_of_visit = num_of_visit-1 where id = {$next}");
         if (empty($next)) {
             $button = '
         <div class="float-left"><a href="index.php?action=tag&cancel=' . $id . '" class="btn btn-danger">'.$CANCEL[$using_lang].'</a></div>
