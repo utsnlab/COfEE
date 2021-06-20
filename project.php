@@ -13,13 +13,13 @@ while($row = $d->fetch($q)){
         $delete_button = '<button class="btn btn-sm btn-danger delete-rows" data-type="projects" data-id="'.$row['id'].'">'.$DELETE[$using_lang].'</button>';
         $export_button = '<a target="_blank" href="export.php?id='.$row['id'].'" class="btn btn-sm btn-primary">'.$EXPORT[$using_lang].'</a>';
     }
-    $next = $d->getrowvalue("id","select id from project_phrases where id not in (select phrases from project_phrases_status where u_id = {$u_id}) and project_phrases.project=".$row['id']." order by id asc limit 0 , 1",true);
+    //$next = $d->getrowvalue("id","select id from project_phrases where id not in (select phrases from project_phrases_status where u_id = {$u_id}) and project_phrases.project=".$row['id']." order by id asc limit 0 , 1",true);
     $users = $d->getrowvalue("users","select GROUP_CONCAT(user.username) as users from user,project_users where user.id = project_users.u_id and project = ".$row['id'],true);
     $users = str_replace(',', ', ', $users);
     $project_table .= '
             <tr>
                 <td>'.$row['id'].'</td>
-                <td><a href="index.php?action=tag&id='.$next.'">'.$row['title'].'</a></td>';
+                <td><a href="index.php?action=phrases&id='.$row['id'].'">'.$row['title'].'</a></td>';
 
     if($ug_id < 3)
         $project_table .='<td>'.$row['user_num'].'</td>

@@ -86,16 +86,19 @@ if(is_numeric($project)) {
         
         $annotation_num = $d->getrowvalue('annotation_num',"select annotation_num from projects where id={$project}",true);
         while($row = $d->fetch($q)){
-            $an_num = $d->getrowvalue('cnt',"select count(*) as cnt from project_phrases_status where u_id!={$u_id} and status=1 and phrases={$row['id']}",true);
+            $row_stat = $d->fetch($d->query("select * from project_phrases_status where u_id={$u_id} and phrases={$row['id']}"));
             
-            if($annotation_num > $an_num) {
+            if(!empty($row_stat)) {
                 
-                if(empty($row['status'])){
+                /*if(empty($row['status'])){
                     $status = '<span class="btn btn-info btn-sm btn-show-status">-</span><br>';
-                }elseif($row['status'] == 1){
-                    $status = '<span class="btn btn-success btn-sm btn-show-status">onfirmed</span><br>';
-                }else{
+                }else*/if($row_stat['status'] == 1){
+                    $status = '<span class="btn btn-success btn-sm btn-show-status">Confirmed</span><br>';
+                }elseif($row_stat['status']==2){
                     $status = '<span class="btn btn-danger btn-sm btn-show-status">Canceled</span><br>';
+                }
+                elseif($row_stat['status']==3){
+                    $status = '<span class="btn btn-secondary btn-sm btn-show-status">Pending</span><br>';
                 }
 
                 $phrases_table .= '
