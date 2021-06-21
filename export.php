@@ -73,7 +73,7 @@ while($row = $d->fetch($q)){
                 if(empty($entity_parent_id)){
                     $entity_parent_id = $phrase_entity_word['id'];
                 }
-                $data[$i]['arg'] = '(' . $args . ', En_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $args_id . ')';
+                $data[$i]['arg'] = '(' . $args . ', EN_' . $row['u_id'] . '_' . $entity_parent_id . '_' . $args_id . ')';
             }
             if ($event == "") {
                 $data[$i]['event'] = "O";
@@ -84,7 +84,7 @@ while($row = $d->fetch($q)){
                 if(empty($parent_id_for_event)){
                     $parent_id_for_event = $phrase_event_word['id'];
                 }
-                $data[$i]['event'] = '(' . $event . ', Ev_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'] . ')';
+                $data[$i]['event'] = '(' . $event . ', EV_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'] . ')';
             }
 
             $data[$i]['role'] = "";
@@ -110,7 +110,7 @@ while($row = $d->fetch($q)){
             if ($event_id == "") {
                 $data[$i]['event_id'] = "O";
             } else {
-                $data[$i]['event_id'] = 'Ev_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'];
+                $data[$i]['event_id'] = 'EV_' . $row['u_id'] . '_' . $parent_id_for_event . '_' . $phrase_event_word['events'];
             }
             if($asserted == ""){
                 $data[$i]['asserted'] = "O";
