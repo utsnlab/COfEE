@@ -82,22 +82,16 @@ if(is_numeric($project)) {
             $current_page = 1;
         }
 
-        $q = $d->query("select * from project_phrases,project_users where project_users.project = project_phrases.project and project_users.u_id={$u_id} and project_phrases.project = {$project} limit {$start},{$limit_per_page}");
+        $q = $d->query("select * from project_phrases,project_phrases_status where project_phrases_status.phrases = project_phrases.id and project_phrases_status.u_id={$u_id} and project_phrases.project = {$project} limit {$start},{$limit_per_page}");
         
         $annotation_num = $d->getrowvalue('annotation_num',"select annotation_num from projects where id={$project}",true);
         while($row = $d->fetch($q)){
-            $row_stat = $d->fetch($d->query("select * from project_phrases_status where u_id={$u_id} and phrases={$row['id']}"));
-            
-            if(!empty($row_stat)) {
-                
-                /*if(empty($row['status'])){
-                    $status = '<span class="btn btn-info btn-sm btn-show-status">-</span><br>';
-                }else*/if($row_stat['status'] == 1){
+                if($row['status'] == 1){
                     $status = '<span class="btn btn-success btn-sm btn-show-status">Confirmed</span><br>';
-                }elseif($row_stat['status']==2){
+                }elseif($row['status']==2){
                     $status = '<span class="btn btn-danger btn-sm btn-show-status">Canceled</span><br>';
                 }
-                elseif($row_stat['status']==3){
+                elseif($row['status']==3){
                     $status = '<span class="btn btn-secondary btn-sm btn-show-status">Pending</span><br>';
                 }
 
@@ -110,7 +104,6 @@ if(is_numeric($project)) {
                         <a href="index.php?action=tag&id=' . $row['id'] . '" class="btn btn-sm btn-primary">Annotation</a>
                     </td>
                 </tr>';
-            }
         }
     }
     $paginate = paginate($cnt,$limit_per_page,$current_page,'index.php?action=phrases&id=' . $project . '&page=');
