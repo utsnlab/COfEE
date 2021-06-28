@@ -1,31 +1,48 @@
 <?php session_start();
 include 'header.php';
-require_once 'include/excel/PHPExcel.php';
-$rendererName = PHPExcel_Settings::PDF_RENDERER_TCPDF;
-$rendererLibrary = 'tcpdf';
-$rendererLibraryPath = 'include/pdf/' . $rendererLibrary;
-$objPHPExcel = new PHPExcel();
+
+require 'vendor/autoload.php';
+use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
+use Box\Spout\Common\Entity\Row;
+
+
+
+$objPHPExcel =  WriterEntityFactory::createXLSXWriter();
+$objPHPExcel->openToFile('../exports/result.xlsx');
+
 $cellName = array('A','B','C','D','E','F','G');
 $cellCount = 7;
 $activeSheet = 0;
-$objPHPExcel->getProperties()->setCreator("Excel Converter")
+/*$objPHPExcel->getProperties()->setCreator("Excel Converter")
     ->setLastModifiedBy("Excel Converter")
     ->setTitle("Report")
     ->setSubject("Report")
     ->setDescription("Report")
     ->setKeywords("Report")
     ->setCategory("Report");
+*/
 $project_id = test_input($_GET['id']);
 $q = $d->query("select u_id,username from project_users,user where project_users.u_id = user.id and project={$project_id} order by user.id asc");
 while($row = $d->fetch($q)){
+    //var_dump("alo");
+    //var_dump($row['u_id']);
+    //if($row['u_id']==31)
+    //    continue;
     $cellNum =1;
     if($activeSheet > 0) {
-        $objPHPExcel->createSheet($activeSheet);
+        $curr_sheet = $objPHPExcel->addNewSheetAndMakeItCurrent();
     }
-    $objPHPExcel->setActiveSheetIndex($activeSheet);
-    $objPHPExcel->getActiveSheet()->setTitle($row['username']);
+    else{
+        $curr_sheet = $objPHPExcel->getCurrentSheet();
+    }
+    //$objPHPExcel->setActiveSheetIndex($activeSheet);
+    $curr_sheet->setName($row['username']);
     $activeSheet++;
-    $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Word');
+    $values = ['Word', 'POS', 'Entity_Value_Time', 'Event', 'Modality', 
+    'Tense', 'Polarity', 'ID_Event', 'Argument'];
+    $headers = WriterEntityFactory::createRowFromArray($values);
+    $objPHPExcel->addRow($headers);
+    /*$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Word');
     $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
     $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
     $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
@@ -33,16 +50,21 @@ while($row = $d->fetch($q)){
     $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tense');
     $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
     $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
-    $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');
+    $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');*/
     $cellNum++;
     $qq = $d->query("select * from project_phrases,project_phrases_status where project_phrases.id = project_phrases_status.phrases and project_phrases_status.u_id=".$row['u_id']." and project_phrases_status.status=1 and project={$project_id} order by project_phrases.id asc");
     while($phrases = $d->fetch($qq)){
+        try{
         if($cellNum > 2000){
-            $objPHPExcel->createSheet($activeSheet);
-            $objPHPExcel->setActiveSheetIndex($activeSheet);
-            $objPHPExcel->getActiveSheet()->setTitle($row['username']."_".$activeSheet);
+            $curr_sheet = $objPHPExcel->addNewSheetAndMakeItCurrent();
+            //$objPHPExcel->createSheet($activeSheet);
+            //$objPHPExcel->setActiveSheetIndex($activeSheet);
+            //$objPHPExcel->getActiveSheet()->setTitle($row['username']."_".$activeSheet);
+            $curr_sheet->setName($row['username']."_".$activeSheet);
             $activeSheet++;
-            $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Word');
+            $headers = WriterEntityFactory::createRowFromArray($values);
+            $objPHPExcel->addRow($headers);
+            /*$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Word');
             $objPHPExcel->getActiveSheet()->setCellValue('B1', 'POS');
             $objPHPExcel->getActiveSheet()->setCellValue('C1', 'Entity_Value_Time');
             $objPHPExcel->getActiveSheet()->setCellValue('D1', 'Event');
@@ -50,7 +72,7 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('F1', 'Tense');
             $objPHPExcel->getActiveSheet()->setCellValue('G1', 'Polarity');
             $objPHPExcel->getActiveSheet()->setCellValue('H1', 'ID_Event');
-            $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');
+            $objPHPExcel->getActiveSheet()->setCellValue('I1', 'Argument');*/
             $cellNum = 2;
         }
         $i = 0;
@@ -129,7 +151,7 @@ while($row = $d->fetch($q)){
             }
             $i++;
         }
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<project id="' . $project_id . '>');
+        /*$objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<project id="' . $project_id . '>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, $phrases['link']);
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, $phrases['time']);
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, '');
@@ -137,9 +159,14 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, '');
-        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, '');
+        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, '');*/
+        $row_values = ['<project id="' . $project_id . '>', $phrases['link'], $phrases['time'], '', '', 
+        '', '', '', ''];
+        $tmp_row_data = WriterEntityFactory::createRowFromArray($row_values);
+        $objPHPExcel->addRow($tmp_row_data);
+        ///
         $cellNum++;
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<s id="'. $phrases['id'] . '">');
+        /*$objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '<s id="'. $phrases['id'] . '">');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, 'begin');
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, 'O');
@@ -147,10 +174,15 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, 'O');
-        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, 'O');
+        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, 'O');*/
+        $row_values = ['<s id="'. $phrases['id'] . '">', 'begin', 'O', 'O', 'O', 
+        'O', 'O', 'O', 'O'];
+        $tmp_row_data = WriterEntityFactory::createRowFromArray($row_values);
+        $objPHPExcel->addRow($tmp_row_data);
+        ///
         $cellNum++;
         foreach ($data as $dataa) {
-            $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, $dataa['word']);
+            /*$objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, $dataa['word']);
             $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, $dataa['pos']);
             $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, $dataa['arg']);
             $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, $dataa['event']);
@@ -158,10 +190,15 @@ while($row = $d->fetch($q)){
             $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, $dataa['tens']);
             $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, $dataa['polarity']);
             $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, $dataa['event_id']);
-            $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, $dataa['role']);
+            $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, $dataa['role']);*/
+            $row_values = [$dataa['word'], $dataa['pos'], $dataa['arg'], $dataa['event'], $dataa['asserted'], 
+            $dataa['tens'], $dataa['polarity'], $dataa['event_id'], $dataa['role']];
+            $tmp_row_data = WriterEntityFactory::createRowFromArray($row_values);
+            $objPHPExcel->addRow($tmp_row_data);
+            ///
             $cellNum++;
         }
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</s>');
+        /*$objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</s>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, 'end');
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, 'O');
@@ -169,9 +206,14 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, 'O');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, 'O');
-        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, 'O');
+        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, 'O');*/
+        $row_values = ['</s>', 'end', 'O', 'O', 'O', 
+        'O', 'O', 'O', 'O'];
+        $tmp_row_data = WriterEntityFactory::createRowFromArray($row_values);
+        $objPHPExcel->addRow($tmp_row_data);
+        ///
         $cellNum++;
-        $objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</project>');
+        /*$objPHPExcel->getActiveSheet()->setCellValue('A' . $cellNum, '</project>');
         $objPHPExcel->getActiveSheet()->setCellValue('B' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('C' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('D' . $cellNum, '');
@@ -179,11 +221,21 @@ while($row = $d->fetch($q)){
         $objPHPExcel->getActiveSheet()->setCellValue('F' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $cellNum, '');
         $objPHPExcel->getActiveSheet()->setCellValue('H' . $cellNum, '');
-        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, '');
+        $objPHPExcel->getActiveSheet()->setCellValue('I' . $cellNum, '');*/
+        $row_values = ['</project>', '', '', '', '', 
+        '', '', '', ''];
+        $tmp_row_data = WriterEntityFactory::createRowFromArray($row_values);
+        $objPHPExcel->addRow($tmp_row_data);
+        ////
+    }
+    catch(Throwable $e){
+        var_dump($e);
+    }
     }
 
 }
-if (!PHPExcel_Settings::setPdfRenderer(
+1+1;
+/*if (!PHPExcel_Settings::setPdfRenderer(
     $rendererName,
     $rendererLibraryPath
 )) {
@@ -200,7 +252,29 @@ header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
 header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
 header ('Pragma: public'); // HTTP/1.0
 header('Content-Type: application/vnd.ms-excel');
-header('Content-Disposition: attachment;filename="Report.xls"');
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-$objWriter->save('php://output');
-exit;
+header('Content-Disposition: attachment;filename="Report.xls"');*/
+//echo "here";
+//var_dump("end");
+/*try{$writer = new Xlsx($objPHPExcel);
+    $writer->save('../exports/result.xlsx');
+    $attachment_location = '/var/www/exports' . "/result.xlsx";}
+catch(Throwable $e){var_dump($e);}
+*/
+$objPHPExcel->close();
+$attachment_location = '/var/www/exports' . "/result.xlsx";
+if (file_exists($attachment_location)) {
+
+    header($_SERVER["SERVER_PROTOCOL"] . " 200 OK");
+    header("Cache-Control: public"); // needed for internet explorer
+    header("Content-Type: application/xlsx");
+    header("Content-Transfer-Encoding: Binary");
+    header("Content-Length:".filesize($attachment_location));
+    header("Content-Disposition: attachment; filename=result.xlsx");
+    readfile($attachment_location);
+    die();        
+} else {
+    die("Error: File not found.");
+} 
+//echo "done";
+return;
+//exit;
