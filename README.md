@@ -1,6 +1,5 @@
 # Events Annotator
 
-installation
 
 ## How to Run
 
