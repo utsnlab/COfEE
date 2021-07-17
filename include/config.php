@@ -5,9 +5,9 @@ if ( !defined('news_security'))
  die("You are not allowed to access this page directly!");
 }
 $dbconfig   = array(
-'hostname'  => 'localhost',
+'hostname'  => 'db',
 'username'  => 'root',
-'password'  => '',
+'password'  => 'root123',
 'perfix'    => '',
 'database'  => 'annotate_data'
 );

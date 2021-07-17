@@ -1,0 +1,24 @@
+version: "3"
+    
+services:
+  db:
+    image: mysql:5.6
+    #command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./schema:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: annotate_data
+      MYSQL_USER: newuser
+      MYSQL_PASSWORD: root123
+    
+  annotate:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "80:80"
+    restart: always

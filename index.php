@@ -47,10 +47,14 @@ if(isset($_POST['register'])){
                 $q = $d->query("select * from events where u_id={$defualt_user_id} and parent is null");
                 $events_data_for_insert = [];
                 $events_columns = ['id', 'title', 'des', 'u_id', 'parent'];
-                $events_max_id = $d->fetch($d->query('select max(id) as m from events'))['m']; 
+                $events_max_id = $d->fetch($d->query('select max(id) as m from events')); 
+                if(!empty($events_max_id))
+                    $events_max_id = $events_max_id['m'];
                 $arg_data_for_insert = [];
                 $args_columns = ["id", "title", 'des', 'u_id', 'event_id'];
-                $args_max_id = $d->fetch($d->query('select max(id) as m from arguments'))['m']; 
+                $args_max_id = $d->fetch($d->query('select max(id) as m from arguments'));
+                if(!empty($args_max_id))
+                    $args_max_id = $args_max_id['m'];
                 while($row = $d->fetch($q)){
                     //$d->iquery("events",["title"=>$row['title'],'des'=>$row['des'],'u_id'=>$u_id]);
                     $events_max_id+=1; 

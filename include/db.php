@@ -90,6 +90,8 @@ class dbclass
     }
     function bulk_insert($table, $columns, $values)
     {
+        if(count($values) == 0)
+            return; 
         $sql = array(); 
         $columns_num = count($columns);
         foreach( $values as $row ) {
