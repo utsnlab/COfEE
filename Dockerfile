@@ -37,19 +37,17 @@ RUN apt-get install -y \
         libmcrypt-dev \
         libjpeg-dev \
         libpng-dev
+        
 RUN docker-php-ext-configure gd \
         --enable-gd-native-ttf \
         --with-freetype-dir=/usr/include/freetype2 \
         --with-png-dir=/usr/include \
         --with-jpeg-dir=/usr/include \
     && docker-php-ext-install gd
-
-COPY apache2.conf /etc/apache2
-WORKDIR /var/www/html
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY . /var/www/html/
+RUN composer install --ignore-platform-reqs
+COPY apache2.conf /etc/apache2
 COPY ./annotate.conf /etc/apache2/sites-available/
-COPY ./hosts /etc/
-RUN echo "127.0.0.1	annotate.co" >> /etc/hosts
-#COPY start-apache /usr/local/bin
 RUN a2enmod rewrite
 EXPOSE 80
