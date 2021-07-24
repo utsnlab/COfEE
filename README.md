@@ -34,8 +34,8 @@ By default the project will start on port `80`, it can be changed by modifying t
 
 **NOTE**: Default admin credentials are:
 
-	- Username: `admin`
-	- Password: `123`
+	- Username: admin
+	- Password: 123
 
  ## Paper Experiments Data
 
