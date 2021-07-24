@@ -41,7 +41,7 @@ By default the project will start on port `80`, it can be changed by modifying t
 
 The corpus of Wikipedia events that the original paper's experiments were conducted on can be downloaded from:
 
-- resources/Wiki-EventSentences.tar.gz
+- [resources/Wiki-EventSentences.tar.gz](https://github.com/utsnlab/COfEE/blob/master/resources/Wikipedia-EventSenteces.tar.gz)
 
 Google News 300M Word2Vec word embedding:
 
@@ -51,7 +51,7 @@ Google News 300M Word2Vec word embedding:
 
 The entire process of annotation in COfEE tool is summarized in the picture below:
 
-![image-20210720165804855]()
+![Annotation Process Summarized](https://raw.githubusercontent.com/utsnlab/COfEE/master/resources/img/1-annotation-summarized.png)
 
 The steps in annotation phase are:
 
@@ -66,15 +66,15 @@ As you have probably figured, step 5 is the main phase of data annotation by hum
 
 - Event trigger annotation when “outbreak” is selected as an event of the subtype “Epidemics”:
 
-  ![image-20210720170422308]()
+  ![1](https://raw.githubusercontent.com/utsnlab/COfEE/master/resources/img/2.png)
 
 - Argument roles annotation phase: selecting the arguments of an “outbreak” event. The roles of the entities are selected through a drop-down list:
 
-  ![image-20210720170454501]()
+  ![2](https://raw.githubusercontent.com/utsnlab/COfEE/master/resources/img/3.png)
 
 - An entity “115” is selected and its roles in different events are shown:
 
-  ![image-20210720170515305]()
+  ![3](https://raw.githubusercontent.com/utsnlab/COfEE/master/resources/img/4.png)
 
 
 
