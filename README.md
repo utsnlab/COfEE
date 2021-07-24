@@ -51,7 +51,7 @@ Google News 300M Word2Vec word embedding:
 
 The entire process of annotation in COfEE tool is summarized in the picture below:
 
-![image-20210720165804855](C:\Users\dozha\AppData\Roaming\Typora\typora-user-images\image-20210720165804855.png)
+![image-20210720165804855]()
 
 The steps in annotation phase are:
 
@@ -66,15 +66,15 @@ As you have probably figured, step 5 is the main phase of data annotation by hum
 
 - Event trigger annotation when “outbreak” is selected as an event of the subtype “Epidemics”:
 
-  ![image-20210720170422308](C:\Users\dozha\AppData\Roaming\Typora\typora-user-images\image-20210720170422308.png)
+  ![image-20210720170422308]()
 
 - Argument roles annotation phase: selecting the arguments of an “outbreak” event. The roles of the entities are selected through a drop-down list:
 
-  ![image-20210720170454501](C:\Users\dozha\AppData\Roaming\Typora\typora-user-images\image-20210720170454501.png)
+  ![image-20210720170454501]()
 
 - An entity “115” is selected and its roles in different events are shown:
 
-  ![image-20210720170515305](C:\Users\dozha\AppData\Roaming\Typora\typora-user-images\image-20210720170515305.png)
+  ![image-20210720170515305]()
 
 
 
