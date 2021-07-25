@@ -1,6 +1,11 @@
 # COfEE Events Annotator Tool
 
-[TOC]
+* [COfEE Events Annotator Tool](#cofee-events-annotator-tool)
+* [What is COfEE?](#what-is-cofee)
+   * [Installation (instructions for self-hosting)](#installation-instructions-for-self-hosting)
+   * [Paper Experiments Data](#paper-experiments-data)
+   * [User Guide](#user-guide)
+* [Citation](#citation)
 
 # What is COfEE?
 
