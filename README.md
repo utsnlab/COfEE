@@ -12,6 +12,22 @@
 **COfEE** (which stands for "a **Comprehensive Ontology for Event Extraction**"), is an event ontology with a more general event schema compared to its predecessors (such as ACE), which is simpler, more flexible and suitable for practical applications. COfEE introduces **12** event **types** and **119** event **subtypes** in two hierarchy levels with **21** argument roles. The event subtypes are defined such that they are conceptually different from each other (with the least possible overlap) in order to tackle the complexity in choosing the type of events. COfEE covers a wide range of topics, from “Politics” to “Life”, “Business” and “Natural Disasters”. It also defines new event types such as “Cyberspace”, “Science” and “Environment”, and new subtypes such as “Cyberattack”, “Extinction” and “Epidemics” by incorporating a data-driven approach by human experts. Additionally, COfEE presents new roles such as “scale”, “number of missing entities”, “number of participants” etc. to capture different dimensions of events more effectively.
 
 This repository contains the source code for COfEE's annotation tool which can be self-hosted (read the descriptions below). An online demo version is also available at [cofee.sociallab.ir](cofee.sociallab.ir). Also, in order to use the complete Persian dataset you need to submit a request to balali.a67@gmail.com. 
+Here is a summary of our dataset statistics:
+Data	Count
+# Sentences	24119
+# Words	326455
+# Entity Mentions	65612
+# Event Triggers	28393
+# Event Triggers (by Tense)	Past	18372
+	Present	7068
+	Future	1345
+	Unspecified	1608
+# Event Triggers (by Polarity)	Positive	26276
+	Negative	2106
+# Event Triggers (by Modality)	Asserted	25671
+	Other	2717
+# Arguments	49404
+
 
 The current repository includes the Wikipedia corpus used for evaluation and experiments of the original manuscript.
 
