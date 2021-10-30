@@ -1,0 +1,2612 @@
+Word	POS	Entity_Value_Time	Event	Modality	Tense	Polarity	ID_Event	Argument
+								
+<s id="2606">	begin	O	O	O	O	O	O	O
+تبعات		O	O	O	O	O	O	
+باخت		O	O	O	O	O	O	
+سنگین		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+استقلال		(B_Organization, EN_26_15532_12)	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+دروازه‌بان		(B_Person, EN_26_15536_15)	O	O	O	O	O	(B_Target,EV_26_3632_210,EN_26_15536_15)
+خارجی		(I_Person, EN_26_15536_15)	O	O	O	O	O	(I_Target,EV_26_3632_210,EN_26_15536_15)
+ماشین‌سازی		(I_Person, EN_26_15536_15)	O	O	O	O	O	(I_Target,EV_26_3632_210,EN_26_15536_15)
+دیپورت		O	(B_End Position, EV_26_3632_210)	Asserted	Past	Positive	EV_26_3632_210	
+شد		O	(I_End Position, EV_26_3632_210)	O	O	O	EV_26_3632_210	
+!		O	(I_End Position, EV_26_3632_210)	O	O	O	EV_26_3632_210	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2609">	begin	O	O	O	O	O	O	O
+دبیر		(B_Person, EN_26_15551_15)	O	O	O	O	O	
+جشنواره		(I_Person, EN_26_15551_15)	O	O	O	O	O	
+تئاتر		(I_Person, EN_26_15551_15)	O	O	O	O	O	
+فتح		(I_Person, EN_26_15551_15)	O	O	O	O	O	
+خرمشهر		(I_Person, EN_26_15551_15)	O	O	O	O	O	
+خبر		O	O	O	O	O	O	
+داد		O	O	O	O	O	O	
+600		(B_Numeric, EN_26_173070_19)	O	O	O	O	O	
+اثر		(I_Numeric, EN_26_173070_19)	O	O	O	O	O	
+نمایشی		(I_Numeric, EN_26_173070_19)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+16		(B_Numeric, EN_26_173073_19)	O	O	O	O	O	
+استان		(B_Location, EN_26_173074_14)	O	O	O	O	O	
+کشور		(I_Location, EN_26_173074_14)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+دبیرخانه		(B_Location, EN_26_15789_14)	O	O	O	O	O	
+جشنواره		(I_Location, EN_26_15789_14)	O	O	O	O	O	
+تئاتر		(I_Location, EN_26_15789_14)	O	O	O	O	O	
+فتح		(I_Location, EN_26_15789_14)	O	O	O	O	O	
+خرمشهر		(I_Location, EN_26_15789_14)	O	O	O	O	O	
+رسید		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2610">	begin	O	O	O	O	O	O	O
+دبیرکل		(B_Person, EN_26_15856_15)	O	O	O	O	O	(B_Participant,EV_26_3680_232,EN_26_15856_15)
+حزب		(I_Person, EN_26_15856_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15856_15)
+مردم‌سالاری		(I_Person, EN_26_15856_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15856_15)
+در		O	O	O	O	O	O	
+دیدار		O	(B_Meeting, EV_26_3680_232)	Asserted	Past	Positive	EV_26_3680_232	
+با		O	O	O	O	O	O	
+دبیرکل		(B_Person, EN_26_15859_15)	O	O	O	O	O	(B_Participant,EV_26_3680_232,EN_26_15859_15)
+حزب		(I_Person, EN_26_15859_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15859_15)
+جمهوری		(I_Person, EN_26_15859_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15859_15)
+خلق		(I_Person, EN_26_15859_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15859_15)
+ترکیه		(I_Person, EN_26_15859_15)	O	O	O	O	O	(I_Participant,EV_26_3680_232,EN_26_15859_15)
+؛		O	O	O	O	O	O	
+احزاب		(B_Organization, EN_26_15864_12)	O	O	O	O	O	(B_Source,EV_26_30065_226,EN_26_15864_12)
+قانونی		(I_Organization, EN_26_15864_12)	O	O	O	O	O	(I_Source,EV_26_30065_226,EN_26_15864_12)
+می‌توانند		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+توسعه		O	(B_Produce, EV_26_30064_214)	Asserted	Future	Positive	EV_26_30064_214	
+روابط		O	O	O	O	O	O	
+کشورهای		O	O	O	O	O	O	
+منطقه		O	O	O	O	O	O	
+کمک		O	(B_Aid, EV_26_30065_226)	Asserted	Future	Positive	EV_26_30065_226	
+کنند		O	(I_Aid, EV_26_30065_226)	O	O	O	EV_26_30065_226	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2624">	begin	O	O	O	O	O	O	O
+سرپرست		(B_Person, EN_26_15794_15)	O	O	O	O	O	
+فرمانداری		(I_Person, EN_26_15794_15)	O	O	O	O	O	
+بوکان		(I_Person, EN_26_15794_15)	O	O	O	O	O	
+:		(I_Person, EN_26_15794_15)	O	O	O	O	O	
+بوکان		(B_Person, EN_26_15798_15)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+منظر		O	O	O	O	O	O	
+آسیب‌های		O	O	O	O	O	O	
+اجتماعی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+استان		(B_Location, EN_26_15799_14)	O	O	O	O	O	
+چهارم		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+بوکان		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+منظر		O	O	O	O	O	O	
+آسیب‌های		O	O	O	O	O	O	
+اجتماعی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+استان		O	O	O	O	O	O	
+چهارم		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2625">	begin	O	O	O	O	O	O	O
+طی		O	O	O	O	O	O	
+احکام		O	O	O	O	O	O	
+جداگانه‌ای		O	O	O	O	O	O	
+صورت		O	O	O	O	O	O	
+گرفت		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+انتصاب		O	(B_Start-Position, EV_26_3668_208)	Asserted	Past	Positive	EV_26_3668_208	
+بخشداران		(B_Person, EN_26_15806_15)	O	O	O	O	O	(B_Target,EV_26_3668_208,EN_26_15806_15)
+و		O	O	O	O	O	O	
+معاونان		(B_Person, EN_26_15807_15)	O	O	O	O	O	(B_Target,EV_26_3668_208,EN_26_15807_15)
+حوزه		(I_Person, EN_26_15807_15)	O	O	O	O	O	(I_Target,EV_26_3668_208,EN_26_15807_15)
+فرمانداری		(I_Person, EN_26_15807_15)	O	O	O	O	O	(I_Target,EV_26_3668_208,EN_26_15807_15)
+شهرستان		(I_Person, EN_26_15807_15)	O	O	O	O	O	(I_Target,EV_26_3668_208,EN_26_15807_15)
+قروه		(I_Person, EN_26_15807_15)	O	O	O	O	O	(I_Target,EV_26_3668_208,EN_26_15807_15)
+انتصاب		O	O	O	O	O	O	
+بخشداران		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+معاونان		O	O	O	O	O	O	
+حوزه		O	O	O	O	O	O	
+فرمانداری		O	O	O	O	O	O	
+شهرستان		O	O	O	O	O	O	
+قروه		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2626">	begin	O	O	O	O	O	O	O
+گوگل		(B_Organization, EN_26_105874_12)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+یک		(B_Numeric, EN_26_105875_19)	O	O	O	O	O	
+حرکت		O	O	O	O	O	O	
+ناباورانه		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+واحد		O	O	O	O	O	O	
+سازنده		(B_Person, EN_26_105881_15)	O	O	O	O	O	
+موبایل		(I_Person, EN_26_105881_15)	O	O	O	O	O	
+خود		(I_Person, EN_26_105881_15)	O	O	O	O	O	
+،		O	O	O	O	O	O	
+«		(B_Organization, EN_26_105876_12)	O	O	O	O	O	
+موتورولا		(I_Organization, EN_26_105876_12)	O	O	O	O	O	
+موبیلیتی		(I_Organization, EN_26_105876_12)	O	O	O	O	O	
+»		(I_Organization, EN_26_105876_12)	O	O	O	O	O	
+را		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+شرکت		(B_Organization, EN_26_15814_12)	O	O	O	O	O	
+چینی		(I_Organization, EN_26_15814_12)	O	O	O	O	O	
+لنوو		(I_Organization, EN_26_15814_12)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+قیمت		O	O	O	O	O	O	
+۲		(B_Numeric, EN_26_105880_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2627">	begin	O	O	O	O	O	O	O
+مدیرعامل		(B_Person, EN_26_15817_15)	O	O	O	O	O	
+شرکت		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+ملی		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+صنایع		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+مس		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+ایران		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+:		(I_Person, EN_26_15817_15)	O	O	O	O	O	
+انتقال		O	(B_Ownership Transfer, EV_26_3695_212)	Asserted	Unspecified	Positive	EV_26_3695_212	
+20		(B_Numeric, EN_26_15824_19)	O	O	O	O	O	(B_Price,EV_26_3695_212,EN_26_15824_19)
+درصد		(I_Numeric, EN_26_15824_19)	O	O	O	O	O	(I_Price,EV_26_3695_212,EN_26_15824_19)
+از		O	O	O	O	O	O	
+فضای		O	O	O	O	O	O	
+وارداتی		O	O	O	O	O	O	
+ترکیه		(B_Geo-Political Entity, EN_26_15826_13)	O	O	O	O	O	(B_Source,EV_26_3695_212,EN_26_15826_13)
+به		O	O	O	O	O	O	
+آذربایجان‌شرقی		(B_Location, EN_26_15827_14)	O	O	O	O	O	(B_Target,EV_26_3695_212,EN_26_15827_14)
+،		O	O	O	O	O	O	
+جزو		O	O	O	O	O	O	
+اهداف		O	O	O	O	O	O	
+اصلی		O	O	O	O	O	O	
+مس		(B_Organization, EN_26_15899_12)	O	O	O	O	O	(B_Place,EV_26_3695_212,EN_26_15899_12)
+ایران		(I_Organization, EN_26_15899_12)	O	O	O	O	O	(I_Place,EV_26_3695_212,EN_26_15899_12)
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2628">	begin	O	O	O	O	O	O	O
+مراسم		O	(B_Ceremony, EV_26_3683_255)	Asserted	Past	Positive	EV_26_3683_255	
+افتتاحیه		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+نخستین		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+دوره		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+بازی‌های		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+جهانی		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+ساحلی		O	(I_Ceremony, EV_26_3683_255)	O	O	O	EV_26_3683_255	
+در		O	O	O	O	O	O	
+دوحه		(B_Location, EN_26_15869_14)	O	O	O	O	O	(B_Place,EV_26_3683_255,EN_26_15869_14)(B_Place,EV_26_50381_255,EN_26_15869_14)
+قطر		(I_Location, EN_26_15869_14)	O	O	O	O	O	(I_Place,EV_26_3683_255,EN_26_15869_14)(I_Place,EV_26_50381_255,EN_26_15869_14)
+برگزار		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+رژه		O	(B_Ceremony, EV_26_50381_255)	Asserted	Past	Positive	EV_26_50381_255	
+کوتاه		O	(I_Ceremony, EV_26_50381_255)	O	O	O	EV_26_50381_255	
+و		O	(I_Ceremony, EV_26_50381_255)	O	O	O	EV_26_50381_255	
+بدون		O	(I_Ceremony, EV_26_50381_255)	O	O	O	EV_26_50381_255	
+پرچم		O	(I_Ceremony, EV_26_50381_255)	O	O	O	EV_26_50381_255	
+سفرا		(B_Person, EN_26_15874_15)	O	O	O	O	O	(B_Participant,EV_26_3683_255,EN_26_15874_15)(B_Participant,EV_26_50381_255,EN_26_15874_15)
+و		O	O	O	O	O	O	
+نمایندگان		(B_Person, EN_26_15886_15)	O	O	O	O	O	(B_Participant,EV_26_3683_255,EN_26_15886_15)(B_Participant,EV_26_50381_255,EN_26_15886_15)
+کشورها		(I_Person, EN_26_15886_15)	O	O	O	O	O	(I_Participant,EV_26_3683_255,EN_26_15886_15)(I_Participant,EV_26_50381_255,EN_26_15886_15)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2632">	begin	O	O	O	O	O	O	O
+معاون		(B_Person, EN_26_15891_15)	O	O	O	O	O	
+اجتماعی		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+و		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+پیشگیری		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+از		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+جرم		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+دادگستری		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+یزد		(I_Person, EN_26_15891_15)	O	O	O	O	O	
+اعلام		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+کلاهبرداری‌های		O	(B_Economic corruption, EV_26_30117_177)	Asserted	Past	Positive	EV_26_30117_177	
+اینترنتی		O	(I_Economic corruption, EV_26_30117_177)	O	O	O	EV_26_30117_177	
+برنده		O	O	O	O	O	O	
+شدن		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+مسابقات		O	(B_Ceremony, EV_26_30119_255)	Asserted	Past	Positive	EV_26_30119_255	
+،		O	O	O	O	O	O	
+بیشترین		O	O	O	O	O	O	
+پرونده		(B_Facility, EN_26_105884_17)	O	O	O	O	O	
+جرایم		(I_Facility, EN_26_105884_17)	O	O	O	O	O	
+فضای		(I_Facility, EN_26_105884_17)	O	O	O	O	O	
+مجازی		(I_Facility, EN_26_105884_17)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2635">	begin	O	O	O	O	O	O	O
+مهلت		O	O	O	O	O	O	
+استعفا		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+مسئولیت‌های		O	O	O	O	O	O	
+دولتی		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+نامزدی		O	O	O	O	O	O	
+مجلس		O	O	O	O	O	O	
+آغاز		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+پ		O	O	O	O	O	O	
+مهلت		O	O	O	O	O	O	
+استعفا		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+مسئولیت‌های		O	O	O	O	O	O	
+دولتی		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+نامزدی		O	O	O	O	O	O	
+مجلس		O	O	O	O	O	O	
+آغاز		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2636">	begin	O	O	O	O	O	O	O
+مهم‌ترین		O	O	O	O	O	O	
+رویدادهای		O	O	O	O	O	O	
+امروز		O	O	O	O	O	O	
+دنیای		O	O	O	O	O	O	
+IT		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+تکنولوژی		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+تزلزل		O	O	O	O	O	O	
+جایگاه		O	O	O	O	O	O	
+ایالات		O	O	O	O	O	O	
+متحده		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+حوزه		O	O	O	O	O	O	
+فناوری		O	O	O	O	O	O	
+تا		O	O	O	O	O	O	
+شکایت		O	(B_Complaint, EV_26_3791_183)	Asserted	Now	Positive	EV_26_3791_183	
+تسلا		(B_Organization, EN_26_16364_12)	O	O	O	O	O	(B_Source,EV_26_3791_183,EN_26_16364_12)
+از		O	O	O	O	O	O	
+جاسوسان		(B_Person, EN_26_16355_15)	O	O	O	O	O	(B_Target,EV_26_3791_183,EN_26_16355_15)
+داخلی		(I_Person, EN_26_16355_15)	O	O	O	O	O	(I_Target,EV_26_3791_183,EN_26_16355_15)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2638">	begin	O	O	O	O	O	O	O
+موج‌سواری		O	O	O	O	O	O	
+ضد		O	O	O	O	O	O	
+وطنی		O	O	O	O	O	O	
+صدف		(B_Person, EN_26_15923_15)	O	O	O	O	O	(B_Source,EV_26_30114_246,EN_26_15923_15)
+خادم		(I_Person, EN_26_15923_15)	O	O	O	O	O	(I_Source,EV_26_30114_246,EN_26_15923_15)
+و		O	O	O	O	O	O	
+مربی‌اش		(B_Person, EN_26_15925_15)	O	O	O	O	O	(B_Source,EV_26_30114_246,EN_26_15925_15)
+فقط		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+پناهندگی		O	(B_Refuge, EV_26_30114_246)	Asserted	Unspecified	Positive	EV_26_30114_246	
+؟		O	O	O	O	O	O	
+«		(B_Person, EN_26_15926_15)	O	O	O	O	O	
+منشی		(I_Person, EN_26_15926_15)	O	O	O	O	O	
+پور		(I_Person, EN_26_15926_15)	O	O	O	O	O	
+»		(I_Person, EN_26_15926_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+دست		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+خادم		(B_Person, EN_26_105872_15)	O	O	O	O	O	
+بزنند		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+ماکرون		(B_Person, EN_26_105873_15)	O	O	O	O	O	
+می‌خواهم		O	O	O	O	O	O	
+اقدام		O	O	O	O	O	O	
+کند		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2642">	begin	O	O	O	O	O	O	O
+نه		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+جنگ		O	(B_War, EV_26_3700_164)	Asserted	Past	Negative	EV_26_3700_164	
+وزیر		(B_Person, EN_26_15933_15)	O	O	O	O	O	(B_Source,EV_26_3700_164,EN_26_15933_15)(B_Source,EV_26_3701_164,EN_26_15933_15)
+خارجه		(I_Person, EN_26_15933_15)	O	O	O	O	O	(I_Source,EV_26_3700_164,EN_26_15933_15)(I_Source,EV_26_3701_164,EN_26_15933_15)
+آلمان		(I_Person, EN_26_15933_15)	O	O	O	O	O	(I_Source,EV_26_3700_164,EN_26_15933_15)(I_Source,EV_26_3701_164,EN_26_15933_15)
+در		O	O	O	O	O	O	
+عراق		(B_Location, EN_26_15936_14)	O	O	O	O	O	(B_Place,EV_26_3700_164,EN_26_15936_14)(B_Place,EV_26_3701_164,EN_26_15936_14)
+نسبت		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+حمله		O	(B_Attack, EV_26_3701_164)	Asserted	Past	Positive	EV_26_3701_164	
+نظامی		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+ایران		(B_Geo-Political Entity, EN_26_15937_13)	O	O	O	O	O	(B_Target,EV_26_3701_164,EN_26_15937_13)
+هشدار		O	O	O	O	O	O	
+داد		O	O	O	O	O	O	
+آرشیو		O	O	O	O	O	O	
+موضوع		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+فعالین		O	O	O	O	O	O	
+حقوق		O	O	O	O	O	O	
+بشر		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2643">	begin	O	O	O	O	O	O	O
+نیروهای		(B_Person, EN_26_15940_15)	O	O	O	O	O	(B_Source,EV_26_3702_184,EN_26_15940_15)
+داعش		(I_Person, EN_26_15940_15)	O	O	O	O	O	(I_Source,EV_26_3702_184,EN_26_15940_15)
+۱۷۵		(B_Person, EN_26_15942_15)	O	O	O	O	O	(B_Number of Targets,EV_26_3702_184,EN_26_15942_15)
+کارگر		(I_Person, EN_26_15942_15)	O	O	O	O	O	(I_Number of Targets,EV_26_3702_184,EN_26_15942_15)
+را		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+یک		O	O	O	O	O	O	
+کارحانهٔ		(B_Location, EN_26_15944_14)	O	O	O	O	O	(B_Place,EV_26_3702_184,EN_26_15944_14)
+سیمان‌سازی		(I_Location, EN_26_15944_14)	O	O	O	O	O	(I_Place,EV_26_3702_184,EN_26_15944_14)
+در		O	O	O	O	O	O	
+الضمیر		(B_Location, EN_26_15946_14)	O	O	O	O	O	(B_Place,EV_26_3702_184,EN_26_15946_14)
+به		O	O	O	O	O	O	
+اسارت		O	(B_Arrest, EV_26_3702_184)	Asserted	Past	Positive	EV_26_3702_184	
+گرفته		O	(I_Arrest, EV_26_3702_184)	O	O	O	EV_26_3702_184	
+و		O	O	O	O	O	O	
+خبری		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+آنان		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+دست		O	O	O	O	O	O	
+نیست		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2645">	begin	O	O	O	O	O	O	O
+وزیر		(B_Person, EN_26_15959_15)	O	O	O	O	O	(B_Participant,EV_26_3709_232,EN_26_15959_15)
+صنعت		(I_Person, EN_26_15959_15)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15959_15)
+،		(I_Person, EN_26_15959_15)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15959_15)
+معدن		(I_Person, EN_26_15959_15)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15959_15)
+و		(I_Person, EN_26_15959_15)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15959_15)
+تجارت		(I_Person, EN_26_15959_15)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15959_15)
+در		O	O	O	O	O	O	
+جلسه		O	(B_Meeting, EV_26_3709_232)	Asserted	Past	Positive	EV_26_3709_232	
+شورای		(B_Organization, EN_26_15968_12)	O	O	O	O	O	(B_Participant,EV_26_3709_232,EN_26_15968_12)
+گفت‌وگوی		(I_Organization, EN_26_15968_12)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15968_12)
+کرمانشاه		(I_Organization, EN_26_15968_12)	O	O	O	O	O	(I_Participant,EV_26_3709_232,EN_26_15968_12)
+افزایش		O	(B_Production Rise, EV_26_3705_219)	Asserted	Past	Positive	EV_26_3705_219	
+تولید		O	(I_Production Rise, EV_26_3705_219)	O	O	O	EV_26_3705_219	
+خودرو		(B_Facility, EN_26_15966_17)	O	O	O	O	O	(B_Participant,EV_26_3705_219,EN_26_15966_17)
+از		O	O	O	O	O	O	
+ماه‌های		(B_Time, EN_26_15976_18)	O	O	O	O	O	(B_Time,EV_26_3705_219,EN_26_15976_18)
+پایانی		(I_Time, EN_26_15976_18)	O	O	O	O	O	(I_Time,EV_26_3705_219,EN_26_15976_18)
+سال		(I_Time, EN_26_15976_18)	O	O	O	O	O	(I_Time,EV_26_3705_219,EN_26_15976_18)
+گذشته		(I_Time, EN_26_15976_18)	O	O	O	O	O	(I_Time,EV_26_3705_219,EN_26_15976_18)
+آغاز		O	O	O	O	O	O	
+شده		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2647">	begin	O	O	O	O	O	O	O
+«		(B_Person, EN_26_15980_15)	O	O	O	O	O	(B_Source,EV_26_50386_221,EN_26_15980_15)
+بنی		(I_Person, EN_26_15980_15)	O	O	O	O	O	(I_Source,EV_26_50386_221,EN_26_15980_15)
+گانتز		(I_Person, EN_26_15980_15)	O	O	O	O	O	(I_Source,EV_26_50386_221,EN_26_15980_15)
+»		(I_Person, EN_26_15980_15)	O	O	O	O	O	(I_Source,EV_26_50386_221,EN_26_15980_15)
+رسما		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+ناکامی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+تشکیل		O	(B_Establishment, EV_26_50386_221)	Asserted	Now	Positive	EV_26_50386_221	
+کابینه		(B_Organization, EN_26_173076_12)	O	O	O	O	O	(B_Target,EV_26_50386_221,EN_26_173076_12)
+اعتراف		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+«		O	O	O	O	O	O	
+بنی		O	O	O	O	O	O	
+گانتز		O	O	O	O	O	O	
+»		O	O	O	O	O	O	
+رسما		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+ناکامی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+تشکیل		O	O	O	O	O	O	
+کابینه		O	O	O	O	O	O	
+اعتراف		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2648">	begin	O	O	O	O	O	O	O
+10		(B_Person, EN_26_15984_15)	O	O	O	O	O	
+هزار		(I_Person, EN_26_15984_15)	O	O	O	O	O	
+زوج		(I_Person, EN_26_15984_15)	O	O	O	O	O	
+خراسانی		(I_Person, EN_26_15984_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+کارگاه‌های		(B_Location, EN_26_15988_14)	O	O	O	O	O	
+آموزشی		(I_Location, EN_26_15988_14)	O	O	O	O	O	
+ازدواج		(I_Location, EN_26_15988_14)	O	O	O	O	O	
+شرکت		O	O	O	O	O	O	
+کردند		O	O	O	O	O	O	
+10		O	O	O	O	O	O	
+هزار		O	O	O	O	O	O	
+زوج		O	O	O	O	O	O	
+خراسانی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+کارگاه‌های		O	O	O	O	O	O	
+آموزشی		O	O	O	O	O	O	
+ازدواج		O	O	O	O	O	O	
+شرکت		O	O	O	O	O	O	
+کردند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2649">	begin	O	O	O	O	O	O	O
+118		(B_Numeric, EN_26_16006_19)	O	O	O	O	O	(B_Number of Targets,EV_26_3713_267,EN_26_16006_19)
+هزار		(I_Numeric, EN_26_16006_19)	O	O	O	O	O	(I_Number of Targets,EV_26_3713_267,EN_26_16006_19)
+قلم		(I_Numeric, EN_26_16006_19)	O	O	O	O	O	(I_Number of Targets,EV_26_3713_267,EN_26_16006_19)
+داروی		(B_Facility, EN_26_16009_17)	O	O	O	O	O	(B_Target,EV_26_3713_267,EN_26_16009_17)
+قاچاق		(I_Facility, EN_26_16009_17)	O	O	O	O	O	(I_Target,EV_26_3713_267,EN_26_16009_17)
+در		O	O	O	O	O	O	
+مرز		(B_Location, EN_26_16000_14)	O	O	O	O	O	(B_Place,EV_26_3713_267,EN_26_16000_14)
+تایباد		(I_Location, EN_26_16000_14)	O	O	O	O	O	(I_Place,EV_26_3713_267,EN_26_16000_14)
+کشف		O	(B_Discovery, EV_26_3713_267)	Asserted	Past	Positive	EV_26_3713_267	
+شد		O	(I_Discovery, EV_26_3713_267)	O	O	O	EV_26_3713_267	
+118		O	O	O	O	O	O	
+هزار		O	O	O	O	O	O	
+قلم		O	O	O	O	O	O	
+داروی		O	O	O	O	O	O	
+قاچاق		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+مرز		O	O	O	O	O	O	
+تایباد		O	O	O	O	O	O	
+کشف		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2651">	begin	O	O	O	O	O	O	O
+9		(B_Numeric, EN_26_173078_19)	O	O	O	O	O	(B_Number of Participants,EV_26_50389_172,EN_26_173078_19)(B_Number of Deaths,EV_26_3818_164,EN_26_173078_19)
+کشته		O	(B_Death, EV_26_50389_172)	Asserted	Past	Positive	EV_26_50389_172	
+در		O	O	O	O	O	O	
+حمله		O	(B_Attack, EV_26_3818_164)	Asserted	Past	Positive	EV_26_3818_164	
+هوایی		O	O	O	O	O	O	
+ائتلاف		(B_Organization, EN_26_16438_12)	O	O	O	O	O	(B_Source,EV_26_3818_164,EN_26_16438_12)
+سعودی		(I_Organization, EN_26_16438_12)	O	O	O	O	O	(I_Source,EV_26_3818_164,EN_26_16438_12)
+به		O	O	O	O	O	O	
+شمال‌غرب		(B_Location, EN_26_16440_14)	O	O	O	O	O	(B_Place,EV_26_3818_164,EN_26_16440_14)(B_Place,EV_26_50389_172,EN_26_16440_14)
+یمن		(I_Location, EN_26_16440_14)	O	O	O	O	O	(I_Place,EV_26_3818_164,EN_26_16440_14)(I_Place,EV_26_50389_172,EN_26_16440_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2652">	begin	O	O	O	O	O	O	O
+از		O	O	O	O	O	O	
+درون		O	O	O	O	O	O	
+تجمع		O	(B_Protest, EV_26_3794_270)	Asserted	Unspecified	Positive	EV_26_3794_270	
+انتخاباتی		O	O	O	O	O	O	
+ترامپ		(B_Person, EN_26_16365_15)	O	O	O	O	O	(B_Target,EV_26_3794_270,EN_26_16365_15)
+؛		O	O	O	O	O	O	
+نفرت		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+خشونت		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+شعارهای		O	O	O	O	O	O	
+ترسناک		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+درون		O	O	O	O	O	O	
+تجمع		O	O	O	O	O	O	
+انتخاباتی		O	O	O	O	O	O	
+ترامپ		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+نفرت		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+خشونت		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+شعارهای		O	O	O	O	O	O	
+ترسناک		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2696">	begin	O	O	O	O	O	O	O
+سیلاب		O	(B_Flood, EV_26_50388_152)	Asserted	Past	Positive	EV_26_50388_152	
+و		O	O	O	O	O	O	
+طغیان		O	O	O	O	O	O	
+رودخانه		(B_Location, EN_26_16376_14)	O	O	O	O	O	(B_Source,EV_26_50387_932,EN_26_16376_14)(B_Participant,EV_26_50388_152,EN_26_16376_14)
+راه		(B_Location, EN_26_16377_14)	O	O	O	O	O	(B_Target,EV_26_50387_932,EN_26_16377_14)(B_Place,EV_26_50388_152,EN_26_16377_14)
+فنوج		(I_Location, EN_26_16377_14)	O	O	O	O	O	(I_Target,EV_26_50387_932,EN_26_16377_14)(I_Place,EV_26_50388_152,EN_26_16377_14)
+-		O	O	O	O	O	O	
+کتیج		(B_Location, EN_26_16370_14)	O	O	O	O	O	(B_Target,EV_26_50387_932,EN_26_16370_14)(B_Place,EV_26_50388_152,EN_26_16370_14)
+را		O	O	O	O	O	O	
+بست		O	(B_Ban, EV_26_50387_932)	Asserted	Past	Positive	EV_26_50387_932	
+سیلاب		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+طغیان		O	O	O	O	O	O	
+رودخانه		O	O	O	O	O	O	
+راه		O	O	O	O	O	O	
+فنوج		O	O	O	O	O	O	
+-		O	O	O	O	O	O	
+کتیج		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+بست		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2697">	begin	O	O	O	O	O	O	O
+شکایت		O	(B_Complaint, EV_26_3805_183)	Asserted	Past	Positive	EV_26_3805_183	
+برخی		O	O	O	O	O	O	
+خانواده‌های		(B_Organization, EN_26_106042_12)	O	O	O	O	O	(B_Source,EV_26_3805_183,EN_26_106042_12)
+قربانیان		(I_Organization, EN_26_106042_12)	O	O	O	O	O	(I_Source,EV_26_3805_183,EN_26_106042_12)
+سقوط		(I_Organization, EN_26_106042_12)	O	O	O	O	O	(I_Source,EV_26_3805_183,EN_26_106042_12)
+هواپیما		(I_Organization, EN_26_106042_12)	O	O	O	O	O	(I_Source,EV_26_3805_183,EN_26_106042_12)
+در		O	O	O	O	O	O	
+اتیوپی		(B_Location, EN_26_16388_14)	O	O	O	O	O	(B_Place,EV_26_3805_183,EN_26_16388_14)
+از		O	O	O	O	O	O	
+بوئینگ		(B_Organization, EN_26_16389_12)	O	O	O	O	O	(B_Target,EV_26_3805_183,EN_26_16389_12)
+شکایت		O	O	O	O	O	O	
+برخی		O	O	O	O	O	O	
+خانواده‌های		O	O	O	O	O	O	
+قربانیان		O	O	O	O	O	O	
+سقوط		O	O	O	O	O	O	
+هواپیما		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+اتیوپی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+بوئینگ		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2700">	begin	O	O	O	O	O	O	O
+فرار		O	(B_Escape, EV_26_3808_174)	Asserted	Past	Positive	EV_26_3808_174	
+مدیران		(B_Person, EN_26_16390_15)	O	O	O	O	O	(B_Source,EV_26_3808_174,EN_26_16390_15)
+و		O	O	O	O	O	O	
+مسئولان		(B_Person, EN_26_16393_15)	O	O	O	O	O	(B_Source,EV_26_3808_174,EN_26_16393_15)
+نظام		(I_Person, EN_26_16393_15)	O	O	O	O	O	(I_Source,EV_26_3808_174,EN_26_16393_15)
+شدت		O	O	O	O	O	O	
+گرفته		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+یک		O	O	O	O	O	O	
+مقام		(B_Person, EN_26_16395_15)	O	O	O	O	O	
+ارشد		(I_Person, EN_26_16395_15)	O	O	O	O	O	
+نیروی		(I_Person, EN_26_16395_15)	O	O	O	O	O	
+انتظامی		(I_Person, EN_26_16395_15)	O	O	O	O	O	
+می‌گوید		O	O	O	O	O	O	
+استرداد		O	(B_Extradite, EV_26_3809_237)	Asserted	Past	Positive	EV_26_3809_237	
+متهمان		(B_Person, EN_26_16399_15)	O	O	O	O	O	(B_Target,EV_26_3809_237,EN_26_16399_15)
+فاسد		(I_Person, EN_26_16399_15)	O	O	O	O	O	(I_Target,EV_26_3809_237,EN_26_16399_15)
+به		O	O	O	O	O	O	
+ایران		(B_Location, EN_26_16401_14)	O	O	O	O	O	(B_Place,EV_26_3809_237,EN_26_16401_14)
+بیشتر		O	O	O	O	O	O	
+شده		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2701">	begin	O	O	O	O	O	O	O
+فرهاد		(B_Person, EN_26_16402_15)	O	O	O	O	O	
+آگاهی		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+،		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+رئیس		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+هیئت		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+مدیره		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+انجمن		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+واردکنندگان		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+فرآورده‌های		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+خام		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+دامی		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+ایران		(I_Person, EN_26_16402_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+انباشت		O	O	O	O	O	O	
+نقدینگی		(B_Facility, EN_26_16415_17)	O	O	O	O	O	
+اقتصاد		O	O	O	O	O	O	
+ایران		(B_Geo-Political Entity, EN_26_16416_13)	O	O	O	O	O	
+را		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+گروگان		O	O	O	O	O	O	
+گرفته		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2702">	begin	O	O	O	O	O	O	O
+قره		(B_Person, EN_26_16428_15)	O	O	O	O	O	
+خاتنی		(I_Person, EN_26_16428_15)	O	O	O	O	O	
+تشریح		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+موافقت		O	O	O	O	O	O	
+اوپک		(B_Organization, EN_26_16430_12)	O	O	O	O	O	(B_Participant,EV_26_3829_220,EN_26_16430_12)
+با		O	O	O	O	O	O	
+تمدید		O	O	O	O	O	O	
+9		(B_Time, EN_26_16431_18)	O	O	O	O	O	(B_Time,EV_26_3829_220,EN_26_16431_18)
+ماهه		(I_Time, EN_26_16431_18)	O	O	O	O	O	(I_Time,EV_26_3829_220,EN_26_16431_18)
+کاهش		O	(B_Production Drop, EV_26_3829_220)	Asserted	Past	Positive	EV_26_3829_220	
+تولید		O	(I_Production Drop, EV_26_3829_220)	O	O	O	EV_26_3829_220	
+نفت		O	(I_Production Drop, EV_26_3829_220)	O	O	O	EV_26_3829_220	
+چه		O	O	O	O	O	O	
+تاثیری		O	O	O	O	O	O	
+بر		O	O	O	O	O	O	
+قیمت		O	O	O	O	O	O	
+نفت		O	O	O	O	O	O	
+ایران		O	O	O	O	O	O	
+دارد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2705">	begin	O	O	O	O	O	O	O
+کریستیانو		(B_Person, EN_26_16445_15)	O	O	O	O	O	
+رونالدو		(I_Person, EN_26_16445_15)	O	O	O	O	O	
+با		O	O	O	O	O	O	
+14		(B_Numeric, EN_26_16447_19)	O	O	O	O	O	
+گل		(I_Numeric, EN_26_16447_19)	O	O	O	O	O	
+زده		(I_Numeric, EN_26_16447_19)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+سال		(B_Time, EN_26_16450_18)	O	O	O	O	O	
+2019		(I_Time, EN_26_16450_18)	O	O	O	O	O	
+،		O	O	O	O	O	O	
+رکورد		O	O	O	O	O	O	
+گل‌های		O	O	O	O	O	O	
+ملی		O	O	O	O	O	O	
+خودش		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+یک		(B_Time, EN_26_16452_18)	O	O	O	O	O	
+سال		(I_Time, EN_26_16452_18)	O	O	O	O	O	
+میلادی		(I_Time, EN_26_16452_18)	O	O	O	O	O	
+ارتقا		O	O	O	O	O	O	
+بخشید		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2706">	begin	O	O	O	O	O	O	O
+کشف		O	(B_Discovery, EV_26_3820_267)	Asserted	Past	Positive	EV_26_3820_267	
+بیش		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+2		(B_Numeric, EN_26_16463_19)	O	O	O	O	O	
+میلیارد		(I_Numeric, EN_26_16463_19)	O	O	O	O	O	
+ریال		(I_Numeric, EN_26_16463_19)	O	O	O	O	O	
+کالای		(B_Facility, EN_26_16461_17)	O	O	O	O	O	(B_Target,EV_26_3820_267,EN_26_16461_17)
+قاچاق		(I_Facility, EN_26_16461_17)	O	O	O	O	O	(I_Target,EV_26_3820_267,EN_26_16461_17)
+در		O	O	O	O	O	O	
+هندیجان		(B_Location, EN_26_16460_14)	O	O	O	O	O	(B_Place,EV_26_3820_267,EN_26_16460_14)
+کشف		O	O	O	O	O	O	
+بیش		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+2		O	O	O	O	O	O	
+میلیارد		O	O	O	O	O	O	
+ریال		O	O	O	O	O	O	
+کالای		O	O	O	O	O	O	
+قاچاق		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+هندیجان		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2707">	begin	O	O	O	O	O	O	O
+کن		(B_Person, EN_26_16466_15)	O	O	O	O	O	(B_Target,EV_26_3821_210,EN_26_16466_15)
+لیوینگستون		(I_Person, EN_26_16466_15)	O	O	O	O	O	(I_Target,EV_26_3821_210,EN_26_16466_15)
+پس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+اینکه		O	O	O	O	O	O	
+گفت		O	O	O	O	O	O	
+آدولف		(B_Person, EN_26_16468_15)	O	O	O	O	O	(B_Source,EV_26_3821_210,EN_26_16468_15)
+هیتلر		(I_Person, EN_26_16468_15)	O	O	O	O	O	(I_Source,EV_26_3821_210,EN_26_16468_15)
+یک		(I_Person, EN_26_16468_15)	O	O	O	O	O	(I_Source,EV_26_3821_210,EN_26_16468_15)
+صهیونیست		(I_Person, EN_26_16468_15)	O	O	O	O	O	(I_Source,EV_26_3821_210,EN_26_16468_15)
+بوده		(I_Person, EN_26_16468_15)	O	O	O	O	O	(I_Source,EV_26_3821_210,EN_26_16468_15)
+است		(I_Person, EN_26_16468_15)	O	O	O	O	O	(I_Source,EV_26_3821_210,EN_26_16468_15)
+،		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+کار		O	O	O	O	O	O	
+با		O	O	O	O	O	O	
+حزبِ		(B_Organization, EN_26_16476_12)	O	O	O	O	O	(B_Occupation,EV_26_3821_210,EN_26_16476_12)
+کارگرِ		(I_Organization, EN_26_16476_12)	O	O	O	O	O	(I_Occupation,EV_26_3821_210,EN_26_16476_12)
+بریتانیا		(I_Organization, EN_26_16476_12)	O	O	O	O	O	(I_Occupation,EV_26_3821_210,EN_26_16476_12)
+معلق		O	(B_End Position, EV_26_3821_210)	Asserted	Past	Positive	EV_26_3821_210	
+شد		O	(I_End Position, EV_26_3821_210)	O	O	O	EV_26_3821_210	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2708">	begin	O	O	O	O	O	O	O
+کودک		(B_Person, EN_26_16479_15)	O	O	O	O	O	(B_Participant,EV_26_3823_137,EN_26_16479_15)(B_Participant,EV_26_3824_134,EN_26_16479_15)
+پنج‌ساله		(I_Person, EN_26_16479_15)	O	O	O	O	O	(I_Participant,EV_26_3823_137,EN_26_16479_15)(I_Participant,EV_26_3824_134,EN_26_16479_15)
+در		O	O	O	O	O	O	
+نرجه		(B_Location, EN_26_16481_14)	O	O	O	O	O	(B_Place,EV_26_3823_137,EN_26_16481_14)
+تاکستان		(I_Location, EN_26_16481_14)	O	O	O	O	O	(I_Place,EV_26_3823_137,EN_26_16481_14)
+بر		O	O	O	O	O	O	
+اثر		O	O	O	O	O	O	
+غرق‌شدگی		O	(B_Drowning, EV_26_3823_137)	Asserted	Past	Positive	EV_26_3823_137	
+جان		O	(B_Death, EV_26_3824_134)	Asserted	Past	Positive	EV_26_3824_134	
+باخت		O	(I_Death, EV_26_3824_134)	O	O	O	EV_26_3824_134	
+کودک		O	O	O	O	O	O	
+پنج‌ساله		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+نرجه		O	O	O	O	O	O	
+تاکستان		O	O	O	O	O	O	
+بر		O	O	O	O	O	O	
+اثر		O	O	O	O	O	O	
+غرق‌شدگی		O	O	O	O	O	O	
+جان		O	O	O	O	O	O	
+باخت		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2709">	begin	O	O	O	O	O	O	O
+گزارش		O	O	O	O	O	O	
+استاندار		(B_Person, EN_26_16483_15)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+تلاش‌ها		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+خروج		O	O	O	O	O	O	
+راه‌آهن		O	O	O	O	O	O	
+فارس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+بن‌بست		O	O	O	O	O	O	
+گزارش		O	O	O	O	O	O	
+استاندار		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+تلاش‌ها		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+خروج		O	O	O	O	O	O	
+راه‌آهن		O	O	O	O	O	O	
+فارس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+بن‌بست		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2710">	begin	O	O	O	O	O	O	O
+گوترش		(B_Person, EN_26_16484_15)	O	O	O	O	O	(B_Source,EV_26_3826_244,EN_26_16484_15)
+حمله		O	(B_Attack, EV_26_3828_164)	Asserted	Past	Positive	EV_26_3828_164	
+به		O	O	O	O	O	O	
+مرکز		(B_Organization, EN_26_16485_12)	O	O	O	O	O	(B_Target,EV_26_3828_164,EN_26_16485_12)
+مهاجران		(I_Organization, EN_26_16485_12)	O	O	O	O	O	(I_Target,EV_26_3828_164,EN_26_16485_12)
+در		O	O	O	O	O	O	
+طرابلس		(B_Location, EN_26_16487_14)	O	O	O	O	O	(B_Place,EV_26_3828_164,EN_26_16487_14)
+را		O	O	O	O	O	O	
+محکوم		O	(B_Condemn, EV_26_3826_244)	Asserted	Past	Positive	EV_26_3826_244	
+کرد		O	(I_Condemn, EV_26_3826_244)	O	O	O	EV_26_3826_244	
+گوترش		O	O	O	O	O	O	
+حمله		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+مرکز		O	O	O	O	O	O	
+مهاجران		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+طرابلس		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+محکوم		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2711">	begin	O	O	O	O	O	O	O
+لاوروف		(B_Person, EN_26_16533_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+اقدامات		O	O	O	O	O	O	
+آمریکا		(B_Geo-Political Entity, EN_26_16532_13)	O	O	O	O	O	
+منجر		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+خلق		(B_Organization, EN_26_16534_12)	O	O	O	O	O	
+القاعده		(I_Organization, EN_26_16534_12)	O	O	O	O	O	
+و		O	O	O	O	O	O	
+داعش		(B_Organization, EN_26_16536_12)	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+لاوروف		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+اقدامات		O	O	O	O	O	O	
+آمریکا		O	O	O	O	O	O	
+منجر		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+خلق		O	O	O	O	O	O	
+القاعده		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+داعش		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2712">	begin	O	O	O	O	O	O	O
+مجتبی		(B_Person, EN_26_16488_15)	O	O	O	O	O	(B_Target,EV_26_3832_157,EN_26_16488_15)
+ذوالنور		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+،		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+نماینده		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+قم		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+و		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+رئیس		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+کمیسیون		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+امنیت		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+مجلس		(I_Person, EN_26_16488_15)	O	O	O	O	O	(I_Target,EV_26_3832_157,EN_26_16488_15)
+در		O	O	O	O	O	O	
+پستی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+اینستاگرام		O	O	O	O	O	O	
+تایید		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+کرونا		O	(B_Epidemics, EV_26_3832_157)	Asserted	Past	Positive	EV_26_3832_157	
+مبتلا		O	O	O	O	O	O	
+شده‌است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2713">	begin	O	O	O	O	O	O	O
+محمد		(B_Person, EN_26_16499_15)	O	O	O	O	O	(B_Participant,EV_26_3834_255,EN_26_16499_15)(B_Source,EV_26_3833_262,EN_26_16499_15)
+اشرف		(I_Person, EN_26_16499_15)	O	O	O	O	O	(I_Participant,EV_26_3834_255,EN_26_16499_15)(I_Source,EV_26_3833_262,EN_26_16499_15)
+غنی		(I_Person, EN_26_16499_15)	O	O	O	O	O	(I_Participant,EV_26_3834_255,EN_26_16499_15)(I_Source,EV_26_3833_262,EN_26_16499_15)
+و		O	O	O	O	O	O	
+عبدالله		(B_Person, EN_26_16502_15)	O	O	O	O	O	(B_Participant,EV_26_3834_255,EN_26_16502_15)(B_Source,EV_26_3833_262,EN_26_16502_15)
+عبدالله		(I_Person, EN_26_16502_15)	O	O	O	O	O	(I_Participant,EV_26_3834_255,EN_26_16502_15)(I_Source,EV_26_3833_262,EN_26_16502_15)
+دو		O	O	O	O	O	O	
+رقیب		O	O	O	O	O	O	
+اصلی		O	O	O	O	O	O	
+انتخابات		O	(B_Election Candidacy, EV_26_3833_262)	Asserted	Past	Positive	EV_26_3833_262	
+ریاست		O	O	O	O	O	O	
+جمهوری		O	O	O	O	O	O	
+افغانستان		(B_Geo-Political Entity, EN_26_16504_13)	O	O	O	O	O	(B_Place,EV_26_3834_255,EN_26_16504_13)
+همزمان		O	O	O	O	O	O	
+با		O	O	O	O	O	O	
+هم		O	O	O	O	O	O	
+مراسم		O	(B_Ceremony, EV_26_3834_255)	Asserted	Past	Positive	EV_26_3834_255	
+تحلیف		O	O	O	O	O	O	
+برگزار		O	O	O	O	O	O	
+کردند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2714">	begin	O	O	O	O	O	O	O
+مدیرکل		(B_Person, EN_26_16505_15)	O	O	O	O	O	
+روابط		(I_Person, EN_26_16505_15)	O	O	O	O	O	
+عمومی		(I_Person, EN_26_16505_15)	O	O	O	O	O	
+استانداری		(I_Person, EN_26_16505_15)	O	O	O	O	O	
+خوزستان		(I_Person, EN_26_16505_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+گفت		O	O	O	O	O	O	
+وگو		O	O	O	O	O	O	
+با		O	O	O	O	O	O	
+برنا		(B_Organization, EN_26_16510_12)	O	O	O	O	O	
+تایید		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+استاندار		(B_Person, EN_26_16511_15)	O	O	O	O	O	
+خوزستان		(I_Person, EN_26_16511_15)	O	O	O	O	O	
+مجددا		O	O	O	O	O	O	
+تحت		O	O	O	O	O	O	
+عمل		O	O	O	O	O	O	
+جراحی		O	O	O	O	O	O	
+قرار		O	O	O	O	O	O	
+گرفت		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2715">	begin	O	O	O	O	O	O	O
+مراحلی		O	O	O	O	O	O	
+که		O	O	O	O	O	O	
+باید		O	O	O	O	O	O	
+پس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+مفقود		O	O	O	O	O	O	
+شدن		O	O	O	O	O	O	
+گذرنامه		O	O	O	O	O	O	
+طی		O	O	O	O	O	O	
+شود		O	O	O	O	O	O	
+مراحلی		O	O	O	O	O	O	
+که		O	O	O	O	O	O	
+باید		O	O	O	O	O	O	
+پس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+مفقود		O	O	O	O	O	O	
+شدن		O	O	O	O	O	O	
+گذرنامه		O	O	O	O	O	O	
+طی		O	O	O	O	O	O	
+شود		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2716">	begin	O	O	O	O	O	O	O
+مشاور		(B_Person, EN_26_16523_15)	O	O	O	O	O	
+شهردار		(I_Person, EN_26_16523_15)	O	O	O	O	O	
+در		(I_Person, EN_26_16523_15)	O	O	O	O	O	
+امور		(I_Person, EN_26_16523_15)	O	O	O	O	O	
+حقوق		(I_Person, EN_26_16523_15)	O	O	O	O	O	
+شهروندی		(I_Person, EN_26_16523_15)	O	O	O	O	O	
+و		O	O	O	O	O	O	
+مدیر		(B_Person, EN_26_16514_15)	O	O	O	O	O	
+بازرسی		(I_Person, EN_26_16514_15)	O	O	O	O	O	
+شهرداری		(I_Person, EN_26_16514_15)	O	O	O	O	O	
+فردیس		(I_Person, EN_26_16514_15)	O	O	O	O	O	
+مطرح		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+تخریب		O	(B_Destruction, EV_26_3837_169)	Asserted	Past	Positive	EV_26_3837_169	
+5		(B_Numeric, EN_26_16519_19)	O	O	O	O	O	(B_Number of Targets,EV_26_3837_169,EN_26_16519_19)
+مورد		(I_Numeric, EN_26_16519_19)	O	O	O	O	O	(I_Number of Targets,EV_26_3837_169,EN_26_16519_19)
+تخلف		(I_Numeric, EN_26_16519_19)	O	O	O	O	O	(I_Number of Targets,EV_26_3837_169,EN_26_16519_19)
+ساختمانی		(I_Numeric, EN_26_16519_19)	O	O	O	O	O	(I_Number of Targets,EV_26_3837_169,EN_26_16519_19)
+در		O	O	O	O	O	O	
+فردیس		(B_Location, EN_26_16518_14)	O	O	O	O	O	(B_Place,EV_26_3837_169,EN_26_16518_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2717">	begin	O	O	O	O	O	O	O
+معاون		(B_Person, EN_26_20836_15)	O	O	O	O	O	
+حقوق		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+بشر		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+و		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+امور		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+بین‌الملل		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+وزیر		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+دادگستری		(I_Person, EN_26_20836_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+رویکرد		O	O	O	O	O	O	
+تفکر		O	O	O	O	O	O	
+کلامی		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+اخلاقیات		O	O	O	O	O	O	
+راه		O	O	O	O	O	O	
+برون‌رفت		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+چالش‌های		O	O	O	O	O	O	
+دنیای		O	O	O	O	O	O	
+اسلام		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2718">	begin	O	O	O	O	O	O	O
+معاون		(B_Person, EN_26_16539_15)	O	O	O	O	O	
+دفتر		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+حمایت		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+از		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+تولید		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+صنایع‌دستی		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+سازمان		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+میراث		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+فرهنگی		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+:		(I_Person, EN_26_16539_15)	O	O	O	O	O	
+محصولات		(B_Facility, EN_26_16550_17)	O	O	O	O	O	
+کپی		(I_Facility, EN_26_16550_17)	O	O	O	O	O	
+چینی		(I_Facility, EN_26_16550_17)	O	O	O	O	O	
+هرگز		O	O	O	O	O	O	
+توان		O	O	O	O	O	O	
+رقابت		O	O	O	O	O	O	
+با		O	O	O	O	O	O	
+صنایع‌دستی		(B_Facility, EN_26_16554_17)	O	O	O	O	O	
+ایرانی		(I_Facility, EN_26_16554_17)	O	O	O	O	O	
+را		O	O	O	O	O	O	
+ندارند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2719">	begin	O	O	O	O	O	O	O
+منابع		(B_Organization, EN_26_16556_12)	O	O	O	O	O	
+آگاه		(I_Organization, EN_26_16556_12)	O	O	O	O	O	
+:		(I_Organization, EN_26_16556_12)	O	O	O	O	O	
+توافق		O	O	O	O	O	O	
+کاهش		O	(B_Production Drop, EV_26_3841_220)	Asserted	Future	Positive	EV_26_3841_220	
+تولید		O	(I_Production Drop, EV_26_3841_220)	O	O	O	EV_26_3841_220	
+تا		O	O	O	O	O	O	
+مارس		(B_Time, EN_26_16559_18)	O	O	O	O	O	(B_Time,EV_26_3841_220,EN_26_16559_18)
+2020		(I_Time, EN_26_16559_18)	O	O	O	O	O	(I_Time,EV_26_3841_220,EN_26_16559_18)
+تمدید		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+منابع		O	O	O	O	O	O	
+آگاه		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+توافق		O	O	O	O	O	O	
+کاهش		O	O	O	O	O	O	
+تولید		O	O	O	O	O	O	
+تا		O	O	O	O	O	O	
+مارس		O	O	O	O	O	O	
+2020		O	O	O	O	O	O	
+تمدید		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2720">	begin	O	O	O	O	O	O	O
+نشریه		O	O	O	O	O	O	
+&quot		(B_Organization, EN_26_22418_12)	O	O	O	O	O	
+;		(I_Organization, EN_26_22418_12)	O	O	O	O	O	
+فارین‌پالسی&quot		(I_Organization, EN_26_22418_12)	O	O	O	O	O	
+;		(I_Organization, EN_26_22418_12)	O	O	O	O	O	
+مطرح		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+مسئول		(B_Person, EN_26_105862_15)	O	O	O	O	O	
+اصلی		(I_Person, EN_26_105862_15)	O	O	O	O	O	
+کودتای		(I_Person, EN_26_105862_15)	O	O	O	O	O	
+28		(I_Person, EN_26_105862_15)	O	O	O	O	O	
+مرداد		(I_Person, EN_26_105862_15)	O	O	O	O	O	
+آمریکا		(B_Geo-Political Entity, EN_26_22427_13)	O	O	O	O	O	
+بود		O	O	O	O	O	O	
+یا		O	O	O	O	O	O	
+انگلیس		(B_Person, EN_26_22437_15)	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+چه		O	O	O	O	O	O	
+کسی		O	O	O	O	O	O	
+دولت		(B_Organization, EN_26_22440_12)	O	O	O	O	O	(B_Target,EV_26_5212_252,EN_26_22440_12)
+مصدق		(I_Organization, EN_26_22440_12)	O	O	O	O	O	(I_Target,EV_26_5212_252,EN_26_22440_12)
+را		O	O	O	O	O	O	
+سرنگون		O	(B_Suppress, EV_26_5212_252)	Asserted	Past	Positive	EV_26_5212_252	
+کرد		O	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="2721">	begin	O	O	O	O	O	O	O
+نیروهای		(B_Person, EN_26_22802_15)	O	O	O	O	O	(B_Source,EV_26_5302_249,EN_26_22802_15)
+نظامی		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+هوادار		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+معمر		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+قذافی		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+،		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+رهبر		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+لیبی		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+،		(I_Person, EN_26_22802_15)	O	O	O	O	O	(I_Source,EV_26_5302_249,EN_26_22802_15)
+پس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+چند		O	O	O	O	O	O	
+روز		O	O	O	O	O	O	
+نبرد		O	O	O	O	O	O	
+سخت		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+تا		O	O	O	O	O	O	
+مرکز		(B_Location, EN_26_22779_14)	O	O	O	O	O	(B_Target,EV_26_5302_249,EN_26_22779_14)
+شهر		(I_Location, EN_26_22779_14)	O	O	O	O	O	(I_Target,EV_26_5302_249,EN_26_22779_14)
+مصراته		(I_Location, EN_26_22779_14)	O	O	O	O	O	(I_Target,EV_26_5302_249,EN_26_22779_14)
+پیشروی		O	(B_Occupy, EV_26_5302_249)	Asserted	Past	Positive	EV_26_5302_249	
+کردند		O	(I_Occupy, EV_26_5302_249)	O	O	O	EV_26_5302_249	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3311">	begin	O	O	O	O	O	O	O
+جانشین		(B_Person, EN_26_22445_15)	O	O	O	O	O	
+فرمانده		(I_Person, EN_26_22445_15)	O	O	O	O	O	
+انتظامی		(I_Person, EN_26_22445_15)	O	O	O	O	O	
+استان		(I_Person, EN_26_22445_15)	O	O	O	O	O	
+عنوان		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+کشف		O	(B_Discovery, EV_26_5217_267)	Asserted	Past	Positive	EV_26_5217_267	
+298		(B_Numeric, EN_26_22449_19)	O	O	O	O	O	(B_Number of Targets,EV_26_5217_267,EN_26_22449_19)
+کیلو		(I_Numeric, EN_26_22449_19)	O	O	O	O	O	(I_Number of Targets,EV_26_5217_267,EN_26_22449_19)
+مواد		(B_Facility, EN_26_22451_17)	O	O	O	O	O	(B_Target,EV_26_5217_267,EN_26_22451_17)
+افیونی		(I_Facility, EN_26_22451_17)	O	O	O	O	O	(I_Target,EV_26_5217_267,EN_26_22451_17)
+در		O	O	O	O	O	O	
+عملیات		O	O	O	O	O	O	
+مشترک		O	O	O	O	O	O	
+پلیسی		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3569">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+روزهای		(B_Time, EN_26_22464_18)	O	O	O	O	O	(B_Time,EV_26_5219_190,EN_26_22464_18)
+آغازین		(I_Time, EN_26_22464_18)	O	O	O	O	O	(I_Time,EV_26_5219_190,EN_26_22464_18)
+سال		(I_Time, EN_26_22464_18)	O	O	O	O	O	(I_Time,EV_26_5219_190,EN_26_22464_18)
+98		(I_Time, EN_26_22464_18)	O	O	O	O	O	(I_Time,EV_26_5219_190,EN_26_22464_18)
+؛		O	O	O	O	O	O	
+خیر		(B_Person, EN_26_22468_15)	O	O	O	O	O	(B_Source,EV_26_5219_190,EN_26_22468_15)
+سنندجی		(I_Person, EN_26_22468_15)	O	O	O	O	O	(I_Source,EV_26_5219_190,EN_26_22468_15)
+سه		(B_Person, EN_26_22475_15)	O	O	O	O	O	(B_Target,EV_26_5219_190,EN_26_22475_15)
+زندانی		(I_Person, EN_26_22475_15)	O	O	O	O	O	(I_Target,EV_26_5219_190,EN_26_22475_15)
+جرایم		O	O	O	O	O	O	
+غیرعمد		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+آزاد		O	(B_Prisoner Release, EV_26_5219_190)	Asserted	Past	Positive	EV_26_5219_190	
+کرد		O	(I_Prisoner Release, EV_26_5219_190)	O	O	O	EV_26_5219_190	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3571">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+غرفه		(B_Location, EN_26_105859_14)	O	O	O	O	O	(B_Place,EV_26_30092_255,EN_26_105859_14)
+ایکنا		(I_Location, EN_26_105859_14)	O	O	O	O	O	(I_Place,EV_26_30092_255,EN_26_105859_14)
+در		O	O	O	O	O	O	
+نمایشگاه		O	(B_Ceremony, EV_26_30092_255)	Asserted	Past	Positive	EV_26_30092_255	
+قرآن		O	(I_Ceremony, EV_26_30092_255)	O	O	O	EV_26_30092_255	
+کریم		O	(I_Ceremony, EV_26_30092_255)	O	O	O	EV_26_30092_255	
+؛		O	O	O	O	O	O	
+ترجمه		O	O	O	O	O	O	
+قرآن		(B_Facility, EN_26_22494_17)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+قلم		(B_Facility, EN_26_22499_17)	O	O	O	O	O	(B_Target,EV_26_5226_215,EN_26_22499_17)
+حدادعادل		(I_Facility, EN_26_22499_17)	O	O	O	O	O	(I_Target,EV_26_5226_215,EN_26_22499_17)
+رونمایی		O	(B_Release, EV_26_5226_215)	Asserted	Past	Positive	EV_26_5226_215	
+شد		O	(I_Release, EV_26_5226_215)	O	O	O	EV_26_5226_215	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3574">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+نشست		O	(B_Meeting, EV_26_5238_232)	Asserted	Past	Positive	EV_26_5238_232	
+تخصصی		O	O	O	O	O	O	
+بررسی		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+گفت‌وگو		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+راهکار		O	O	O	O	O	O	
+کاهش		O	O	O	O	O	O	
+آسیب‌های		O	O	O	O	O	O	
+اجتماعی		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فرهنگی		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+دانشگاه		(B_Location, EN_26_22513_14)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3578">	begin	O	O	O	O	O	O	O
+درمان		O	O	O	O	O	O	
+بیماری		(B_Disease, EN_26_173079_22)	O	O	O	O	O	
+پانیک		(I_Disease, EN_26_173079_22)	O	O	O	O	O	
+9364441263		(B_Contact-Info, EN_26_173081_21)	O	O	O	O	O	
+راهی		O	O	O	O	O	O	
+موثر		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+مطمئن		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+درمان		O	O	O	O	O	O	
+بیماری		O	O	O	O	O	O	
+کافیست		O	O	O	O	O	O	
+با		O	O	O	O	O	O	
+ما		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3583">	begin	O	O	O	O	O	O	O
+دنیای		O	O	O	O	O	O	
+حیوانات		O	O	O	O	O	O	
+-		O	O	O	O	O	O	
+مبارزه		O	O	O	O	O	O	
+پلنگ		(B_Animal, EN_26_22540_16)	O	O	O	O	O	
+های		(I_Animal, EN_26_22540_16)	O	O	O	O	O	
+جگوار		(I_Animal, EN_26_22540_16)	O	O	O	O	O	
+با		O	O	O	O	O	O	
+بیماری		(B_Disease, EN_26_22548_22)	O	O	O	O	O	
+مرموز		(I_Disease, EN_26_22548_22)	O	O	O	O	O	
+-		(I_Disease, EN_26_22548_22)	O	O	O	O	O	
+Jaguar		(I_Disease, EN_26_22548_22)	O	O	O	O	O	
+Fights		(I_Disease, EN_26_22548_22)	O	O	O	O	O	
+Illness		(I_Disease, EN_26_22548_22)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3585">	begin	O	O	O	O	O	O	O
+دیدار		O	(B_Meeting, EV_26_5247_232)	Asserted	Past	Positive	EV_26_5247_232	
+روحانی		(B_Person, EN_26_22560_15)	O	O	O	O	O	(B_Participant,EV_26_5247_232,EN_26_22560_15)
+با		O	O	O	O	O	O	
+علما		(B_Person, EN_26_22563_15)	O	O	O	O	O	(B_Participant,EV_26_5247_232,EN_26_22563_15)
+و		(I_Person, EN_26_22563_15)	O	O	O	O	O	(I_Participant,EV_26_5247_232,EN_26_22563_15)
+فرهیختگان		(I_Person, EN_26_22563_15)	O	O	O	O	O	(I_Participant,EV_26_5247_232,EN_26_22563_15)
+اهل		(I_Person, EN_26_22563_15)	O	O	O	O	O	(I_Participant,EV_26_5247_232,EN_26_22563_15)
+سنت		(I_Person, EN_26_22563_15)	O	O	O	O	O	(I_Participant,EV_26_5247_232,EN_26_22563_15)
+برادران		(B_Person, EN_26_22568_15)	O	O	O	O	O	
+اهل		(I_Person, EN_26_22568_15)	O	O	O	O	O	
+سنت		(I_Person, EN_26_22568_15)	O	O	O	O	O	
+مرزداران		O	O	O	O	O	O	
+صدیق		O	O	O	O	O	O	
+کشورند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3588">	begin	O	O	O	O	O	O	O
+راه		O	O	O	O	O	O	
+غلیه		O	O	O	O	O	O	
+بر		O	O	O	O	O	O	
+تحریم‌ها		O	O	O	O	O	O	
+افزایش		O	O	O	O	O	O	
+تولید		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+راه		O	O	O	O	O	O	
+غلیه		O	O	O	O	O	O	
+بر		O	O	O	O	O	O	
+تحریم‌ها		O	O	O	O	O	O	
+افزایش		O	O	O	O	O	O	
+تولید		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3589">	begin	O	O	O	O	O	O	O
+راهکارهای		O	O	O	O	O	O	
+وزارت		(B_Organization, EN_26_24041_12)	O	O	O	O	O	
+صنعت		(I_Organization, EN_26_24041_12)	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+بهبود		O	O	O	O	O	O	
+وضعیت		O	O	O	O	O	O	
+صنعت		O	O	O	O	O	O	
+خودرو		O	O	O	O	O	O	
+-		O	O	O	O	O	O	
+افزایش		O	O	O	O	O	O	
+تولید		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+راه		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3590">	begin	O	O	O	O	O	O	O
+رشد		O	O	O	O	O	O	
+50		(B_Numeric, EN_26_22841_19)	O	O	O	O	O	
+درصدی		(I_Numeric, EN_26_22841_19)	O	O	O	O	O	
+تخلیه		O	(B_Import, EV_26_30228_227)	Asserted	Now	Positive	EV_26_30228_227	
+کالاهای		(B_Facility, EN_26_22843_17)	O	O	O	O	O	(B_Artifact,EV_26_30228_227,EN_26_22843_17)
+اساسی		(I_Facility, EN_26_22843_17)	O	O	O	O	O	(I_Artifact,EV_26_30228_227,EN_26_22843_17)
+در		O	O	O	O	O	O	
+بندرامام		(B_Location, EN_26_22847_14)	O	O	O	O	O	(B_Place,EV_26_30228_227,EN_26_22847_14)
+(		(I_Location, EN_26_22847_14)	O	O	O	O	O	(I_Place,EV_26_30228_227,EN_26_22847_14)
+ره		(I_Location, EN_26_22847_14)	O	O	O	O	O	(I_Place,EV_26_30228_227,EN_26_22847_14)
+)		(I_Location, EN_26_22847_14)	O	O	O	O	O	(I_Place,EV_26_30228_227,EN_26_22847_14)
+طی		O	O	O	O	O	O	
+شش		(B_Time, EN_26_22856_18)	O	O	O	O	O	(B_Time,EV_26_30228_227,EN_26_22856_18)
+ماهه		(I_Time, EN_26_22856_18)	O	O	O	O	O	(I_Time,EV_26_30228_227,EN_26_22856_18)
+نخست		(I_Time, EN_26_22856_18)	O	O	O	O	O	(I_Time,EV_26_30228_227,EN_26_22856_18)
+سال‌جاری		(I_Time, EN_26_22856_18)	O	O	O	O	O	(I_Time,EV_26_30228_227,EN_26_22856_18)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3631">	begin	O	O	O	O	O	O	O
+شورای		(B_Person, EN_26_22865_15)	O	O	O	O	O	(B_Participant,EV_26_5318_232,EN_26_22865_15)
+نظامی		(I_Person, EN_26_22865_15)	O	O	O	O	O	(I_Participant,EV_26_5318_232,EN_26_22865_15)
+سودان		(I_Person, EN_26_22865_15)	O	O	O	O	O	(I_Participant,EV_26_5318_232,EN_26_22865_15)
+تشکیل		O	O	O	O	O	O	
+نشست		O	(B_Meeting, EV_26_5318_232)	Asserted	Past	Negative	EV_26_5318_232	
+با		O	O	O	O	O	O	
+احزاب		(B_Person, EN_26_22868_15)	O	O	O	O	O	(B_Participant,EV_26_5318_232,EN_26_22868_15)
+و		(I_Person, EN_26_22868_15)	O	O	O	O	O	(I_Participant,EV_26_5318_232,EN_26_22868_15)
+نیروهای		(I_Person, EN_26_22868_15)	O	O	O	O	O	(I_Participant,EV_26_5318_232,EN_26_22868_15)
+سیاسی		(I_Person, EN_26_22868_15)	O	O	O	O	O	(I_Participant,EV_26_5318_232,EN_26_22868_15)
+را		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+تعویق		O	O	O	O	O	O	
+انداخت		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3636">	begin	O	O	O	O	O	O	O
+ظریف		(B_Person, EN_26_22883_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+توییتر		(B_Organization, EN_26_22885_12)	O	O	O	O	O	
+نوشت		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+اجزای		(B_Facility, EN_26_22888_17)	O	O	O	O	O	(B_Target,EV_26_5322_267,EN_26_22888_17)
+پهپاد		(I_Facility, EN_26_22888_17)	O	O	O	O	O	(I_Target,EV_26_5322_267,EN_26_22888_17)
+متجاوز		(I_Facility, EN_26_22888_17)	O	O	O	O	O	(I_Target,EV_26_5322_267,EN_26_22888_17)
+آمریکایی		(I_Facility, EN_26_22888_17)	O	O	O	O	O	(I_Target,EV_26_5322_267,EN_26_22888_17)
+در		O	O	O	O	O	O	
+آب‌های		(B_Location, EN_26_22892_14)	O	O	O	O	O	(B_Place,EV_26_5322_267,EN_26_22892_14)
+سرزمینی		(I_Location, EN_26_22892_14)	O	O	O	O	O	(I_Place,EV_26_5322_267,EN_26_22892_14)
+ایران		(I_Location, EN_26_22892_14)	O	O	O	O	O	(I_Place,EV_26_5322_267,EN_26_22892_14)
+کشف		O	(B_Discovery, EV_26_5322_267)	Asserted	Past	Positive	EV_26_5322_267	
+شد		O	(I_Discovery, EV_26_5322_267)	O	O	O	EV_26_5322_267	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3642">	begin	O	O	O	O	O	O	O
+فال		O	O	O	O	O	O	
+روزانه		(B_Time, EN_26_173086_18)	O	O	O	O	O	
+پنج‌شنبه		(B_Time, EN_26_22895_18)	O	O	O	O	O	
+6		(I_Time, EN_26_22895_18)	O	O	O	O	O	
+تیر		(I_Time, EN_26_22895_18)	O	O	O	O	O	
+98		(I_Time, EN_26_22895_18)	O	O	O	O	O	
++		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+حافظ		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+روز		(B_Time, EN_26_173087_18)	O	O	O	O	O	
+تولد		(I_Time, EN_26_173087_18)	O	O	O	O	O	
+98		(B_Numeric, EN_26_173089_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3644">	begin	O	O	O	O	O	O	O
+فال		O	O	O	O	O	O	
+روزانه		(B_Time, EN_26_173082_18)	O	O	O	O	O	
+دوشنبه		(B_Time, EN_26_22901_18)	O	O	O	O	O	
+14		(I_Time, EN_26_22901_18)	O	O	O	O	O	
+مرداد		(I_Time, EN_26_22901_18)	O	O	O	O	O	
+98		(I_Time, EN_26_22901_18)	O	O	O	O	O	
++		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+حافظ		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+روز		(B_Time, EN_26_173083_18)	O	O	O	O	O	
+تولد		(I_Time, EN_26_173083_18)	O	O	O	O	O	
+98		(B_Numeric, EN_26_173085_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3645">	begin	O	O	O	O	O	O	O
+فال		O	O	O	O	O	O	
+روزانه		(B_Time, EN_26_173090_18)	O	O	O	O	O	
+سه‌شنبه		(B_Time, EN_26_22905_18)	O	O	O	O	O	
+29		(I_Time, EN_26_22905_18)	O	O	O	O	O	
+مرداد		(I_Time, EN_26_22905_18)	O	O	O	O	O	
+98		(I_Time, EN_26_22905_18)	O	O	O	O	O	
++		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+حافظ		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+روز		(B_Time, EN_26_173091_18)	O	O	O	O	O	
+تولد		(I_Time, EN_26_173091_18)	O	O	O	O	O	
+98		(B_Numeric, EN_26_173093_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3646">	begin	O	O	O	O	O	O	O
+فال		O	O	O	O	O	O	
+روزانه		(B_Time, EN_26_173094_18)	O	O	O	O	O	
+سه‌شنبه		(B_Time, EN_26_22913_18)	O	O	O	O	O	
+3		(I_Time, EN_26_22913_18)	O	O	O	O	O	
+اردیبهشت		(I_Time, EN_26_22913_18)	O	O	O	O	O	
+98		(I_Time, EN_26_22913_18)	O	O	O	O	O	
++		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+حافظ		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+روز		(B_Time, EN_26_173095_18)	O	O	O	O	O	
+تولد		(I_Time, EN_26_173095_18)	O	O	O	O	O	
+98		(B_Numeric, EN_26_173097_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3648">	begin	O	O	O	O	O	O	O
+فال		O	O	O	O	O	O	
+روزانه		(B_Time, EN_26_173098_18)	O	O	O	O	O	
+شنبه		(B_Time, EN_26_22921_18)	O	O	O	O	O	
+4		(I_Time, EN_26_22921_18)	O	O	O	O	O	
+آبان		(I_Time, EN_26_22921_18)	O	O	O	O	O	
+98		(I_Time, EN_26_22921_18)	O	O	O	O	O	
++		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+حافظ		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+فال		O	O	O	O	O	O	
+روز		(B_Time, EN_26_173099_18)	O	O	O	O	O	
+تولد		(I_Time, EN_26_173099_18)	O	O	O	O	O	
+98		(B_Numeric, EN_26_173101_19)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3650">	begin	O	O	O	O	O	O	O
+فرماندار		(B_Person, EN_26_22929_15)	O	O	O	O	O	
+اهواز		(I_Person, EN_26_22929_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+عملیات		O	O	O	O	O	O	
+امدادرسانی		O	(B_Aid, EV_26_5327_226)	Asserted	Now	Positive	EV_26_5327_226	
+به		O	O	O	O	O	O	
+روستاهای		(B_Location, EN_26_22946_14)	O	O	O	O	O	(B_Target,EV_26_5327_226,EN_26_22946_14)
+بخش		(I_Location, EN_26_22946_14)	O	O	O	O	O	(I_Target,EV_26_5327_226,EN_26_22946_14)
+مرکزی		(I_Location, EN_26_22946_14)	O	O	O	O	O	(I_Target,EV_26_5327_226,EN_26_22946_14)
+به		O	O	O	O	O	O	
+سرعت		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+حال		O	O	O	O	O	O	
+انجام		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3652">	begin	O	O	O	O	O	O	O
+فرمانده		(B_Person, EN_26_22953_15)	O	O	O	O	O	
+قرارگاه		(I_Person, EN_26_22953_15)	O	O	O	O	O	
+حمزه		(I_Person, EN_26_22953_15)	O	O	O	O	O	
+سیدالشهدا		(I_Person, EN_26_22953_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+عاملان		(B_Person, EN_26_22959_15)	O	O	O	O	O	
+ترور		(I_Person, EN_26_22959_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+زیرخاک		O	O	O	O	O	O	
+هم		O	O	O	O	O	O	
+باشند		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+سزای		O	O	O	O	O	O	
+عملشان		O	O	O	O	O	O	
+می‌رسند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3656">	begin	O	O	O	O	O	O	O
+قتل		O	(B_Homicide, EV_26_5330_172)	Asserted	Past	Positive	EV_26_5330_172	
+چهار		(B_Person, EN_26_22965_15)	O	O	O	O	O	(B_Number of Targets,EV_26_5330_172,EN_26_22965_15)
+نفر		(I_Person, EN_26_22965_15)	O	O	O	O	O	(I_Number of Targets,EV_26_5330_172,EN_26_22965_15)
+در		O	O	O	O	O	O	
+اداره		(B_Location, EN_26_22969_14)	O	O	O	O	O	(B_Place,EV_26_5330_172,EN_26_22969_14)
+مرکزی		(I_Location, EN_26_22969_14)	O	O	O	O	O	(I_Place,EV_26_5330_172,EN_26_22969_14)
+پلیس		(I_Location, EN_26_22969_14)	O	O	O	O	O	(I_Place,EV_26_5330_172,EN_26_22969_14)
+پاریس		(I_Location, EN_26_22969_14)	O	O	O	O	O	(I_Place,EV_26_5330_172,EN_26_22969_14)
+:		O	O	O	O	O	O	
+تحقیقات		O	O	O	O	O	O	
+ردپای		O	O	O	O	O	O	
+تروریستی		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+نشان		O	O	O	O	O	O	
+می‌دهد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3658">	begin	O	O	O	O	O	O	O
+ک		(B_Organization, EN_26_24121_12)	O	O	O	O	O	(B_Source,EV_26_5331_932,EN_26_24121_12)
+ال		(I_Organization, EN_26_24121_12)	O	O	O	O	O	(I_Source,EV_26_5331_932,EN_26_24121_12)
+ام		(I_Organization, EN_26_24121_12)	O	O	O	O	O	(I_Source,EV_26_5331_932,EN_26_24121_12)
+و		O	O	O	O	O	O	
+خطوط		(B_Organization, EN_26_24124_12)	O	O	O	O	O	(B_Source,EV_26_5331_932,EN_26_24124_12)
+هوایی		(I_Organization, EN_26_24124_12)	O	O	O	O	O	(I_Source,EV_26_5331_932,EN_26_24124_12)
+اتریش		(I_Organization, EN_26_24124_12)	O	O	O	O	O	(I_Source,EV_26_5331_932,EN_26_24124_12)
+پرواز		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+تهران		(B_Location, EN_26_22978_14)	O	O	O	O	O	(B_Place,EV_26_5331_932,EN_26_22978_14)
+را		O	O	O	O	O	O	
+متوقف		O	(B_Ban, EV_26_5331_932)	Asserted	Future	Positive	EV_26_5331_932	
+می		O	(I_Ban, EV_26_5331_932)	O	O	O	EV_26_5331_932	
+کنند		O	(I_Ban, EV_26_5331_932)	O	O	O	EV_26_5331_932	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3659">	begin	O	O	O	O	O	O	O
+کارشناس		(B_Person, EN_26_24043_15)	O	O	O	O	O	
+مسائل		(I_Person, EN_26_24043_15)	O	O	O	O	O	
+سیاسی		(I_Person, EN_26_24043_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+برخی		O	O	O	O	O	O	
+نمایندگان		(B_Person, EN_26_24046_15)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+دنبال		O	O	O	O	O	O	
+سواستفاده		O	O	O	O	O	O	
+انتخاباتی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+موضوع		O	O	O	O	O	O	
+دختر		(B_Person, EN_26_24047_15)	O	O	O	O	O	
+آبی		(I_Person, EN_26_24047_15)	O	O	O	O	O	
+هستند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3828">	begin	O	O	O	O	O	O	O
+پایبندی		O	O	O	O	O	O	
+اوپک		(B_Geo-Political Entity, EN_26_24049_13)	O	O	O	O	O	
+و		O	O	O	O	O	O	
+متحدانش		(B_Person, EN_26_24050_15)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+توافق		O	O	O	O	O	O	
+کاهش		O	(B_Production Drop, EV_26_5596_220)	Asserted	Now	Positive	EV_26_5596_220	
+تولید		O	(I_Production Drop, EV_26_5596_220)	O	O	O	EV_26_5596_220	
+نفت		(B_Facility, EN_26_24051_17)	O	O	O	O	O	(B_Participant,EV_26_5596_220,EN_26_24051_17)
+به		O	O	O	O	O	O	
+200		(B_Numeric, EN_26_24052_19)	O	O	O	O	O	(B_Fluctuation,EV_26_5596_220,EN_26_24052_19)
+درصد		(I_Numeric, EN_26_24052_19)	O	O	O	O	O	(I_Fluctuation,EV_26_5596_220,EN_26_24052_19)
+رسید		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3829">	begin	O	O	O	O	O	O	O
+پدافند		(B_Facility, EN_26_24054_17)	O	O	O	O	O	
+هوایی		(I_Facility, EN_26_24054_17)	O	O	O	O	O	
+یمن		(I_Facility, EN_26_24054_17)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+شکار		O	(B_Discovery, EV_26_5598_267)	Asserted	Past	Positive	EV_26_5598_267	
+پهپاد		(B_Facility, EN_26_24057_17)	O	O	O	O	O	(B_Target,EV_26_5598_267,EN_26_24057_17)
+آمریکایی		(I_Facility, EN_26_24057_17)	O	O	O	O	O	(I_Target,EV_26_5598_267,EN_26_24057_17)
+بر		O	O	O	O	O	O	
+فراز		O	O	O	O	O	O	
+ساحل		(B_Location, EN_26_24059_14)	O	O	O	O	O	(B_Place,EV_26_5598_267,EN_26_24059_14)
+غربی		(I_Location, EN_26_24059_14)	O	O	O	O	O	(I_Place,EV_26_5598_267,EN_26_24059_14)
+خبر		O	O	O	O	O	O	
+داد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3830">	begin	O	O	O	O	O	O	O
+پرداخت		O	(B_Money Transfer, EV_26_5599_211)	Asserted	Past	Positive	EV_26_5599_211	
+49		(B_Numeric, EN_26_24061_19)	O	O	O	O	O	(B_Price,EV_26_5599_211,EN_26_24061_19)
+هزار		(I_Numeric, EN_26_24061_19)	O	O	O	O	O	(I_Price,EV_26_5599_211,EN_26_24061_19)
+فقره		(I_Numeric, EN_26_24061_19)	O	O	O	O	O	(I_Price,EV_26_5599_211,EN_26_24061_19)
+تسهیلات		O	O	O	O	O	O	
+مضاربه		O	O	O	O	O	O	
+بانک		(B_Organization, EN_26_24064_12)	O	O	O	O	O	(B_Source,EV_26_5599_211,EN_26_24064_12)
+ملی		(I_Organization, EN_26_24064_12)	O	O	O	O	O	(I_Source,EV_26_5599_211,EN_26_24064_12)
+ایران		(I_Organization, EN_26_24064_12)	O	O	O	O	O	(I_Source,EV_26_5599_211,EN_26_24064_12)
+در		O	O	O	O	O	O	
+نیمه		(B_Time, EN_26_24067_18)	O	O	O	O	O	(B_Time,EV_26_5599_211,EN_26_24067_18)
+نخست		(I_Time, EN_26_24067_18)	O	O	O	O	O	(I_Time,EV_26_5599_211,EN_26_24067_18)
+امسال		(I_Time, EN_26_24067_18)	O	O	O	O	O	(I_Time,EV_26_5599_211,EN_26_24067_18)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3831">	begin	O	O	O	O	O	O	O
+پرداخت		O	(B_Money Transfer, EV_26_5604_211)	Asserted	Past	Positive	EV_26_5604_211	
+7		(B_Numeric, EN_26_24070_19)	O	O	O	O	O	(B_Price,EV_26_5604_211,EN_26_24070_19)
+میلیارد		(I_Numeric, EN_26_24070_19)	O	O	O	O	O	(I_Price,EV_26_5604_211,EN_26_24070_19)
+ریال		(I_Numeric, EN_26_24070_19)	O	O	O	O	O	(I_Price,EV_26_5604_211,EN_26_24070_19)
+تسهیلات		(B_Facility, EN_26_173102_17)	O	O	O	O	O	
+قرض‌الحسنه		(I_Facility, EN_26_173102_17)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+کشاورزان		(B_Person, EN_26_24073_15)	O	O	O	O	O	(B_Target,EV_26_5604_211,EN_26_24073_15)(B_Target,EV_26_5605_169,EN_26_24073_15)
+اصفهانی		(I_Person, EN_26_24073_15)	O	O	O	O	O	(I_Target,EV_26_5604_211,EN_26_24073_15)(I_Target,EV_26_5605_169,EN_26_24073_15)
+خسارت‌دیده		O	(B_Destruction, EV_26_5605_169)	Asserted	Past	Positive	EV_26_5605_169	
+ناشی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+سیل		O	(B_Flood, EV_26_50390_152)	Asserted	Past	Positive	EV_26_50390_152	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3832">	begin	O	O	O	O	O	O	O
+پرسپولیسی‌ها		(B_Organization, EN_26_24079_12)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+دنبال		O	O	O	O	O	O	
+18		(B_Numeric, EN_26_24080_19)	O	O	O	O	O	
+میلیارد		(I_Numeric, EN_26_24080_19)	O	O	O	O	O	
+گمشده		(I_Numeric, EN_26_24080_19)	O	O	O	O	O	
+!		O	O	O	O	O	O	
+پ		O	O	O	O	O	O	
+پرسپولیسی‌ها		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+دنبال		O	O	O	O	O	O	
+18		O	O	O	O	O	O	
+میلیارد		O	O	O	O	O	O	
+گمشده		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3833">	begin	O	O	O	O	O	O	O
+پس		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+تساوی		O	O	O	O	O	O	
+برابر		O	O	O	O	O	O	
+ویتوریا		(B_Organization, EN_26_24085_12)	O	O	O	O	O	
+گیمارش		(I_Organization, EN_26_24085_12)	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+هواداران		(B_Person, EN_26_24083_15)	O	O	O	O	O	(B_Source,EV_26_5606_210,EN_26_24083_15)
+آرسنال		(I_Person, EN_26_24083_15)	O	O	O	O	O	(I_Source,EV_26_5606_210,EN_26_24083_15)
+خواهان		O	O	O	O	O	O	
+اخراج		O	(B_End Position, EV_26_5606_210)	Asserted	Past	Positive	EV_26_5606_210	
+اونای		(B_Person, EN_26_24087_15)	O	O	O	O	O	(B_Target,EV_26_5606_210,EN_26_24087_15)
+امری		(I_Person, EN_26_24087_15)	O	O	O	O	O	(I_Target,EV_26_5606_210,EN_26_24087_15)
+شدند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3834">	begin	O	O	O	O	O	O	O
+پلیس		(B_Person, EN_26_24089_15)	O	O	O	O	O	
+برزیل		(I_Person, EN_26_24089_15)	O	O	O	O	O	
+:		(I_Person, EN_26_24089_15)	O	O	O	O	O	
+شواهد		O	O	O	O	O	O	
+کافی		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+طرح		O	O	O	O	O	O	
+اتهام		O	(B_Complaint, EV_26_30062_183)	Asserted	Now	Positive	EV_26_30062_183	
+تجاوز		O	(B_Sex assault, EV_26_5607_170)	Other	Past	Positive	EV_26_5607_170	
+جنسی		O	(I_Sex assault, EV_26_5607_170)	O	O	O	EV_26_5607_170	
+علیه		O	O	O	O	O	O	
+نیمار		(B_Person, EN_26_24092_15)	O	O	O	O	O	(B_Source,EV_26_5607_170,EN_26_24092_15)(B_Target,EV_26_30062_183,EN_26_24092_15)
+وجود		O	O	O	O	O	O	
+ندارد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3835">	begin	O	O	O	O	O	O	O
+پنس		(B_Organization, EN_26_24093_12)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+ترکیه		(B_Geo-Political Entity, EN_26_24094_13)	O	O	O	O	O	
+بین		O	O	O	O	O	O	
+باقی		O	O	O	O	O	O	
+ماندن		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+ناتو		(B_Organization, EN_26_24095_12)	O	O	O	O	O	
+یا		O	O	O	O	O	O	
+خرید		O	O	O	O	O	O	
+اس		(B_Facility, EN_26_24096_17)	O	O	O	O	O	
+400		(I_Facility, EN_26_24096_17)	O	O	O	O	O	
+انتخاب		O	O	O	O	O	O	
+کند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3836">	begin	O	O	O	O	O	O	O
+پوشش		O	(B_Aid, EV_26_5609_226)	Asserted	Past	Positive	EV_26_5609_226	
+امدادی		O	(I_Aid, EV_26_5609_226)	O	O	O	EV_26_5609_226	
+84		(B_Numeric, EN_26_24098_19)	O	O	O	O	O	(B_Target,EV_26_5609_226,EN_26_24098_19)
+حادثه		(I_Numeric, EN_26_24098_19)	O	O	O	O	O	(I_Target,EV_26_5609_226,EN_26_24098_19)
+توسط		O	O	O	O	O	O	
+نجاتگران		(B_Person, EN_26_24100_15)	O	O	O	O	O	(B_Source,EV_26_5609_226,EN_26_24100_15)
+جمعیت		(I_Person, EN_26_24100_15)	O	O	O	O	O	(I_Source,EV_26_5609_226,EN_26_24100_15)
+هلال‌احمر		(I_Person, EN_26_24100_15)	O	O	O	O	O	(I_Source,EV_26_5609_226,EN_26_24100_15)
+استان		(I_Person, EN_26_24100_15)	O	O	O	O	O	(I_Source,EV_26_5609_226,EN_26_24100_15)
+اصفهان		(I_Person, EN_26_24100_15)	O	O	O	O	O	(I_Source,EV_26_5609_226,EN_26_24100_15)
+در		O	O	O	O	O	O	
+هفته		(B_Time, EN_26_24105_18)	O	O	O	O	O	(B_Time,EV_26_5609_226,EN_26_24105_18)
+گذشته		(I_Time, EN_26_24105_18)	O	O	O	O	O	(I_Time,EV_26_5609_226,EN_26_24105_18)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3837">	begin	O	O	O	O	O	O	O
+پیام		O	O	O	O	O	O	
+تبریک		O	O	O	O	O	O	
+وزیر		(B_Person, EN_26_24107_15)	O	O	O	O	O	
+بهداشت		(I_Person, EN_26_24107_15)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+مناسبت		O	O	O	O	O	O	
+انتصاب		O	(B_Start-Position, EV_26_5611_208)	Asserted	Past	Positive	EV_26_5611_208	
+وزیر		(B_Person, EN_26_24109_15)	O	O	O	O	O	(B_Target,EV_26_5611_208,EN_26_24109_15)
+بهداشت		(I_Person, EN_26_24109_15)	O	O	O	O	O	(I_Target,EV_26_5611_208,EN_26_24109_15)
+و		(I_Person, EN_26_24109_15)	O	O	O	O	O	(I_Target,EV_26_5611_208,EN_26_24109_15)
+رفاه		(I_Person, EN_26_24109_15)	O	O	O	O	O	(I_Target,EV_26_5611_208,EN_26_24109_15)
+خانواده		(I_Person, EN_26_24109_15)	O	O	O	O	O	(I_Target,EV_26_5611_208,EN_26_24109_15)
+هند		(I_Person, EN_26_24109_15)	O	O	O	O	O	(I_Target,EV_26_5611_208,EN_26_24109_15)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3838">	begin	O	O	O	O	O	O	O
+پیروزی		O	O	O	O	O	O	
+دونالد		(B_Person, EN_26_24115_15)	O	O	O	O	O	(B_Participant,EV_26_5612_261,EN_26_24115_15)
+ترامپ		(I_Person, EN_26_24115_15)	O	O	O	O	O	(I_Participant,EV_26_5612_261,EN_26_24115_15)
+و		O	O	O	O	O	O	
+برنی		(B_Person, EN_26_24117_15)	O	O	O	O	O	(B_Participant,EV_26_5612_261,EN_26_24117_15)
+سندرز		(I_Person, EN_26_24117_15)	O	O	O	O	O	(I_Participant,EV_26_5612_261,EN_26_24117_15)
+در		O	O	O	O	O	O	
+انتخابات		O	(B_Election Results, EV_26_5612_261)	Asserted	Past	Positive	EV_26_5612_261	
+مقدماتی		O	O	O	O	O	O	
+ریاست		O	O	O	O	O	O	
+جمهوری		O	O	O	O	O	O	
+نیو		(B_Geo-Political Entity, EN_26_24315_13)	O	O	O	O	O	(B_Place,EV_26_5612_261,EN_26_24315_13)
+همپشر		(I_Geo-Political Entity, EN_26_24315_13)	O	O	O	O	O	(I_Place,EV_26_5612_261,EN_26_24315_13)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3839">	begin	O	O	O	O	O	O	O
+پیشنهاد		O	O	O	O	O	O	
+سخنگوی		(B_Person, EN_26_24127_15)	O	O	O	O	O	
+شورای		(I_Person, EN_26_24127_15)	O	O	O	O	O	
+نگهبان		(I_Person, EN_26_24127_15)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+دولت		(B_Organization, EN_26_24130_12)	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+پیگیری		O	O	O	O	O	O	
+دخالت		O	O	O	O	O	O	
+اروپا		(B_Geo-Political Entity, EN_26_24131_13)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+اغتشاشات		O	(B_Protest, EV_26_5613_270)	Asserted	Past	Positive	EV_26_5613_270	
+اخیر		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3840">	begin	O	O	O	O	O	O	O
+تاثیر		O	O	O	O	O	O	
+گرسنگی		O	O	O	O	O	O	
+ناشی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+کمبود		O	O	O	O	O	O	
+ریزمغذی‌ها		O	O	O	O	O	O	
+بر		O	O	O	O	O	O	
+هیجانات		O	O	O	O	O	O	
+آیا		O	O	O	O	O	O	
+واقعا		O	O	O	O	O	O	
+«		O	O	O	O	O	O	
+گرسنه		O	O	O	O	O	O	
+»		O	O	O	O	O	O	
+هستید		O	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+دانستنی‌ها		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3844">	begin	O	O	O	O	O	O	O
+تجاوز		O	(B_Sex assault, EV_26_5614_170)	Asserted	Past	Positive	EV_26_5614_170	
+جنسی		O	(I_Sex assault, EV_26_5614_170)	O	O	O	EV_26_5614_170	
+به		O	O	O	O	O	O	
+مریم		(B_Person, EN_26_24150_15)	O	O	O	O	O	(B_Target,EV_26_5614_170,EN_26_24150_15)
+15		(I_Person, EN_26_24150_15)	O	O	O	O	O	(I_Target,EV_26_5614_170,EN_26_24150_15)
+ساله		(I_Person, EN_26_24150_15)	O	O	O	O	O	(I_Target,EV_26_5614_170,EN_26_24150_15)
+توسط		O	O	O	O	O	O	
+2		(B_Person, EN_26_24153_15)	O	O	O	O	O	(B_Number of Sources,EV_26_5614_170,EN_26_24153_15)
+خاستگارش		(I_Person, EN_26_24153_15)	O	O	O	O	O	(I_Number of Sources,EV_26_5614_170,EN_26_24153_15)
+در		O	O	O	O	O	O	
+روستا		(B_Location, EN_26_24155_14)	O	O	O	O	O	(B_Place,EV_26_5614_170,EN_26_24155_14)
++		O	O	O	O	O	O	
+جزئیات		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3845">	begin	O	O	O	O	O	O	O
+تجاوز		O	(B_Sex assault, EV_26_5618_170)	Asserted	Past	Positive	EV_26_5618_170	
+جنسی		O	(I_Sex assault, EV_26_5618_170)	O	O	O	EV_26_5618_170	
+به		O	O	O	O	O	O	
+مریم		(B_Person, EN_26_24156_15)	O	O	O	O	O	(B_Target,EV_26_5618_170,EN_26_24156_15)
+15		(I_Person, EN_26_24156_15)	O	O	O	O	O	(I_Target,EV_26_5618_170,EN_26_24156_15)
+ساله		(I_Person, EN_26_24156_15)	O	O	O	O	O	(I_Target,EV_26_5618_170,EN_26_24156_15)
+توسط		O	O	O	O	O	O	
+2		(B_Person, EN_26_24159_15)	O	O	O	O	O	(B_Number of Sources,EV_26_5618_170,EN_26_24159_15)
+خواستگارش		(I_Person, EN_26_24159_15)	O	O	O	O	O	(I_Number of Sources,EV_26_5618_170,EN_26_24159_15)
+در		O	O	O	O	O	O	
+روستا		(B_Location, EN_26_24161_14)	O	O	O	O	O	(B_Place,EV_26_5618_170,EN_26_24161_14)
++		O	O	O	O	O	O	
+جزئیات		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3846">	begin	O	O	O	O	O	O	O
+تجاوز		O	(B_Sex assault, EV_26_5620_170)	Asserted	Past	Positive	EV_26_5620_170	
+جنسی		O	(I_Sex assault, EV_26_5620_170)	O	O	O	EV_26_5620_170	
+مرد		(B_Person, EN_26_24162_15)	O	O	O	O	O	(B_Source,EV_26_5620_170,EN_26_24162_15)
+جوان		(I_Person, EN_26_24162_15)	O	O	O	O	O	(I_Source,EV_26_5620_170,EN_26_24162_15)
+به		O	O	O	O	O	O	
+دختر		(B_Person, EN_26_24164_15)	O	O	O	O	O	(B_Target,EV_26_5620_170,EN_26_24164_15)
+وزن		(B_Person, EN_26_24167_15)	O	O	O	O	O	(B_Target,EV_26_5620_170,EN_26_24167_15)
+همسایه		(I_Person, EN_26_24167_15)	O	O	O	O	O	(I_Target,EV_26_5620_170,EN_26_24167_15)
+در		O	O	O	O	O	O	
+مقابل		O	O	O	O	O	O	
+همسرش		(B_Person, EN_26_24176_15)	O	O	O	O	O	
++		O	O	O	O	O	O	
+عکس		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3847">	begin	O	O	O	O	O	O	O
+تجمع		O	(B_Protest, EV_26_5628_270)	Asserted	Past	Positive	EV_26_5628_270	
+دانشجویان		(B_Person, EN_26_24177_15)	O	O	O	O	O	(B_Number of Sources,EV_26_5623_270,EN_26_24177_15)(B_Source,EV_26_5628_270,EN_26_24177_15)
+بسیجی		(I_Person, EN_26_24177_15)	O	O	O	O	O	(I_Number of Sources,EV_26_5623_270,EN_26_24177_15)(I_Source,EV_26_5628_270,EN_26_24177_15)
+در		O	O	O	O	O	O	
+اعتراض		O	(B_Protest, EV_26_5623_270)	Asserted	Past	Positive	EV_26_5623_270	
+به		O	O	O	O	O	O	
+وضعیت		O	O	O	O	O	O	
+شیخ		(B_Person, EN_26_24179_15)	O	O	O	O	O	(B_Target,EV_26_5623_270,EN_26_24179_15)
+زکزاکی		(I_Person, EN_26_24179_15)	O	O	O	O	O	(I_Target,EV_26_5623_270,EN_26_24179_15)
+مقابل		O	O	O	O	O	O	
+سفارت		(B_Organization, EN_26_24183_12)	O	O	O	O	O	(B_Place,EV_26_5623_270,EN_26_24183_12)
+نیجریه		(I_Organization, EN_26_24183_12)	O	O	O	O	O	(I_Place,EV_26_5623_270,EN_26_24183_12)
+(		O	O	O	O	O	O	
+عکس		O	O	O	O	O	O	
+)		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3848">	begin	O	O	O	O	O	O	O
+تجمع		O	(B_Protest, EV_26_5626_270)	Asserted	Past	Positive	EV_26_5626_270	
+گروهی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+کارگران		(B_Person, EN_26_24200_15)	O	O	O	O	O	(B_Source,EV_26_5626_270,EN_26_24200_15)
+کارخانه		(I_Person, EN_26_24200_15)	O	O	O	O	O	(I_Source,EV_26_5626_270,EN_26_24200_15)
+صنایع		(I_Person, EN_26_24200_15)	O	O	O	O	O	(I_Source,EV_26_5626_270,EN_26_24200_15)
+مخابراتی		(I_Person, EN_26_24200_15)	O	O	O	O	O	(I_Source,EV_26_5626_270,EN_26_24200_15)
+راه		(I_Person, EN_26_24200_15)	O	O	O	O	O	(I_Source,EV_26_5626_270,EN_26_24200_15)
+دور		(I_Person, EN_26_24200_15)	O	O	O	O	O	(I_Source,EV_26_5626_270,EN_26_24200_15)
+در		O	O	O	O	O	O	
+مقابل		O	O	O	O	O	O	
+استانداری		(B_Location, EN_26_24206_14)	O	O	O	O	O	(B_Place,EV_26_5626_270,EN_26_24206_14)
+فارس		(I_Location, EN_26_24206_14)	O	O	O	O	O	(I_Place,EV_26_5626_270,EN_26_24206_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3850">	begin	O	O	O	O	O	O	O
+تخریب		O	(B_Destruction, EV_26_5629_169)	Asserted	Past	Positive	EV_26_5629_169	
+یکی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+دیواره‌های		(B_Facility, EN_26_24217_17)	O	O	O	O	O	(B_Target,EV_26_5629_169,EN_26_24217_17)
+حفاظتی		(I_Facility, EN_26_24217_17)	O	O	O	O	O	(I_Target,EV_26_5629_169,EN_26_24217_17)
+میانی		(I_Facility, EN_26_24217_17)	O	O	O	O	O	(I_Target,EV_26_5629_169,EN_26_24217_17)
+تالاب		(I_Facility, EN_26_24217_17)	O	O	O	O	O	(I_Target,EV_26_5629_169,EN_26_24217_17)
+هامون		(I_Facility, EN_26_24217_17)	O	O	O	O	O	(I_Target,EV_26_5629_169,EN_26_24217_17)
+در		O	O	O	O	O	O	
+شمال		(B_Location, EN_26_24222_14)	O	O	O	O	O	(B_Place,EV_26_5629_169,EN_26_24222_14)
+سیستان		(I_Location, EN_26_24222_14)	O	O	O	O	O	(I_Place,EV_26_5629_169,EN_26_24222_14)
+و		(I_Location, EN_26_24222_14)	O	O	O	O	O	(I_Place,EV_26_5629_169,EN_26_24222_14)
+بلوچستان		(I_Location, EN_26_24222_14)	O	O	O	O	O	(I_Place,EV_26_5629_169,EN_26_24222_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3852">	begin	O	O	O	O	O	O	O
+تدوین		O	O	O	O	O	O	
+پیش‌نویس		O	O	O	O	O	O	
+قانون		O	O	O	O	O	O	
+تسریع		O	O	O	O	O	O	
+مجازات		O	O	O	O	O	O	
+اعدام		O	O	O	O	O	O	
+برای		O	O	O	O	O	O	
+مجرمان		(B_Person, EN_26_24233_15)	O	O	O	O	O	
+عامل		(I_Person, EN_26_24233_15)	O	O	O	O	O	
+کشتار		(I_Person, EN_26_24233_15)	O	O	O	O	O	
+جمعی		(I_Person, EN_26_24233_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+آمریکا		(B_Location, EN_26_24246_14)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3854">	begin	O	O	O	O	O	O	O
+ترامپ		(B_Person, EN_26_24251_15)	O	O	O	O	O	
+خطاب		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+«		(B_Organization, EN_26_24259_12)	O	O	O	O	O	(B_Target,EV_26_30063_178,EN_26_24259_12)
+اون		(I_Organization, EN_26_24259_12)	O	O	O	O	O	(I_Target,EV_26_30063_178,EN_26_24259_12)
+»		(I_Organization, EN_26_24259_12)	O	O	O	O	O	(I_Target,EV_26_30063_178,EN_26_24259_12)
+:		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+شما		O	O	O	O	O	O	
+قول		O	O	O	O	O	O	
+می‌دهم		O	O	O	O	O	O	
+هدف		O	O	O	O	O	O	
+جاسوسی		O	(B_Espionage, EV_26_30063_178)	Asserted	Future	Positive	EV_26_30063_178	
+«		(B_Organization, EN_26_24264_12)	O	O	O	O	O	(B_Source,EV_26_30063_178,EN_26_24264_12)
+سیا		(I_Organization, EN_26_24264_12)	O	O	O	O	O	(I_Source,EV_26_30063_178,EN_26_24264_12)
+»		(I_Organization, EN_26_24264_12)	O	O	O	O	O	(I_Source,EV_26_30063_178,EN_26_24264_12)
+قرار		O	O	O	O	O	O	
+نگیرید		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3856">	begin	O	O	O	O	O	O	O
+تریلر		(B_Organization, EN_26_24288_12)	O	O	O	O	O	(B_Source,EV_26_5635_215,EN_26_24288_12)
+جدید		O	O	O	O	O	O	
+بازی		(B_Facility, EN_26_24298_17)	O	O	O	O	O	(B_Target,EV_26_5635_215,EN_26_24298_17)
+Doom		(I_Facility, EN_26_24298_17)	O	O	O	O	O	(I_Target,EV_26_5635_215,EN_26_24298_17)
+Eternal		(I_Facility, EN_26_24298_17)	O	O	O	O	O	(I_Target,EV_26_5635_215,EN_26_24298_17)
+شیطان		O	O	O	O	O	O	
+جدید		O	O	O	O	O	O	
+بازی		O	O	O	O	O	O	
+را		O	O	O	O	O	O	
+معرفی		O	(B_Release, EV_26_5635_215)	Asserted	Now	Positive	EV_26_5635_215	
+می‌کند		O	(I_Release, EV_26_5635_215)	O	O	O	EV_26_5635_215	
+[گیمزکام		O	O	O	O	O	O	
+2019		O	O	O	O	O	O	
+]		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3859">	begin	O	O	O	O	O	O	O
+تظاهرات		O	(B_Protest, EV_26_5677_270)	Asserted	Past	Negative	EV_26_5677_270	
+بحرینی‌ها		(B_Person, EN_26_24302_15)	O	O	O	O	O	(B_Source,EV_26_5677_270,EN_26_24302_15)
+در		O	O	O	O	O	O	
+اعتراض		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+اعدام		O	(B_Execution, EV_26_5678_187)	Asserted	Past	Positive	EV_26_5678_187	
+دو		(B_Person, EN_26_24536_15)	O	O	O	O	O	(B_Number of Targets,EV_26_5678_187,EN_26_24536_15)
+جوان		(I_Person, EN_26_24536_15)	O	O	O	O	O	(I_Number of Targets,EV_26_5678_187,EN_26_24536_15)
+شیعه		(I_Person, EN_26_24536_15)	O	O	O	O	O	(I_Number of Targets,EV_26_5678_187,EN_26_24536_15)
+مخالف		O	O	O	O	O	O	
+توسط		O	O	O	O	O	O	
+رژیم		(B_Organization, EN_26_24534_12)	O	O	O	O	O	(B_Source,EV_26_5678_187,EN_26_24534_12)
+آل‌خلیفه		(I_Organization, EN_26_24534_12)	O	O	O	O	O	(I_Source,EV_26_5678_187,EN_26_24534_12)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3862">	begin	O	O	O	O	O	O	O
+تلاش		O	O	O	O	O	O	
+بن		(B_Person, EN_26_24324_15)	O	O	O	O	O	(B_Source,EV_26_5643_932,EN_26_24324_15)
+سلمان		(I_Person, EN_26_24324_15)	O	O	O	O	O	(I_Source,EV_26_5643_932,EN_26_24324_15)
+برای		O	O	O	O	O	O	
+حذف		O	(B_Ban, EV_26_5643_932)	Asserted	Past	Positive	EV_26_5643_932	
+رقبا		(B_Person, EN_26_24323_15)	O	O	O	O	O	(B_Target,EV_26_5643_932,EN_26_24323_15)
+؛		O	O	O	O	O	O	
+خودکشی		O	(B_Suicide, EV_26_5645_144)	Asserted	Past	Positive	EV_26_5645_144	
+فرزند		(B_Person, EN_26_24326_15)	O	O	O	O	O	(B_Source,EV_26_5645_144,EN_26_24326_15)
+ملک		(I_Person, EN_26_24326_15)	O	O	O	O	O	(I_Source,EV_26_5645_144,EN_26_24326_15)
+عبدالله		(I_Person, EN_26_24326_15)	O	O	O	O	O	(I_Source,EV_26_5645_144,EN_26_24326_15)
+در		O	O	O	O	O	O	
+زندان		(B_Location, EN_26_24329_14)	O	O	O	O	O	(B_Place,EV_26_5645_144,EN_26_24329_14)
++		O	O	O	O	O	O	
+عکس		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3866">	begin	O	O	O	O	O	O	O
+توقیف		O	(B_Ban, EV_26_5648_932)	Asserted	Past	Positive	EV_26_5648_932	
+کامیون		(B_Facility, EN_26_24345_17)	O	O	O	O	O	(B_Target,EV_26_5648_932,EN_26_24345_17)
+تانکردار		(I_Facility, EN_26_24345_17)	O	O	O	O	O	(I_Target,EV_26_5648_932,EN_26_24345_17)
+با		O	O	O	O	O	O	
+29		(B_Numeric, EN_26_24363_19)	O	O	O	O	O	
+هزار		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+و		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+500		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+لیتر		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+سوخت		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+قاچاق		(I_Numeric, EN_26_24363_19)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+نائین		(B_Location, EN_26_24356_14)	O	O	O	O	O	(B_Place,EV_26_5648_932,EN_26_24356_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3869">	begin	O	O	O	O	O	O	O
+جبهه		O	O	O	O	O	O	
+مردمی		O	O	O	O	O	O	
+آزادی		O	O	O	O	O	O	
+فلسطین		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+صورت		O	O	O	O	O	O	
+درگیری		O	(B_Conflict, EV_26_5655_247)	Other	Unspecified	Positive	EV_26_5655_247	
+با		O	O	O	O	O	O	
+اسرائیل		(B_Geo-Political Entity, EN_26_24370_13)	O	O	O	O	O	(B_Target,EV_26_5655_247,EN_26_24370_13)
+،		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+کنار		O	O	O	O	O	O	
+مقاومت		O	O	O	O	O	O	
+می‌ایستیم		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3872">	begin	O	O	O	O	O	O	O
+جزئیات		O	O	O	O	O	O	
+عجیب		O	O	O	O	O	O	
+پرونده		(B_Facility, EN_26_24427_17)	O	O	O	O	O	
+جاسوسی		(I_Facility, EN_26_24427_17)	O	O	O	O	O	
+یک		(B_Numeric, EN_26_105843_19)	O	O	O	O	O	
+مامور		(B_Person, EN_26_24431_15)	O	O	O	O	O	
+سابق		(I_Person, EN_26_24431_15)	O	O	O	O	O	
+سیا		(I_Person, EN_26_24431_15)	O	O	O	O	O	
+که		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+کشورش		(B_Location, EN_26_105844_14)	O	O	O	O	O	
+خیانت		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3878">	begin	O	O	O	O	O	O	O
+چطور		O	O	O	O	O	O	
+نیاز		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+حفظ		O	O	O	O	O	O	
+بقا		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+عصر		O	O	O	O	O	O	
+یخبندان		O	O	O	O	O	O	
+منجر		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+اختراع		O	O	O	O	O	O	
+سفالگری		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3883">	begin	O	O	O	O	O	O	O
+حزب‌الله		(B_Person, EN_26_24469_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+تحریم‌ها		O	O	O	O	O	O	
+جز		O	O	O	O	O	O	
+لاینفک		O	O	O	O	O	O	
+منافع		O	O	O	O	O	O	
+اسرائیل		(B_Geo-Political Entity, EN_26_24470_13)	O	O	O	O	O	
+است		O	O	O	O	O	O	
+تحریم‌ها		O	O	O	O	O	O	
+جز		O	O	O	O	O	O	
+لاینفک		O	O	O	O	O	O	
+منافع		O	O	O	O	O	O	
+اسرائیل		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3884">	begin	O	O	O	O	O	O	O
+حضور		O	(B_Meeting, EV_26_30101_232)	Asserted	Now	Positive	EV_26_30101_232	
+فعال		O	O	O	O	O	O	
+کانون		(B_Organization, EN_26_24488_12)	O	O	O	O	O	(B_Participant,EV_26_30101_232,EN_26_24488_12)(B_Participant,EV_26_30096_255,EN_26_24488_12)
+جوانه‌های		(I_Organization, EN_26_24488_12)	O	O	O	O	O	(I_Participant,EV_26_30101_232,EN_26_24488_12)(I_Participant,EV_26_30096_255,EN_26_24488_12)
+بانک		(I_Organization, EN_26_24488_12)	O	O	O	O	O	(I_Participant,EV_26_30101_232,EN_26_24488_12)(I_Participant,EV_26_30096_255,EN_26_24488_12)
+ملی		(I_Organization, EN_26_24488_12)	O	O	O	O	O	(I_Participant,EV_26_30101_232,EN_26_24488_12)(I_Participant,EV_26_30096_255,EN_26_24488_12)
+ایران		(I_Organization, EN_26_24488_12)	O	O	O	O	O	(I_Participant,EV_26_30101_232,EN_26_24488_12)(I_Participant,EV_26_30096_255,EN_26_24488_12)
+در		O	O	O	O	O	O	
+نمایشگاه		O	(B_Ceremony, EV_26_30096_255)	Asserted	Now	Positive	EV_26_30096_255	
+دنیای		O	(I_Ceremony, EV_26_30096_255)	O	O	O	EV_26_30096_255	
+اسباب‌بازی		O	(I_Ceremony, EV_26_30096_255)	O	O	O	EV_26_30096_255	
+و		O	(I_Ceremony, EV_26_30096_255)	O	O	O	EV_26_30096_255	
+سرگرمی		O	(I_Ceremony, EV_26_30096_255)	O	O	O	EV_26_30096_255	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3886">	begin	O	O	O	O	O	O	O
+حمایت		O	(B_Aid, EV_26_5672_226)	Asserted	Past	Positive	EV_26_5672_226	
+دومین		O	O	O	O	O	O	
+دموکرات		(B_Organization, EN_26_24522_12)	O	O	O	O	O	(B_Source,EV_26_5672_226,EN_26_24522_12)
+از		O	O	O	O	O	O	
+حوزه		O	O	O	O	O	O	
+پیروزی		O	O	O	O	O	O	
+ترامپ		(B_Person, EN_26_24523_15)	O	O	O	O	O	(B_Target,EV_26_5672_226,EN_26_24523_15)
+در		O	O	O	O	O	O	
+سال		(B_Time, EN_26_24524_18)	O	O	O	O	O	(B_Time,EV_26_5672_226,EN_26_24524_18)
+2016		(I_Time, EN_26_24524_18)	O	O	O	O	O	(I_Time,EV_26_5672_226,EN_26_24524_18)
+از		O	O	O	O	O	O	
+استیضاح		O	O	O	O	O	O	
+او		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3888">	begin	O	O	O	O	O	O	O
+حمل		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+استفاده		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+مک‌بوک		(B_Facility, EN_26_24526_17)	O	O	O	O	O	(B_Target,EV_26_5673_932,EN_26_24526_17)
+در		O	O	O	O	O	O	
+پروازهای		O	O	O	O	O	O	
+ده‌ها		(B_Numeric, EN_26_105839_19)	O	O	O	O	O	
+شرکت		(B_Organization, EN_26_105840_12)	O	O	O	O	O	
+معتبر		(I_Organization, EN_26_105840_12)	O	O	O	O	O	
+بین‌المللی		(I_Organization, EN_26_105840_12)	O	O	O	O	O	
+ممنوع		O	(B_Ban, EV_26_5673_932)	Asserted	Past	Positive	EV_26_5673_932	
+شد		O	(I_Ban, EV_26_5673_932)	O	O	O	EV_26_5673_932	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3893">	begin	O	O	O	O	O	O	O
+خسارت		O	(B_Destruction, EV_26_5675_169)	Asserted	Past	Positive	EV_26_5675_169	
+میلیاردی		O	O	O	O	O	O	
+طوفان		O	(B_Storm, EV_26_5676_151)	Asserted	Past	Positive	EV_26_5676_151	
+حاره‌ای		O	O	O	O	O	O	
+کیار		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+سه		(B_Facility, EN_26_25629_17)	O	O	O	O	O	(B_Target,EV_26_5675_169,EN_26_25629_17)
+موج‌شکن		(I_Facility, EN_26_25629_17)	O	O	O	O	O	(I_Target,EV_26_5675_169,EN_26_25629_17)
+در		O	O	O	O	O	O	
+جنوب		(B_Location, EN_26_24527_14)	O	O	O	O	O	(B_Place,EV_26_5675_169,EN_26_24527_14)
+سیستان		(I_Location, EN_26_24527_14)	O	O	O	O	O	(I_Place,EV_26_5675_169,EN_26_24527_14)
+و		(I_Location, EN_26_24527_14)	O	O	O	O	O	(I_Place,EV_26_5675_169,EN_26_24527_14)
+بلوچستان		(I_Location, EN_26_24527_14)	O	O	O	O	O	(I_Place,EV_26_5675_169,EN_26_24527_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3894">	begin	O	O	O	O	O	O	O
+دادستان		(B_Person, EN_26_24539_15)	O	O	O	O	O	
+کل		(I_Person, EN_26_24539_15)	O	O	O	O	O	
+کشور		(I_Person, EN_26_24539_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+روز		(B_Time, EN_26_24542_18)	O	O	O	O	O	(B_Time,EV_26_5679_210,EN_26_24542_18)
+گذشته		(I_Time, EN_26_24542_18)	O	O	O	O	O	(I_Time,EV_26_5679_210,EN_26_24542_18)
+5		(B_Numeric, EN_26_24547_19)	O	O	O	O	O	(B_Number of Targets,EV_26_5679_210,EN_26_24547_19)
+قاضی		(B_Person, EN_26_24548_15)	O	O	O	O	O	(B_Target,EV_26_5679_210,EN_26_24548_15)
+فاسد		(I_Person, EN_26_24548_15)	O	O	O	O	O	(I_Target,EV_26_5679_210,EN_26_24548_15)
+اخراج		O	(B_End Position, EV_26_5679_210)	Asserted	Past	Positive	EV_26_5679_210	
+شدند		O	(I_End Position, EV_26_5679_210)	O	O	O	EV_26_5679_210	
+-		O	O	O	O	O	O	
+خط		O	O	O	O	O	O	
+اعتدال		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3895">	begin	O	O	O	O	O	O	O
+دادستان		(B_Person, EN_26_24550_15)	O	O	O	O	O	(B_Target,EV_26_30021_932,EN_26_24550_15)
+کل		(I_Person, EN_26_24550_15)	O	O	O	O	O	(I_Target,EV_26_30021_932,EN_26_24550_15)
+کشور		(I_Person, EN_26_24550_15)	O	O	O	O	O	(I_Target,EV_26_30021_932,EN_26_24550_15)
+:		O	O	O	O	O	O	
+هیچ		O	O	O	O	O	O	
+واحد		(B_Organization, EN_26_105672_12)	O	O	O	O	O	
+تولیدی		(I_Organization, EN_26_105672_12)	O	O	O	O	O	
+نباید		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+خاطر		O	O	O	O	O	O	
+مشکلات		O	O	O	O	O	O	
+قضایی		O	O	O	O	O	O	
+تعطیل		O	(B_Ban, EV_26_30021_932)	Asserted	Now	Positive	EV_26_30021_932	
+شود		O	(I_Ban, EV_26_30021_932)	O	O	O	EV_26_30021_932	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3896">	begin	O	O	O	O	O	O	O
+دادستانی		(B_Person, EN_26_24553_15)	O	O	O	O	O	
+تهران		(I_Person, EN_26_24553_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+دادگاه		O	(B_Trial, EV_26_5681_188)	Asserted	Future	Positive	EV_26_5681_188	
+هفت		(B_Person, EN_26_24565_15)	O	O	O	O	O	(B_Target,EV_26_5681_188,EN_26_24565_15)
+نفر		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+از		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+متهمان		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+پرونده		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+«		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+هتاکان		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+»		(I_Person, EN_26_24565_15)	O	O	O	O	O	(I_Target,EV_26_5681_188,EN_26_24565_15)
+از		O	O	O	O	O	O	
+یکشنبه		(B_Time, EN_26_24560_18)	O	O	O	O	O	(B_Time,EV_26_5681_188,EN_26_24560_18)
+آغاز		O	O	O	O	O	O	
+می‌شود		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3897">	begin	O	O	O	O	O	O	O
+دادگاه		O	(B_Trial, EV_26_5682_188)	Asserted	Past	Positive	EV_26_5682_188	
+معاون		(B_Person, EN_26_24573_15)	O	O	O	O	O	(B_Target,EV_26_5683_183,EN_26_24573_15)(B_Target,EV_26_5682_188,EN_26_24573_15)
+و		O	O	O	O	O	O	
+مدیران		(B_Person, EN_26_24574_15)	O	O	O	O	O	(B_Target,EV_26_5683_183,EN_26_24574_15)(B_Target,EV_26_5682_188,EN_26_24574_15)
+سابق		(I_Person, EN_26_24574_15)	O	O	O	O	O	(I_Target,EV_26_5683_183,EN_26_24574_15)(I_Target,EV_26_5682_188,EN_26_24574_15)
+بانک		(I_Person, EN_26_24574_15)	O	O	O	O	O	(I_Target,EV_26_5683_183,EN_26_24574_15)(I_Target,EV_26_5682_188,EN_26_24574_15)
+مرکزی		(I_Person, EN_26_24574_15)	O	O	O	O	O	(I_Target,EV_26_5683_183,EN_26_24574_15)(I_Target,EV_26_5682_188,EN_26_24574_15)
+به		O	O	O	O	O	O	
+اتهام		O	(B_Complaint, EV_26_5683_183)	Asserted	Past	Positive	EV_26_5683_183	
+اخلال		O	O	O	O	O	O	
+ارزی		O	O	O	O	O	O	
+برگزار		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3898">	begin	O	O	O	O	O	O	O
+دانشجوی		(B_Person, EN_26_24579_15)	O	O	O	O	O	(B_Participant,EV_26_5684_232,EN_26_24579_15)
+پیرو		(I_Person, EN_26_24579_15)	O	O	O	O	O	(I_Participant,EV_26_5684_232,EN_26_24579_15)
+خط		(I_Person, EN_26_24579_15)	O	O	O	O	O	(I_Participant,EV_26_5684_232,EN_26_24579_15)
+امام		(I_Person, EN_26_24579_15)	O	O	O	O	O	(I_Participant,EV_26_5684_232,EN_26_24579_15)
+در		O	O	O	O	O	O	
+گفتگو		O	(B_Meeting, EV_26_5684_232)	Asserted	Past	Positive	EV_26_5684_232	
+با		O	O	O	O	O	O	
+شیرازه		(B_Organization, EN_26_24586_12)	O	O	O	O	O	(B_Participant,EV_26_5684_232,EN_26_24586_12)
+:		(I_Organization, EN_26_24586_12)	O	O	O	O	O	(I_Participant,EV_26_5684_232,EN_26_24586_12)
+سازمان‌های		(B_Organization, EN_26_24583_12)	O	O	O	O	O	
+بین‌المللی		(I_Organization, EN_26_24583_12)	O	O	O	O	O	
+ساخته		O	O	O	O	O	O	
+دست		O	O	O	O	O	O	
+آمریکاست		(B_Geo-Political Entity, EN_26_24585_13)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3899">	begin	O	O	O	O	O	O	O
+دانلود		O	O	O	O	O	O	
+فیلم		(B_Facility, EN_26_24588_17)	O	O	O	O	O	
+تیم		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+کشتار		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+(		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+The		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+Kill		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+Team		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+2019		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+)		(I_Facility, EN_26_24588_17)	O	O	O	O	O	
+لینک		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+توضیحات		O	O	O	O	O	O	
++		O	O	O	O	O	O	
+زیرنویس		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3900">	begin	O	O	O	O	O	O	O
+دبیر		(B_Person, EN_26_24597_15)	O	O	O	O	O	
+انجمن		(I_Person, EN_26_24597_15)	O	O	O	O	O	
+برنج		(I_Person, EN_26_24597_15)	O	O	O	O	O	
+:		(I_Person, EN_26_24597_15)	O	O	O	O	O	
+افزایش		O	(B_Price Rise, EV_26_5685_217)	Asserted	Now	Positive	EV_26_5685_217	
+قیمت		O	(I_Price Rise, EV_26_5685_217)	O	O	O	EV_26_5685_217	
+برنج		(B_Facility, EN_26_24601_17)	O	O	O	O	O	(B_Participant,EV_26_5685_217,EN_26_24601_17)
+توسط		O	O	O	O	O	O	
+عده‌ای		(B_Person, EN_26_24602_15)	O	O	O	O	O	(B_Participant,EV_26_5685_217,EN_26_24602_15)
+محتکر		(I_Person, EN_26_24602_15)	O	O	O	O	O	(I_Participant,EV_26_5685_217,EN_26_24602_15)
+و		(I_Person, EN_26_24602_15)	O	O	O	O	O	(I_Participant,EV_26_5685_217,EN_26_24602_15)
+سودجو		(I_Person, EN_26_24602_15)	O	O	O	O	O	(I_Participant,EV_26_5685_217,EN_26_24602_15)
+انجام		O	O	O	O	O	O	
+می‌شود		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3901">	begin	O	O	O	O	O	O	O
+دبیر		(B_Person, EN_26_24606_15)	O	O	O	O	O	
+ستاد		(I_Person, EN_26_24606_15)	O	O	O	O	O	
+حقوق		(I_Person, EN_26_24606_15)	O	O	O	O	O	
+بشر		(I_Person, EN_26_24606_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+حقوق		O	O	O	O	O	O	
+بشر		O	O	O	O	O	O	
+غربی		O	O	O	O	O	O	
+تروریست		(B_Organization, EN_26_24610_12)	O	O	O	O	O	
+را		O	O	O	O	O	O	
+فعال		O	O	O	O	O	O	
+حقوق		O	O	O	O	O	O	
+بشر		O	O	O	O	O	O	
+جامی‌زند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3902">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+ابلاغیه		O	O	O	O	O	O	
+دادستان		(B_Person, EN_26_24611_15)	O	O	O	O	O	
+کل		(I_Person, EN_26_24611_15)	O	O	O	O	O	
+کشور		(I_Person, EN_26_24611_15)	O	O	O	O	O	
+مطرح		O	O	O	O	O	O	
+شد		O	O	O	O	O	O	
+ممنوعیت		O	(B_Ban, EV_26_5687_932)	Asserted	Now	Positive	EV_26_5687_932	
+واگذاری		O	O	O	O	O	O	
+کارت		(B_Facility, EN_26_24614_17)	O	O	O	O	O	(B_Target,EV_26_5687_932,EN_26_24614_17)
+بازرگانی		(I_Facility, EN_26_24614_17)	O	O	O	O	O	(I_Target,EV_26_5687_932,EN_26_24614_17)
+به		O	O	O	O	O	O	
+غیر		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3903">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+اعتراض		O	(B_Protest, EV_26_5899_270)	Asserted	Past	Negative	EV_26_5899_270	
+به		O	O	O	O	O	O	
+شکنجه		O	(B_Torture, EV_26_5897_173)	Asserted	Past	Positive	EV_26_5897_173	
+اسیر		(B_Person, EN_26_25587_15)	O	O	O	O	O	(B_Target,EV_26_5897_173,EN_26_25587_15)
+فلسطینی		(I_Person, EN_26_25587_15)	O	O	O	O	O	(I_Target,EV_26_5897_173,EN_26_25587_15)
+درگیری		O	(B_Conflict, EV_26_5898_247)	Asserted	Past	Positive	EV_26_5898_247	
+فلسطینیان		(B_Person, EN_26_25589_15)	O	O	O	O	O	(B_Source,EV_26_5898_247,EN_26_25589_15)
+با		O	O	O	O	O	O	
+نظامیان		(B_Person, EN_26_25590_15)	O	O	O	O	O	(B_Source,EV_26_5898_247,EN_26_25590_15)
+اشغالگر		(I_Person, EN_26_25590_15)	O	O	O	O	O	(I_Source,EV_26_5898_247,EN_26_25590_15)
+در		O	O	O	O	O	O	
+قدس		(B_Location, EN_26_25592_14)	O	O	O	O	O	(B_Place,EV_26_5898_247,EN_26_25592_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="3904">	begin	O	O	O	O	O	O	O
+در		O	O	O	O	O	O	
+تبعید		O	O	O	O	O	O	
+گاه		O	O	O	O	O	O	
+لیگ		(B_Organization, EN_26_25706_12)	O	O	O	O	O	
+یک		(I_Organization, EN_26_25706_12)	O	O	O	O	O	
+کاظمی		(B_Person, EN_26_25708_15)	O	O	O	O	O	
+-		O	O	O	O	O	O	
+وینکو		(B_Person, EN_26_25709_15)	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+تلاقی		O	O	O	O	O	O	
+خاطرات		O	O	O	O	O	O	
+،		O	O	O	O	O	O	
+جنگ		O	O	O	O	O	O	
+20		O	O	O	O	O	O	
+ساله		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4061">	begin	O	O	O	O	O	O	O
+نماینده		(B_Person, EN_26_25631_15)	O	O	O	O	O	
+اصلاح‌طلب		(I_Person, EN_26_25631_15)	O	O	O	O	O	
+مجلس		(I_Person, EN_26_25631_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+اقدامات		O	O	O	O	O	O	
+دولت		(B_Organization, EN_26_25634_12)	O	O	O	O	O	
+نیجریه		(I_Organization, EN_26_25634_12)	O	O	O	O	O	
+برخلاف		O	O	O	O	O	O	
+تمام		O	O	O	O	O	O	
+موازین		O	O	O	O	O	O	
+بین‌المللی		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+انسانی		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4062">	begin	O	O	O	O	O	O	O
+نوع‌دوستی		O	O	O	O	O	O	
+اصفهانی‌ها		(B_Person, EN_26_25639_15)	O	O	O	O	O	(B_Source,EV_26_5924_190,EN_26_25639_15)
+در		O	O	O	O	O	O	
+آزادی		O	O	O	O	O	O	
+زندانیان		(B_Person, EN_26_25695_15)	O	O	O	O	O	(B_Target,EV_26_5924_190,EN_26_25695_15)
+آزادی		O	(B_Prisoner Release, EV_26_5924_190)	Asserted	Past	Positive	EV_26_5924_190	
+زندان		O	(I_Prisoner Release, EV_26_5924_190)	O	O	O	EV_26_5924_190	
+محکوم		O	O	O	O	O	O	
+مالی		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+زندان		(B_Location, EN_26_25698_14)	O	O	O	O	O	
+مرکزی		(I_Location, EN_26_25698_14)	O	O	O	O	O	
+اصفهان		(I_Location, EN_26_25698_14)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4064">	begin	O	O	O	O	O	O	O
+نوید		(B_Person, EN_26_25643_15)	O	O	O	O	O	
+محمدزاده		(I_Person, EN_26_25643_15)	O	O	O	O	O	
+و		O	O	O	O	O	O	
+معادی		(B_Person, EN_26_25645_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+تعقیب		O	O	O	O	O	O	
+مدیری		(B_Person, EN_26_25647_15)	O	O	O	O	O	
+و		O	O	O	O	O	O	
+گلزار		(B_Person, EN_26_25648_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+فروش		O	O	O	O	O	O	
+نوروزی		O	O	O	O	O	O	
+سینما		(B_Organization, EN_26_25649_12)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4066">	begin	O	O	O	O	O	O	O
+نیروهای		(B_Person, EN_26_25654_15)	O	O	O	O	O	(B_Source,EV_26_5916_164,EN_26_25654_15)
+امنیتی		(I_Person, EN_26_25654_15)	O	O	O	O	O	(I_Source,EV_26_5916_164,EN_26_25654_15)
+مصر		(I_Person, EN_26_25654_15)	O	O	O	O	O	(I_Source,EV_26_5916_164,EN_26_25654_15)
+با		O	O	O	O	O	O	
+حمله		O	(B_Attack, EV_26_5916_164)	Asserted	Past	Positive	EV_26_5916_164	
+به		O	O	O	O	O	O	
+زادگاه		(B_Location, EN_26_25657_14)	O	O	O	O	O	(B_Target,EV_26_5916_164,EN_26_25657_14)
+مرسی		(I_Location, EN_26_25657_14)	O	O	O	O	O	(I_Target,EV_26_5916_164,EN_26_25657_14)
+،		O	O	O	O	O	O	
+ده‌ها		(B_Person, EN_26_25665_15)	O	O	O	O	O	(B_Target,EV_26_5914_184,EN_26_25665_15)
+نفر		(I_Person, EN_26_25665_15)	O	O	O	O	O	(I_Target,EV_26_5914_184,EN_26_25665_15)
+را		O	O	O	O	O	O	
+بازداشت		O	(B_Arrest, EV_26_5914_184)	Asserted	Past	Positive	EV_26_5914_184	
+کردند		O	(I_Arrest, EV_26_5914_184)	O	O	O	EV_26_5914_184	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4068">	begin	O	O	O	O	O	O	O
+هشدار		O	O	O	O	O	O	
+درباره		O	O	O	O	O	O	
+قحطی		O	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+عدم		O	O	O	O	O	O	
+کنترل		O	O	O	O	O	O	
+ملخ‌های		(B_Animal, EN_26_25667_16)	O	O	O	O	O	(B_Source,EV_26_5917_236,EN_26_25667_16)
+صحرایی		(I_Animal, EN_26_25667_16)	O	O	O	O	O	(I_Source,EV_26_5917_236,EN_26_25667_16)
+،		O	O	O	O	O	O	
+امنیت		O	O	O	O	O	O	
+غذایی		O	O	O	O	O	O	
+ایران		(B_Geo-Political Entity, EN_26_25669_13)	O	O	O	O	O	(B_Target,EV_26_5917_236,EN_26_25669_13)
+را		O	O	O	O	O	O	
+تهدید		O	(B_Threat, EV_26_5917_236)	Asserted	Now	Positive	EV_26_5917_236	
+می‌کند		O	(I_Threat, EV_26_5917_236)	O	O	O	EV_26_5917_236	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4069">	begin	O	O	O	O	O	O	O
+هشدار		O	(B_Threat, EV_26_5922_236)	Asserted	Past	Positive	EV_26_5922_236	
+وزیر		(B_Person, EN_26_25675_15)	O	O	O	O	O	(B_Source,EV_26_5922_236,EN_26_25675_15)
+بهداشت		(I_Person, EN_26_25675_15)	O	O	O	O	O	(I_Source,EV_26_5922_236,EN_26_25675_15)
+فلسطین		(I_Person, EN_26_25675_15)	O	O	O	O	O	(I_Source,EV_26_5922_236,EN_26_25675_15)
+نسبت		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+پیامدهای		O	O	O	O	O	O	
+قطع		O	(B_Resource Shortages, EV_26_5920_162)	Asserted	Past	Positive	EV_26_5920_162	
+برق		O	(I_Resource Shortages, EV_26_5920_162)	O	O	O	EV_26_5920_162	
+از		O	O	O	O	O	O	
+سوی		O	O	O	O	O	O	
+رژیم		(B_Organization, EN_26_25678_12)	O	O	O	O	O	(B_Participant,EV_26_5920_162,EN_26_25678_12)
+صهیونیستی		(I_Organization, EN_26_25678_12)	O	O	O	O	O	(I_Participant,EV_26_5920_162,EN_26_25678_12)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4071">	begin	O	O	O	O	O	O	O
+هفته		(B_Time, EN_26_25680_18)	O	O	O	O	O	
+نهم		(I_Time, EN_26_25680_18)	O	O	O	O	O	
+لیگ		(B_Organization, EN_26_25682_12)	O	O	O	O	O	
+برتر		(I_Organization, EN_26_25682_12)	O	O	O	O	O	
+روسیه		(I_Organization, EN_26_25682_12)	O	O	O	O	O	
+؛		O	O	O	O	O	O	
+پیروزی		O	O	O	O	O	O	
+زنیت		(B_Person, EN_26_25687_15)	O	O	O	O	O	
+در		O	O	O	O	O	O	
+شب		O	O	O	O	O	O	
+پنالتی		O	O	O	O	O	O	
+خراب		O	O	O	O	O	O	
+کردن		O	O	O	O	O	O	
+آزمون		(B_Person, EN_26_25686_15)	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4072">	begin	O	O	O	O	O	O	O
+همسایگان		(B_Person, EN_26_26048_15)	O	O	O	O	O	(B_Source,EV_26_5927_241,EN_26_26048_15)
+افغانستان		(I_Person, EN_26_26048_15)	O	O	O	O	O	(I_Source,EV_26_5927_241,EN_26_26048_15)
+امکان		O	O	O	O	O	O	
+مداخله		O	(B_Interference, EV_26_5927_241)	Asserted	Past	Positive	EV_26_5927_241	
+کشورهای		(B_Geo-Political Entity, EN_26_25703_13)	O	O	O	O	O	(B_Target,EV_26_5927_241,EN_26_25703_13)
+فرامنطقه‌ای		(I_Geo-Political Entity, EN_26_25703_13)	O	O	O	O	O	(I_Target,EV_26_5927_241,EN_26_25703_13)
+در		O	O	O	O	O	O	
+بحران		O	O	O	O	O	O	
+این		(B_Location, EN_26_29524_14)	O	O	O	O	O	(B_Place,EV_26_5927_241,EN_26_29524_14)
+کشور		(I_Location, EN_26_29524_14)	O	O	O	O	O	(I_Place,EV_26_5927_241,EN_26_29524_14)
+را		O	O	O	O	O	O	
+محدود		O	O	O	O	O	O	
+کنند		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4073">	begin	O	O	O	O	O	O	O
+واکنش		O	O	O	O	O	O	
+دمشق		(B_Geo-Political Entity, EN_26_25716_13)	O	O	O	O	O	
+به		O	O	O	O	O	O	
+اجلاس		(B_Organization, EN_26_25717_12)	O	O	O	O	O	
+مکه		(I_Organization, EN_26_25717_12)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+بیانیه		O	O	O	O	O	O	
+مکه		(B_Geo-Political Entity, EN_26_25719_13)	O	O	O	O	O	
+«		O	O	O	O	O	O	
+عین		O	O	O	O	O	O	
+دخالت		O	O	O	O	O	O	
+»		O	O	O	O	O	O	
+در		O	O	O	O	O	O	
+امور		O	O	O	O	O	O	
+سوریه		(B_Geo-Political Entity, EN_26_25720_13)	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4078">	begin	O	O	O	O	O	O	O
+وزیر		(B_Person, EN_26_25732_15)	O	O	O	O	O	
+جهاد		(I_Person, EN_26_25732_15)	O	O	O	O	O	
+کشاورزی		(I_Person, EN_26_25732_15)	O	O	O	O	O	
+مطرح		O	O	O	O	O	O	
+کرد		O	O	O	O	O	O	
+:		O	O	O	O	O	O	
+افزایش		O	(B_Production Rise, EV_26_5930_219)	Asserted	Past	Positive	EV_26_5930_219	
+تولیدات		O	(I_Production Rise, EV_26_5930_219)	O	O	O	EV_26_5930_219	
+کشاورزی		O	(I_Production Rise, EV_26_5930_219)	O	O	O	EV_26_5930_219	
+با		O	O	O	O	O	O	
+توجه		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+بارش‌های		(B_Facility, EN_26_25745_17)	O	O	O	O	O	(B_Participant,EV_26_5930_219,EN_26_25745_17)
+اخیر		(I_Facility, EN_26_25745_17)	O	O	O	O	O	(I_Participant,EV_26_5930_219,EN_26_25745_17)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4081">	begin	O	O	O	O	O	O	O
+وزیر		(B_Person, EN_26_25747_15)	O	O	O	O	O	
+صهیونیست		(I_Person, EN_26_25747_15)	O	O	O	O	O	
+:		O	O	O	O	O	O	
+تهدید		O	(B_Threat, EV_26_5934_236)	Asserted	Now	Positive	EV_26_5934_236	
+ایران		(B_Geo-Political Entity, EN_26_25750_13)	O	O	O	O	O	(B_Source,EV_26_5934_236,EN_26_25750_13)
+مدام		O	O	O	O	O	O	
+بیشتر		O	O	O	O	O	O	
+می‌شود		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+ما		O	O	O	O	O	O	
+هنوز		O	O	O	O	O	O	
+درگیر		O	O	O	O	O	O	
+تشکیل		O	O	O	O	O	O	
+کابینه‌ایم		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4084">	begin	O	O	O	O	O	O	O
+یادآوری		O	O	O	O	O	O	
+نشریه		(B_Organization, EN_26_25758_12)	O	O	O	O	O	
+آمریکایی		(I_Organization, EN_26_25758_12)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+پیروزی		O	O	O	O	O	O	
+ایران		(B_Geo-Political Entity, EN_26_25760_13)	O	O	O	O	O	(B_Source,EV_26_5937_164,EN_26_25760_13)
+بر		O	O	O	O	O	O	
+آمریکا		(B_Geo-Political Entity, EN_26_25761_13)	O	O	O	O	O	(B_Source,EV_26_5937_164,EN_26_25761_13)
+در		O	O	O	O	O	O	
+یک		O	O	O	O	O	O	
+جنگ		O	(B_Attack, EV_26_5937_164)	Asserted	Past	Positive	EV_26_5937_164	
+شبیه‌سازی		O	O	O	O	O	O	
+شده		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4086">	begin	O	O	O	O	O	O	O
+یک		O	O	O	O	O	O	
+ریال		O	O	O	O	O	O	
+اعتبار		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+بناهای		(B_Location, EN_26_25762_14)	O	O	O	O	O	
+تاریخی		(I_Location, EN_26_25762_14)	O	O	O	O	O	
+آسیب‌دیده		(I_Location, EN_26_25762_14)	O	O	O	O	O	
+از		O	O	O	O	O	O	
+سیل		O	(B_Flood, EV_26_5938_152)	Asserted	Past	Positive	EV_26_5938_152	
+لرستان		(B_Location, EN_26_25765_14)	O	O	O	O	O	(B_Place,EV_26_5938_152,EN_26_25765_14)
+اختصاص		O	O	O	O	O	O	
+نیافته		O	O	O	O	O	O	
+است		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4087">	begin	O	O	O	O	O	O	O
+یورش		O	(B_Attack, EV_26_5939_164)	Asserted	Unspecified	Positive	EV_26_5939_164	
+صدها		(B_Person, EN_26_25769_15)	O	O	O	O	O	(B_Source,EV_26_5939_164,EN_26_25769_15)
+پلیس		(I_Person, EN_26_25769_15)	O	O	O	O	O	(I_Source,EV_26_5939_164,EN_26_25769_15)
+آلمانی		(I_Person, EN_26_25769_15)	O	O	O	O	O	(I_Source,EV_26_5939_164,EN_26_25769_15)
+به		O	O	O	O	O	O	
+پناهگاه		(B_Location, EN_26_25772_14)	O	O	O	O	O	(B_Target,EV_26_5939_164,EN_26_25772_14)
+سابق		(I_Location, EN_26_25772_14)	O	O	O	O	O	(I_Target,EV_26_5939_164,EN_26_25772_14)
+ناتو		(I_Location, EN_26_25772_14)	O	O	O	O	O	(I_Target,EV_26_5939_164,EN_26_25772_14)
+و		O	O	O	O	O	O	
+متلاشی		O	(B_Dissolution, EV_26_5940_252)	Asserted	Past	Positive	EV_26_5940_252	
+شدن		O	(I_Dissolution, EV_26_5940_252)	O	O	O	EV_26_5940_252	
+باند		(B_Organization, EN_26_25775_12)	O	O	O	O	O	(B_Target,EV_26_5940_252,EN_26_25775_12)
+تبهکاران		(I_Organization, EN_26_25775_12)	O	O	O	O	O	(I_Target,EV_26_5940_252,EN_26_25775_12)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4089">	begin	O	O	O	O	O	O	O
+❓بیماری		(B_Disease, EN_26_25777_22)	O	O	O	O	O	
+کوررنگی		(I_Disease, EN_26_25777_22)	O	O	O	O	O	
+چیست		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+چگونه		O	O	O	O	O	O	
+ایجاد		O	O	O	O	O	O	
+می‌شود		O	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+و		O	O	O	O	O	O	
+آیا		O	O	O	O	O	O	
+قابل		O	O	O	O	O	O	
+درمان		O	O	O	O	O	O	
+هست		O	O	O	O	O	O	
+؟		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4090">	begin	O	O	O	O	O	O	O
+10		O	O	O	O	O	O	
+جواب		O	O	O	O	O	O	
+دندان‌شکن		O	O	O	O	O	O	
+به		O	O	O	O	O	O	
+کسانی		O	O	O	O	O	O	
+که		O	O	O	O	O	O	
+از		O	O	O	O	O	O	
+شما		O	O	O	O	O	O	
+می‌پرسند		O	O	O	O	O	O	
+چرا		O	O	O	O	O	O	
+ازدواج		O	O	O	O	O	O	
+نکرده‌اید		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+!		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4091">	begin	O	O	O	O	O	O	O
+2		O	O	O	O	O	O	
+دلیل		O	O	O	O	O	O	
+کاهش		O	(B_Price Drop, EV_26_5942_218)	Asserted	Past	Positive	EV_26_5942_218	
+قیمت		O	(I_Price Drop, EV_26_5942_218)	O	O	O	EV_26_5942_218	
+طلای		(B_Facility, EN_26_25779_17)	O	O	O	O	O	(B_Participant,EV_26_5942_218,EN_26_25779_17)
+جهانی		(I_Facility, EN_26_25779_17)	O	O	O	O	O	(I_Participant,EV_26_5942_218,EN_26_25779_17)
+2		O	O	O	O	O	O	
+دلیل		O	O	O	O	O	O	
+کاهش		O	O	O	O	O	O	
+قیمت		O	O	O	O	O	O	
+طلای		O	O	O	O	O	O	
+جهانی		O	O	O	O	O	O	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4092">	begin	O	O	O	O	O	O	O
+2		(B_Numeric, EN_26_25784_19)	O	O	O	O	O	(B_Number of Participants,EV_26_5947_134,EN_26_25784_19)(B_Number of Participants,EV_26_5948_135,EN_26_25784_19)
+کشته		O	(B_Death, EV_26_5947_134)	Asserted	Past	Positive	EV_26_5947_134	
+و		O	O	O	O	O	O	
+زخمی		O	(B_Injury, EV_26_5948_135)	Asserted	Past	Positive	EV_26_5948_135	
+بر		O	O	O	O	O	O
+اثر		O	O	O	O	O	O
+برخورد		O	(B_Traffic Collision, EV_26_5944_263)	Asserted	Past	Positive	EV_26_5944_263	
+کامیون		(B_Facility, EN_26_25782_17)	O	O	O	O	O	(B_Participant,EV_26_5944_263,EN_26_25782_17)
+با		O	O	O	O	O	O	
+موتورسیکلت		(B_Facility, EN_26_25783_17)	O	O	O	O	O	(B_Participant,EV_26_5944_263,EN_26_25783_17)
+در		O	O	O	O	O	O	
+مهاباد		(B_Location, EN_26_25781_14)	O	O	O	O	O	(B_Place,EV_26_5944_263,EN_26_25781_14)(B_Place,EV_26_5948_135,EN_26_25781_14)(B_Place,EV_26_5947_134,EN_26_25781_14)
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4093">	begin	O	O	O	O	O	O	O
+2		(B_Numeric, EN_26_25787_19)	O	O	O	O	O	(B_Number of Targets,EV_26_5950_190,EN_26_25787_19)
+گروگان		(B_Person, EN_26_25785_15)	O	O	O	O	O	(B_Target,EV_26_5950_190,EN_26_25785_15)
+با		O	O	O	O	O	O	
+تلاش		O	O	O	O	O	O	
+رزمندگان		(B_Person, EN_26_25788_15)	O	O	O	O	O	(B_Source,EV_26_5950_190,EN_26_25788_15)
+قرارگاه		(I_Person, EN_26_25788_15)	O	O	O	O	O	(I_Source,EV_26_5950_190,EN_26_25788_15)
+قدس		(I_Person, EN_26_25788_15)	O	O	O	O	O	(I_Source,EV_26_5950_190,EN_26_25788_15)
+جنوب		(I_Person, EN_26_25788_15)	O	O	O	O	O	(I_Source,EV_26_5950_190,EN_26_25788_15)
+شرق		(I_Person, EN_26_25788_15)	O	O	O	O	O	(I_Source,EV_26_5950_190,EN_26_25788_15)
+سپاه		(I_Person, EN_26_25788_15)	O	O	O	O	O	(I_Source,EV_26_5950_190,EN_26_25788_15)
+آزاد		O	(B_Prisoner Release, EV_26_5950_190)	Asserted	Past	Positive	EV_26_5950_190	
+شدند		O	(I_Prisoner Release, EV_26_5950_190)	O	O	O	EV_26_5950_190	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4094">	begin	O	O	O	O	O	O	O
+3		(B_Numeric, EN_26_25808_19)	O	O	O	O	O	(B_Number of Targets,EV_26_5955_169,EN_26_25808_19)(B_Number of Targets,EV_26_5956_176,EN_26_25808_19)
+دکل		(B_Facility, EN_26_25806_17)	O	O	O	O	O	(B_Target,EV_26_5955_169,EN_26_25806_17)(B_Target,EV_26_5956_176,EN_26_25806_17)
+مخابراتی		(I_Facility, EN_26_25806_17)	O	O	O	O	O	(I_Target,EV_26_5955_169,EN_26_25806_17)(I_Target,EV_26_5956_176,EN_26_25806_17)
+در		O	O	O	O	O	O	
+جنوب		(B_Location, EN_26_25811_14)	O	O	O	O	O	(B_Place,EV_26_5955_169,EN_26_25811_14)(B_Place,EV_26_5956_176,EN_26_25811_14)
+سیستان		(I_Location, EN_26_25811_14)	O	O	O	O	O	(I_Place,EV_26_5955_169,EN_26_25811_14)(I_Place,EV_26_5956_176,EN_26_25811_14)
+و		(I_Location, EN_26_25811_14)	O	O	O	O	O	(I_Place,EV_26_5955_169,EN_26_25811_14)(I_Place,EV_26_5956_176,EN_26_25811_14)
+بلوچستان		(I_Location, EN_26_25811_14)	O	O	O	O	O	(I_Place,EV_26_5955_169,EN_26_25811_14)(I_Place,EV_26_5956_176,EN_26_25811_14)
+تخریب		O	(B_Destruction, EV_26_5955_169)	Asserted	Past	Positive	EV_26_5955_169	
+و		O	O	O	O	O	O	
+سرقت		O	(B_Robbery, EV_26_5956_176)	Asserted	Past	Positive	EV_26_5956_176	
+شد		O	(I_Robbery, EV_26_5956_176)	O	O	O	EV_26_5956_176	
+</s>	end	O	O	O	O	O	O	O
+								
+								
+<s id="4097">	begin	O	O	O	O	O	O	O
+40		(B_Person, EN_26_25835_15)	O	O	O	O	O	(B_Source,EV_26_5958_223,EN_26_25835_15)
+دختر		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+بازمانده		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+از		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+تحصیل		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+و		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+ازدواج		(I_Person, EN_26_25835_15)	O	O	O	O	O	(I_Source,EV_26_5958_223,EN_26_25835_15)
+به		O	O	O	O	O	O	
+مشهد		(B_Location, EN_26_25822_14)	O	O	O	O	O	(B_Target,EV_26_5958_223,EN_26_25822_14)
+مقدس		(I_Location, EN_26_25822_14)	O	O	O	O	O	(I_Target,EV_26_5958_223,EN_26_25822_14)
+مشرف		O	(B_Travel, EV_26_5958_223)	Asserted	Past	Positive	EV_26_5958_223	
+شدند		O	(I_Travel, EV_26_5958_223)	O	O	O	EV_26_5958_223	
+</s>	end	O	O	O	O	O	O	O
